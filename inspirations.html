@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Inspirations — Coming Soon · HIEZY Web Solutions</title>
+  <meta name="description"
+    content="Our curated Design Inspirations gallery is coming soon. Browse handpicked UI designs across dashboards, e-commerce, and landing pages.">
+  <link rel="canonical" href="https://hiezy.com/inspirations.html">
+
+  <!-- Favicon / Safari Compatibility -->
+  <link rel="icon" type="image/png" href="assets/images/brand/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="assets/images/brand/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/brand/favicon.png">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hiezy.com/inspirations.html">
+  <meta property="og:title" content="Design Inspirations — Coming Soon · HIEZY Web Solutions">
+  <meta property="og:description" content="Curating high-end digital experiences. Browse handpicked UI designs across dashboards, e-commerce, and landing pages.">
+  <meta property="og:image" content="https://hiezy.com/assets/images/brand/hero-preview.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://hiezy.com/inspirations.html">
+  <meta property="twitter:title" content="Design Inspirations — Coming Soon · HIEZY Web Solutions">
+  <meta property="twitter:description" content="Curating high-end digital experiences. Browse handpicked UI designs.">
+  <meta property="twitter:image" content="https://hiezy.com/assets/images/brand/hero-preview.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <style>
+    :root {
+      --ink: #0b1220;
+      --paper: #fbfbfc;
+      --slate-2: #475569;
+      --accent: #1d4ed8;
+      --border: rgba(255, 255, 255, 0.1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+      overflow: hidden;
+      background: #060a14;
+      color: white;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      cursor: none; /* Hide default cursor for stardust effect */
+    }
+    
+    #stardust-canvas {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ─── DRAFTING BOARD BACKGROUND ─── */
+    .drafting-board {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background-image:
+        radial-gradient(circle at 50% 50%, rgba(29, 78, 216, 0.15), transparent 80%),
+        linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 100% 100%, 40px 40px, 40px 40px;
+    }
+
+    /* Floating crosshairs */
+    .crosshair {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      pointer-events: none;
+    }
+
+    .crosshair::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -5px;
+      right: -5px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .crosshair::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: -5px;
+      bottom: -5px;
+      width: 1px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* ─── MAIN LAYOUT ─── */
+    main {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem;
+    }
+
+    /* Technical Dimension Line Wrapper */
+    .dimension-box {
+      position: relative;
+      display: inline-block;
+      margin: 0 auto;
+    }
+
+    /* The massive text */
+    .hero-text {
+      font-size: clamp(3rem, 15vw, 10rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 0.9;
+      text-transform: uppercase;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.08);
+      user-select: none;
+      animation: reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        transform: translateY(20px) skewY(2deg);
+        filter: blur(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) skewY(0deg);
+        filter: blur(0px);
+      }
+    }
+
+    /* Foreground Text - more readable */
+    .foreground-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      width: 100%;
+      pointer-events: auto;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.4rem 1rem;
+      border-radius: 99px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 2rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      background: rgb(221, 20, 39);
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgb(221, 20, 39);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.4;
+        transform: scale(0.8);
+      }
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 3em;
+      background: var(--accent);
+      margin-left: 8px;
+      vertical-align: baseline;
+      animation: blink 1s step-end infinite;
+      box-shadow: 0 0 12px var(--accent);
+    }
+
+    @keyframes blink {
+
+      from,
+      to {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      max-width: 400px;
+      margin: 0 auto 3rem;
+      line-height: 1.6;
+    }
+
+    /* Dimension Lines */
+    .dim-line {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .dim-line.h {
+      height: 1px;
+      left: -40px;
+      right: -40px;
+    }
+
+    .dim-line.v {
+      width: 1px;
+      top: -40px;
+      bottom: -40px;
+    }
+
+    .dim-text {
+      position: absolute;
+      font-family: monospace;
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.3);
+      background: #060a14;
+      padding: 0 4px;
+    }
+
+    /* NAVIGATION */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255, 255, 255, 0.4);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.6rem 1.2rem;
+      border-radius: 12px;
+    }
+
+    .back-link:hover {
+      color: white;
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateX(-4px);
+    }
+
+    /* FOOTER INFO */
+    .footer-info {
+      position: fixed;
+      bottom: 2rem;
+      left: 4rem;
+      right: 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      color: rgba(255, 255, 255, 0.2);
+      font-size: 10px;
+      font-family: monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .coord {
+      color: var(--accent);
+      margin-right: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        padding: 2rem;
+      }
+
+      nav {
+        padding: 1.5rem 2rem;
+      }
+
+      .footer-info {
+        left: 2rem;
+        right: 2rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="drafting-board">
+    <canvas id="stardust-canvas"></canvas>
+    <div class="crosshair" style="top: 10%; left: 10%;"></div>
+    <div class="crosshair" style="top: 10%; right: 10%;"></div>
+    <div class="crosshair" style="bottom: 10%; left: 10%;"></div>
+    <div class="crosshair" style="bottom: 10%; right: 10%;"></div>
+  </div>
+
+  <nav style="justify-content: flex-end;">
+    <a href="index.html" class="back-link">
+      <i class="bi bi-arrow-left"></i> BACK TO STUDIO
+    </a>
+  </nav>
+
+  <main>
+    <div class="dimension-box">
+      <!-- Massive Background Text -->
+      <div class="hero-text">Inspiration</div>
+
+      <!-- Technical Elements -->
+      <div class="dim-line h" style="top: -20px;"></div>
+      <div class="dim-line h" style="bottom: -32px;"></div>
+      <div class="dim-line v" style="left: -20px;"></div>
+      <div class="dim-line v" style="right: -20px;"></div>
+      <div class="dim-text" style="top: -26px; left: 50%; transform: translateX(-50%);">960.00 DP</div>
+      <div class="dim-text" style="bottom: -37px; left: 50%; transform: translateX(-50%);">RELEASE_V1.0</div>
+
+      <!-- Foreground Centered Content -->
+      <div class="foreground-content">
+        <div class="badge">
+          <span class="status-dot"></span>
+          System Status: Drafting
+        </div>
+        <div style="min-height: 5rem;">
+          <h1 id="typing-text"></h1><span class="cursor"></span>
+        </div>
+        <p>Our curated library of premium UI designs is currently being indexed. Browsing available soon.</p>
+      </div>
+    </div>
+  </main>
+
+  <div class="footer-info">
+    <div>
+      <span class="coord">X: 1920</span>
+      <span class="coord">Y: 1080</span>
+      <span>EST. COMPLETION: Q2 2025</span>
+    </div>
+    <div>
+      &copy; 2025 HIEZY WEB SOLUTIONS // ALL RIGHTS RESERVED
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('stardust-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let mouse = { x: -100, y: -100 };
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+      
+      // Spawn particles on move
+      for (let i = 0; i < 3; i++) {
+        particles.push(new Particle(mouse.x, mouse.y));
+      }
+    });
+
+    class Particle {
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.size = Math.random() * 2.5 + 1;
+        this.speedX = (Math.random() - 0.5) * 1.5;
+        this.speedY = (Math.random() - 0.5) * 1.5;
+        // Use a mix of white and accent blue for the stardust
+        const colors = ['#ffffff', '#1d4ed8', '#60a5fa'];
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+        this.life = 1;
+        this.decay = Math.random() * 0.02 + 0.005;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.life -= this.decay;
+      }
+      draw() {
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = this.color;
+        ctx.fillStyle = this.color;
+        ctx.globalAlpha = this.life;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Draw a subtle "core" glow at mouse position
+      ctx.beginPath();
+      const gradient = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 15);
+      gradient.addColorStop(0, 'rgba(255, 255, 255, 0.3)');
+      gradient.addColorStop(1, 'rgba(29, 78, 216, 0)');
+      ctx.fillStyle = gradient;
+      ctx.arc(mouse.x, mouse.y, 15, 0, Math.PI * 2);
+      ctx.fill();
+
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+        
+        if (particles[i].life <= 0) {
+          particles.splice(i, 1);
+          i--;
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const text = "Coming Soon...";
+      const target = document.getElementById('typing-text');
+      let i = 0;
+
+      function type() {
+        if (i < text.length) {
+          target.textContent += text.charAt(i);
+          i++;
+
+          // Random delay between 50ms and 200ms for a more "technical/human" feel
+          const delay = Math.floor(Math.random() * 150) + 50;
+          setTimeout(type, delay);
+        }
+      }
+
+      // Start typing after the background elements have settled
+      setTimeout(type, 1200);
+    });
+  </script>
+</body>
+
+</html>

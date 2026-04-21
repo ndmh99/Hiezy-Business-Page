@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon / Safari Compatibility -->
+  <link rel="icon" type="image/png" href="assets/images/brand/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="assets/images/brand/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/brand/favicon.png">
+
+  <title>hiezy Web Solutions — Affordable, Easy-to-Use Websites for Small Businesses</title>
+  <meta name="description"
+    content="hiezy Web Solutions builds low-cost, fast, and easy-to-manage websites for small businesses. Clear pricing, no hidden fees, and you own the site.">
+  <meta name="keywords"
+    content="web design, small business website, affordable web development, vancouver web design, easy to use websites, hiezy">
+  <link rel="canonical" href="https://hiezy.com">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hiezy.com">
+  <meta property="og:title" content="hiezy Web Solutions — Affordable Websites for Small Businesses">
+  <meta property="og:description"
+    content="Low-cost, fast, and easy-to-manage websites. Clear pricing, no hidden fees. Build your professional online presence today.">
+  <meta property="og:image" content="https://hiezy.com/assets/images/brand/hero-preview.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://hiezy.com">
+  <meta property="twitter:title" content="hiezy Web Solutions — Affordable Websites for Small Businesses">
+  <meta property="twitter:description"
+    content="Low-cost, fast, and easy-to-manage websites. Clear pricing, no hidden fees.">
+  <meta property="twitter:image" content="https://hiezy.com/assets/images/brand/hero-preview.png">
+
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "hiezy Web Solutions",
+      "description": "Affordable website design and software for small to medium businesses.",
+      "url": "https://hiezy.com",
+      "logo": "https://hiezy.com/assets/images/brand/hiezy-logo.png",
+      "priceRange": "$$",
+      "areaServed": "Vancouver & Lower Mainland BC, Canada",
+      "sameAs": [
+        "https://www.instagram.com/hiezydotcom/"
+      ]
+    }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="data/content.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&amp;display=swap"
+    rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "var(--ink)",
+            paper: "var(--paper)",
+            slate: "var(--slate)",
+            slate2: "var(--slate-2)",
+            accent: "var(--accent)",
+            accent2: "var(--accent-2)",
+            border: "var(--border)",
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-100%)' }
+            }
+          },
+          animation: {
+            marquee: 'marquee 25s linear infinite'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="antialiased selection:bg-blue-200/60 selection:text-ink">
+  <!-- Global header (sticky) -->
+  <header class="sticky top-0 z-50 border-b border-border bg-white/70 backdrop-blur-xl">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between gap-3">
+        <a href="#home" class="group inline-flex flex-col items-start focus-ring rounded-lg px-2 py-1"
+          style="cursor: default;">
+          <img id="nav-logo" src="" alt="" class="h-7 w-auto">
+          <span class="text-[10px] font-bold uppercase tracking-widest text-slate2 mt-1">Web Solutions</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-1 rounded-full border border-border bg-white/60 px-2 py-1">
+          <a data-nav="home" href="#home"
+            class="nav-link font-display text-sm font-semibold text-slate2 px-4 py-2 rounded-full hover:text-ink hover:bg-slate-900/[0.04] transition focus-ring"
+            style="cursor: default;">Home</a>
+          <a data-nav="services" href="#services"
+            class="nav-link font-display text-sm font-semibold text-slate2 px-4 py-2 rounded-full hover:text-ink hover:bg-slate-900/[0.04] transition focus-ring"
+            style="cursor: default;">Packages &amp; Work</a>
+          <a data-nav="contact" href="#contact"
+            class="nav-link font-display text-sm font-semibold text-slate2 px-4 py-2 rounded-full hover:text-ink hover:bg-slate-900/[0.04] transition focus-ring active-underline text-ink"
+            style="cursor: default;">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-2 sm:gap-3">
+          <div class="hidden sm:flex items-center gap-5 border-r border-border pr-6 mr-2">
+            <a href="https://www.instagram.com/hiezydotcom/" target="_blank" rel="noopener noreferrer"
+              class="text-slate2 hover:text-accent transition-colors" aria-label="Instagram">
+              <i class="bi bi-instagram text-lg"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61575414031314" target="_blank" rel="noopener noreferrer"
+              class="text-slate2 hover:text-accent transition-colors" aria-label="Facebook">
+              <i class="bi bi-facebook text-lg"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/dmhn" target="_blank" rel="noopener noreferrer"
+              class="text-slate2 hover:text-accent transition-colors" aria-label="LinkedIn">
+              <i class="bi bi-linkedin text-lg"></i>
+            </a>
+          </div>
+
+          <button id="menuBtn"
+            class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-white/70 hover:bg-white transition focus-ring"
+            aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+            <i class="bi bi-list text-xl text-ink" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-border bg-white/80 backdrop-blur-xl">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3">
+        <div class="grid gap-1">
+          <a href="#home"
+            class="nav-link-mobile font-display text-sm font-semibold text-slate2 px-3 py-2 rounded-lg hover:bg-slate-900/[0.04] hover:text-ink transition focus-ring"
+            style="cursor: default;">Home</a>
+          <a href="#services"
+            class="nav-link-mobile font-display text-sm font-semibold text-slate2 px-3 py-2 rounded-lg hover:bg-slate-900/[0.04] hover:text-ink transition focus-ring"
+            style="cursor: default;">Packages &amp; Work</a>
+          <a href="#contact"
+            class="nav-link-mobile font-display text-sm font-semibold text-slate2 px-3 py-2 rounded-lg hover:bg-slate-900/[0.04] hover:text-ink transition focus-ring"
+            style="cursor: default;">Contact &amp; Prices</a>
+          <a href="#services"
+            class="font-display text-sm font-semibold text-ink px-3 py-2 rounded-lg hover:bg-slate-900/[0.04] transition focus-ring"
+            style="cursor: default;">
+            View Low Prices
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME — Hero value proposition -->
+    <section id="home" data-anchor="" class="relative">
+      <div class="absolute inset-0 bg-sheen"></div>
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 sm:pt-18 lg:pt-22 pb-14 sm:pb-16 lg:pb-20">
+        <div class="grid items-center gap-10 lg:grid-cols-12">
+          <div class="lg:col-span-6">
+            <div
+              class="inline-flex items-center gap-2 rounded-full border border-border bg-white/70 px-3 py-1.5 text-xs font-display font-semibold text-slate2 shadow-sm">
+              <i class="bi bi-patch-check-fill text-accent"></i>
+              Professional sites starting at just $149
+            </div>
+
+            <h1 class="mt-5 font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink">
+              High‑quality websites for small&amp;medium businesses
+            </h1>
+
+            <p class="mt-5 text-lg sm:text-xl leading-relaxed text-slate2">
+              We build professional, fast websites and applications—at a price everyone can afford.
+            </p>
+
+            <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-3">
+              <a href="#services"
+                class="inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-5 py-3 font-display text-sm font-semibold text-white shadow-soft hover:brightness-110 active:brightness-95 transition focus-ring"
+                style="cursor: default;">
+                See Our Packages
+                <i class="bi bi-arrow-right"></i>
+              </a>
+              <a href="#contact"
+                class="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-white/70 px-5 py-3 font-display text-sm font-semibold text-ink shadow-sm hover:bg-white transition focus-ring"
+                style="cursor: default;">
+                <i class="bi bi-telephone-outbound"></i>
+                Book a 15‑min Call
+              </a>
+            </div>
+
+            <p class="mt-3 text-sm font-display text-slate2">
+              Honest pricing. No hidden fees. <span class="text-ink font-semibold">You own everything we build.</span>
+            </p>
+
+          </div>
+
+          <div class="lg:col-span-6">
+            <div class="relative">
+              <div
+                class="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-blue-600/10 via-sky-500/10 to-transparent blur-2xl">
+              </div>
+
+              <div class="relative rounded-[2rem] border border-border bg-white/70 shadow-soft overflow-hidden">
+                <div class="flex items-center justify-between px-5 py-4 border-b border-border">
+                  <div class="flex items-center gap-2">
+                    <span class="h-2.5 w-2.5 rounded-full bg-red-400/80"></span>
+                    <span class="h-2.5 w-2.5 rounded-full bg-amber-400/80"></span>
+                    <span class="h-2.5 w-2.5 rounded-full bg-emerald-400/80"></span>
+                  </div>
+                  <div class="font-display text-xs font-semibold text-slate2">Preview — business-site.com</div>
+                  <div class="h-8 w-8 rounded-xl border border-border bg-white/60 grid place-items-center">
+                    <i class="bi bi-phone text-slate2"></i>
+                  </div>
+                </div>
+
+                <div class="grid md:grid-cols-5">
+                  <div class="md:col-span-2 p-5 border-b md:border-b-0 md:border-r border-border">
+                    <div class="flex items-start gap-3">
+                      <div
+                        class="h-10 w-10 rounded-2xl bg-gradient-to-br from-green-600 to-sky-500 grid place-items-center text-white shadow-sm">
+                        <i class="bi bi-compass"></i>
+                      </div>
+                      <div>
+                        <div class="font-display font-extrabold text-ink leading-tight">Clean. Clear. Quick.</div>
+                        <div class="mt-1 text-sm text-slate2">One path to call, book, or inquire.</div>
+                      </div>
+                    </div>
+
+                    <div class="mt-6 space-y-3">
+                      <div
+                        class="h-10 rounded-xl border border-border bg-white/70 px-4 flex items-center justify-between">
+                        <span class="text-sm font-display font-semibold text-ink">Services</span>
+                        <i class="bi bi-chevron-right text-slate2"></i>
+                      </div>
+                      <div
+                        class="h-10 rounded-xl border border-border bg-white/70 px-4 flex items-center justify-between">
+                        <span class="text-sm font-display font-semibold text-ink">About</span>
+                        <i class="bi bi-chevron-right text-slate2"></i>
+                      </div>
+                      <div
+                        class="h-10 rounded-xl border border-border bg-white/70 px-4 flex items-center justify-between">
+                        <span class="text-sm font-display font-semibold text-ink">Contact</span>
+                        <i class="bi bi-chevron-right text-slate2"></i>
+                      </div>
+                    </div>
+
+                    <div class="mt-6">
+                      <div
+                        class="rounded-2xl border border-border bg-gradient-to-br from-blue-600/10 to-sky-500/10 p-4">
+                        <div class="font-display text-sm font-bold text-ink">Primary action</div>
+                        <div class="mt-1 text-sm text-slate2">Tap-friendly buttons for action calling.</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="md:col-span-3 p-5">
+                    <img src="assets/images/brand/hero-preview.png"
+                      class="w-full aspect-[16/9] rounded-2xl object-cover border border-border shadow-sm animate-float"
+                      alt="Website mockup on devices" style="">
+                    <div class="mt-4 grid grid-cols-3 gap-3">
+                      <div class="rounded-2xl border border-border bg-white/70 p-3">
+                        <div class="text-xs font-display font-semibold text-slate2">Performance</div>
+                        <div class="mt-1 flex items-center gap-2">
+                          <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+                          <span class="font-display text-sm font-bold text-ink">Quick</span>
+                        </div>
+                      </div>
+                      <div class="rounded-2xl border border-border bg-white/70 p-3">
+                        <div class="text-xs font-display font-semibold text-slate2">Accessibility</div>
+                        <div class="mt-1 flex items-center gap-2">
+                          <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+                          <span class="font-display text-sm font-bold text-ink">Clear</span>
+                        </div>
+                      </div>
+                      <div class="rounded-2xl border border-border bg-white/70 p-3">
+                        <div class="text-xs font-display font-semibold text-slate2">Handoff</div>
+                        <div class="mt-1 flex items-center gap-2">
+                          <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+                          <span class="font-display text-sm font-bold text-ink">Owned</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="absolute -bottom-6 -right-6 hidden sm:block">
+                <div class="glass shadow-soft rounded-2xl p-4 w-64">
+                  <div class="flex items-center justify-between">
+                    <div class="font-display text-xs font-semibold text-slate2">Typical outcome</div>
+                    <i class="bi bi-graph-up-arrow text-accent"></i>
+                  </div>
+                  <div class="mt-2 font-display text-sm font-bold text-ink">More calls &amp; clearer decisions</div>
+                  <div class="mt-1 text-sm text-slate2">Less friction between “I’m interested” and “I’m contacting you.”
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- HOME — Trust & clarity bar -->
+    <section class="border-y border-border bg-white/60">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+        <div class="grid gap-6 md:grid-cols-3">
+          <div class="flex gap-4">
+            <div
+              class="h-11 w-11 shrink-0 rounded-full border border-border bg-white grid place-items-center shadow-sm">
+              <i class="bi bi-currency-dollar text-accent text-lg"></i>
+            </div>
+            <div>
+              <div class="font-display text-base font-extrabold tracking-tight text-ink">Lowest prices around</div>
+              <div class="mt-1 text-sm text-slate2">Professional sites that fit every business budgets.</div>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div
+              class="h-11 w-11 shrink-0 rounded-full border border-border bg-white grid place-items-center shadow-sm">
+              <i class="bi bi-file-earmark-code text-accent text-lg"></i>
+            </div>
+            <div>
+              <div class="font-display text-base font-extrabold tracking-tight text-ink">You own your site &amp; apps
+              </div>
+              <div class="mt-1 text-sm text-slate2">We hand over everything you need.</div>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div
+              class="h-11 w-11 shrink-0 rounded-full border border-border bg-white grid place-items-center shadow-sm">
+              <i class="bi bi-shield-check text-accent text-lg"></i>
+            </div>
+            <div>
+              <div class="font-display text-base font-extrabold tracking-tight text-ink">24/7 Support </div>
+              <div class="mt-1 text-sm text-slate2">Ongoing care even after the work is done.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOME -->
+    <section class="relative overflow-hidden">
+      <div
+        class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]">
+      </div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+        <div class="grid gap-16 lg:grid-cols-12 lg:items-start">
+          <div class="lg:col-span-5">
+            <div class="space-y-2 mb-8">
+              <span class="text-xs font-bold tracking-[0.3em] uppercase text-accent">Studio Standards</span>
+              <h2 class="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-ink leading-[1.1]"><span
+                  class="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-ink leading-[1.1]"
+                  style="border-image: none; margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse))); margin-right: 0px; margin-bottom: calc(0.5rem * var(--tw-space-y-reverse)); margin-left: 0px; color: rgb(11, 18, 32);">How
+                  We Take Care<br style="border-image: none;">Your Business</span>.</h2>
+            </div>
+
+            <p class="text-lg text-slate2 leading-relaxed max-w-md">We believe in building lasting relationships, which
+              is why every project includes a thoughtful set of services designed to ensure your success long after
+              launch.</p>
+
+            <div class="mt-12 space-y-10">
+              <div class="flex gap-6">
+                <div class="flex-shrink-0 h-px w-8 bg-accent mt-3"></div>
+                <div>
+                  <h4 class="font-display font-bold text-ink text-lg italic">01. Foundational Consulting</h4>
+                  <p class="text-slate2 text-sm mt-2 leading-relaxed">We help map out the requirements for your
+                    application demands, creating a strong semantic foundation for your site.</p>
+                </div>
+              </div>
+              <div class="flex gap-6">
+                <div class="flex-shrink-0 h-px w-8 bg-accent mt-3"></div>
+                <div>
+                  <h4 class="font-display font-bold text-ink text-lg italic"><span
+                      class="font-display font-bold text-ink text-lg italic"
+                      style="margin: 0px; color: rgb(11, 18, 32);">
+                      <h4 class="font-display font-bold text-ink text-lg italic" style="color: rgb(11, 18, 32);">02.
+                        Smooth Deployment</h4>
+                    </span></h4>
+                  <p class="text-slate2 text-sm mt-2 leading-relaxed">We handle the technical side of launching your
+                    site, ensuring a seamless experience from the very start.<br></p>
+                </div>
+              </div>
+              <div class="flex gap-6">
+                <div class="flex-shrink-0 h-px w-8 bg-accent mt-3"></div>
+                <div>
+                  <h4 class="font-display font-bold text-ink text-lg italic">03.&nbsp;<span
+                      class="font-display font-bold text-ink text-lg italic"
+                      style="border-image: none; margin: 0px; color: rgb(11, 18, 32);">Our Post-Launch Care</span></h4>
+                  <p class="text-slate2 text-sm mt-2 leading-relaxed">We offer 30 days of direct support for any
+                    technical adjustments or refinements as you get acquainted with your new site (Monthly support
+                    subscription is optional).<br></p>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+          <div class="lg:col-span-7">
+            <div class="relative">
+              <div
+                class="absolute -top-12 -left-12 text-[10rem] font-display font-black text-slate-100/50 -z-10 select-none">
+                PLUS</div>
+
+              <div class="bg-white border border-border p-2 rounded-[2rem] shadow-2xl">
+                <div class="relative rounded-[1.5rem] overflow-hidden aspect-[16/10.5] group">
+                  <video id="introVideo" style="border: white 1px solid" preload="metadata" playsinline=""
+                    class="w-full h-full object-contain">
+                    <source src="assets/videos/introduction.mp4#t=1" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+
+                  <!-- Custom Play Button Overlay -->
+                  <div id="videoOverlay"
+                    class="absolute inset-0 flex items-center justify-center bg-ink/10 transition-all duration-500 cursor-pointer group-hover:bg-ink/20">
+                    <button id="playIcon"
+                      class="h-20 w-20 rounded-full bg-accent flex items-center justify-center text-white transition-all duration-500 hover:scale-110 active:scale-95">
+                      <i class="bi bi-play-fill text-5xl ml-1"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="pt-0 p-8 sm:p-10">
+                  <div class="flex items-center justify-between mb-8">
+                    <div>
+                      <div class="text-xs font-bold text-slate2 uppercase tracking-widest mb-1">Standard Package</div>
+                      <div class="text-xl font-display font-bold text-ink">Launch Foundation</div>
+                    </div>
+                    <div class="h-14 w-14 rounded-full border border-border flex items-center justify-center">
+                      <i class="bi bi-patch-check-fill text-accent text-2xl"></i>
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-2 gap-8 border-t border-border pt-8">
+                    <div>
+                      <div class="text-[10px] font-bold text-accent uppercase tracking-widest mb-2">Audit Status</div>
+                      <div class="text-sm font-bold text-ink">Production Ready</div>
+                    </div>
+                    <div>
+                      <div class="text-[10px] font-bold text-accent uppercase tracking-widest mb-2">Service Fee</div>
+                      <div class="text-sm font-bold text-ink">Included</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="absolute -bottom-6 -right-6 bg-accent text-white px-6 py-4 rounded-2xl shadow-xl hidden sm:block">
+                <div class="text-[10px] font-bold uppercase tracking-widest opacity-80">Guaranteed</div>
+                <div class="font-display font-bold">100% Launch Success</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOME — What you get (deliverables) -->
+    <section class="mx-auto max-w-7xl p-y-24 p-x-6 p-t-24 p-r-6 p-b-24 p-l-6">
+      <div class="py-12">
+        <div class="flex items-center justify-center gap-3 mb-12">
+          <span class="text-xs tracking-[0.2em] uppercase text-[#64748b] font-semibold">— BRANDS TRUSTING</span>
+          <img id="trusted-hiezy-logo" src="" alt="HIEZY" class="h-10 w-auto pointer-events-none">
+          <span class="text-xs tracking-[0.2em] uppercase text-[#64748b] font-semibold">—</span>
+        </div>
+        <div class="relative flex overflow-hidden w-full max-w-full" id="logo-marquee-wrapper">
+          <div
+            class="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10">
+          </div>
+          <div
+            class="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10">
+          </div>
+
+          <div class="flex w-max shrink-0 items-center gap-x-16 pr-16 flex-nowrap" id="logo-marquee-content">
+            <img
+              class="h-12 w-auto object-contain rounded-md grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-default shrink-0 max-w-none"
+              src="assets/images/clients/client-vera-makeup.jpg" alt="Vera Makeup">
+            <img
+              class="h-12 w-auto object-contain rounded-md grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-default shrink-0 max-w-none"
+              src="assets/images/clients/client-tech-logo.png" alt="Tech Partner">
+            <img
+              class="h-12 w-auto object-contain rounded-md grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-default shrink-0 max-w-none"
+              src="assets/images/clients/client-creative-agency.png" alt="Creative Agency">
+            <img
+              class="h-12 w-auto object-contain rounded-md grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-default shrink-0 max-w-none"
+              src="assets/images/clients/client-fashion-monogram.png" alt="Fashion Brand">
+            <img
+              class="h-12 w-auto object-contain rounded-md grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-default shrink-0 max-w-none"
+              src="assets/images/clients/client-coffee-logo.png" alt="Van 168 Coffee">
+          </div>
+        </div>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const content = document.getElementById("logo-marquee-content");
+            const wrapper = document.getElementById("logo-marquee-wrapper");
+
+            // Clone logos inside the primary container to ensure it stretches wider than ultra-wide screens
+            const items = Array.from(content.children);
+            for (let i = 0; i < 2; i++) {
+              items.forEach(item => {
+                content.appendChild(item.cloneNode(true));
+              });
+            }
+
+            // Clone the entire primary container and append it to act as the seamless follow-up
+            const clone = content.cloneNode(true);
+            clone.setAttribute("aria-hidden", "true");
+            wrapper.appendChild(clone);
+
+            // Safari Bug Fix: Force the browser to recalculate the layout width BEFORE starting the animation
+            // If we don't do this, Safari caches the width before the JS clones were added, causing overlapping.
+            void wrapper.offsetWidth;
+
+            // Start the animation on both containers now that their widths are accurately calculated
+            content.classList.add("animate-marquee");
+            clone.classList.add("animate-marquee");
+          });
+        </script>
+      </div>
+    </section>
+
+    <!-- HOME — Final CTA -->
+
+
+    <!-- SERVICES & PORTFOLIO — Hero (pricing clarity) -->
+    <section id="services" data-anchor="" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+      <div class="max-w-3xl">
+        <h2 class="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-ink">
+          Choose the best plan for your budget
+        </h2>
+        <p class="mt-4 text-lg sm:text-xl text-slate2 leading-relaxed">
+          Honest, low prices with no surprises. Get a professional site without overpaying.
+        </p>
+      </div>
+
+      <!-- Service tiers & starting prices -->
+      <div class="mt-12 grid gap-6 lg:grid-cols-3">
+        <article
+          class="js-lift-card flex flex-col h-full rounded-2xl border border-border bg-white/70 p-7 shadow-soft-hover">
+          <div class="flex items-start justify-between gap-4">
+            <div class="w-full h-[7.5rem]">
+              <h2 class="font-display text-xl font-extrabold text-ink">Basic Landing Page</h2>
+              <div class="mt-1 font-display text-3xl font-extrabold tracking-tight text-ink">
+                Starting at $149
+              </div>
+              <p class="mt-2 text-sm text-slate2">Best for: One clear offer + one clear action.</p>
+            </div>
+            <div
+              class="h-11 w-11 shrink-0 rounded-full border border-border bg-white grid place-items-center shadow-sm">
+              <i class="bi bi-layout-text-window text-accent text-lg"></i>
+            </div>
+          </div>
+
+          <ul class="mt-6 space-y-3 text-slate2">
+            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>1 page (clean layout +
+                strong CTA)</span></li>
+            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Contact section or
+                simple form</span></li>
+            <li class="flex gap-3 text-[#64748b]"><i class="bi bi-x mt-0.5 text-xl text-[#e11d48]"></i><span>SEO
+                setup</span></li>
+            <li class="flex gap-3 text-[#64748b]"><i class="bi bi-x mt-0.5 text-xl text-[#e11d48]"></i><span>Logins or
+                accounts</span></li>
+            <li class="flex gap-3 text-[#64748b]"><i class="bi bi-x mt-0.5 text-xl text-[#e11d48]"></i><span>Dashboards
+                or admin views</span></li>
+            <li class="flex gap-3 text-[#64748b]"><i class="bi bi-x mt-0.5 text-xl text-[#e11d48]"></i><span>Payments or
+                bookings</span></li>
+          </ul>
+
+          <div class="mt-auto pt-7 flex flex-col gap-4">
+            <a href="#contact"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border bg-white/70 px-5 py-3 font-display text-sm font-semibold text-ink hover:bg-white transition focus-ring"
+              style="cursor: default;">
+              Request this package
+              <i class="bi bi-arrow-right"></i>
+            </a>
+            <div class="text-xs font-display text-slate2 opacity-0 pointer-events-none select-none">
+              Great fit if you want a clean site that feels established.
+            </div>
+          </div>
+        </article>
+
+        <article id="tilt-card" style="transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);"
+          class="flex flex-col h-full relative rounded-2xl border border-border bg-white/80 p-7 shadow-soft cursor-default">
+          <div
+            class="absolute -top-3 left-6 inline-flex items-center gap-2 rounded-full bg-accent px-3 py-1 text-xs font-display font-semibold text-white shadow-soft">
+            <i class="bi bi-stars"></i>
+            Most popular
+          </div>
+
+          <div class="flex items-start justify-between gap-4">
+            <div class="w-full h-[7.5rem]">
+              <h2 class="font-display text-xl font-extrabold text-ink">Complete Business Pack</h2>
+              <div class="mt-1 font-display text-3xl font-extrabold tracking-tight text-ink">
+                Starting at $600
+              </div>
+              <p class="mt-2 text-sm text-slate2">Best for: Local businesses that need a full site to look established.
+              </p>
+            </div>
+            <div
+              class="h-16 w-16 shrink-0 rounded-full bg-gradient-to-br from-blue-600 to-sky-500 text-white grid place-items-center shadow-md">
+              <i class="bi bi-building text-2xl inline-block animate-ring"></i>
+            </div>
+          </div>
+
+          <ul class="mt-6 space-y-3 text-slate2">
+            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Up to 5 pages (Home,
+                About, etc.)</span></li>
+            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Custom forms &amp; clear
+                pathways</span></li>
+            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Free SEO setup
+                (basics)</span></li>
+            <li class="flex gap-3 text-[#64748b]"><i class="bi bi-x mt-0.5 text-xl text-[#e11d48]"></i><span>Logins or
+                accounts</span></li>
+            <li class="flex gap-3 text-[#64748b]"><i class="bi bi-x mt-0.5 text-xl text-[#e11d48]"></i><span>Dashboards
+                or admin views</span></li>
+            <li class="flex gap-3 text-[#64748b]"><i class="bi bi-x mt-0.5 text-xl text-[#e11d48]"></i><span>Payments or
+                bookings</span></li>
+          </ul>
+
+          <div class="mt-auto pt-7 flex flex-col gap-4">
+            <a href="#contact"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-5 py-3 font-display text-sm font-semibold text-white shadow-soft hover:brightness-110 active:brightness-95 transition focus-ring"
+              style="cursor: default;">
+              Request this package
+              <i class="bi bi-arrow-right"></i>
+            </a>
+            <div class="text-xs font-display text-slate2">
+              Great fit if you want a clean site that feels established.
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="js-lift-card flex flex-col h-full rounded-2xl border border-border bg-white/70 p-7 shadow-soft-hover">
+          <div class="flex items-start justify-between gap-4">
+            <div class="w-full h-[7.5rem]">
+              <h2 class="font-display text-xl font-extrabold text-ink">Advanced Site &amp; Software</h2>
+              <div class="mt-1 font-display text-3xl font-extrabold tracking-tight text-ink">
+                Starting at $1,500
+              </div>
+              <p class="mt-2 text-sm text-slate2">Best for: Businesses that need payments, bookings, or logins.</p>
+            </div>
+            <div
+              class="h-11 w-11 shrink-0 rounded-full border border-border bg-white grid place-items-center shadow-sm">
+              <i class="bi bi-braces-asterisk text-accent text-lg"></i>
+            </div>
+          </div>
+
+          <ul class="mt-6 space-y-3 text-slate2">
+            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Complex custom
+                pages (more than 10)</span></li>
+            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Custom forms &amp; clear
+                pathways</span></li>
+            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Advanced SEO
+                setup</span></li>
+            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Logins / accounts (when
+                needed)</span></li>
+            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Dashboards or admin
+                views</span></li>
+            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Payments or bookings (as
+                needed)</span></li>
+          </ul>
+
+          <div class="mt-auto pt-7 flex flex-col gap-4">
+            <a href="#contact"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border bg-white/70 px-5 py-3 font-display text-sm font-semibold text-ink hover:bg-white transition focus-ring"
+              style="cursor: default;">
+              Request this package
+              <i class="bi bi-arrow-right"></i>
+            </a>
+            <div class="text-xs font-display text-slate2 opacity-0 pointer-events-none select-none">
+              Great fit if you want a clean site that feels established.
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p class="mt-6 text-sm font-display text-slate2">
+        Final pricing depends on pages, content readiness, and any special features. We’ll quote the total before we
+        begin.
+      </p>
+
+
+
+      <!-- Engagement options -->
+      <div class="mt-16 sm:mt-20">
+        <div class="grid gap-10 lg:grid-cols-12 lg:items-start">
+          <div class="lg:col-span-4">
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">
+              Choose one-time build or ongoing care
+            </h2>
+            <p class="mt-3 text-lg text-slate2">
+              Keep it simple: launch and own it, or have us handle small updates.
+            </p>
+          </div>
+
+          <div class="lg:col-span-8 relative grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-12 gap-y-4 md:gap-y-6">
+            <!-- Vertical solid line divider for desktop -->
+            <div
+              class="hidden md:block absolute left-1/2 top-2 bottom-2 w-px border-l border-solid border-ink/20 -translate-x-1/2 z-0">
+            </div>
+
+            <!-- Headers -->
+            <div class="order-1 md:order-none relative pt-4 pb-2">
+              <div class="flex flex-col sm:flex-row items-start gap-5">
+                <i class="bi bi-box-arrow-in-down text-accent text-4xl leading-none pt-1"></i>
+                <div>
+                  <h3 class="font-display text-2xl font-extrabold text-ink">One‑time build</h3>
+                  <p class="text-sm font-medium text-slate2 mt-1">Launch it, own it, and manage it.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="order-6 md:order-none relative pt-4 pb-2 md:pl-6">
+              <div class="flex flex-col sm:flex-row items-start gap-5">
+                <i class="bi bi-life-preserver text-accent text-4xl leading-none pt-1"></i>
+                <div>
+                  <h3 class="font-display text-2xl font-extrabold text-ink">Monthly care</h3>
+                  <p class="text-sm font-medium text-slate2 mt-1">Small updates handled for you—so your site stays
+                    fresh.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 1 -->
+            <div class="order-2 md:order-none flex gap-4 cursor-default text-slate2">
+              <i class="bi bi-check2 text-accent mt-0.5 text-xl shrink-0"></i>
+              <span>Great if you only need occasional changes</span>
+            </div>
+
+            <div class="order-7 md:order-none flex gap-4 cursor-default text-slate2 md:pl-6">
+              <i class="bi bi-check2 text-accent mt-0.5 text-xl shrink-0"></i>
+              <span>Updates, backups, and small fixes</span>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="order-3 md:order-none flex gap-4 cursor-default text-slate2">
+              <i class="bi bi-check2 text-accent mt-0.5 text-xl shrink-0"></i>
+              <span>Clear handoff and instructions</span>
+            </div>
+
+            <div class="order-8 md:order-none flex gap-4 cursor-default text-slate2 md:pl-6">
+              <i class="bi bi-check2 text-accent mt-0.5 text-xl shrink-0"></i>
+              <span>Content tweaks (hours, photos, promos)</span>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="order-4 md:order-none flex gap-4 cursor-default text-slate2">
+              <i class="bi bi-check2 text-accent mt-0.5 text-xl shrink-0"></i>
+              <span>Optional help available when needed</span>
+            </div>
+
+            <div class="order-9 md:order-none flex gap-4 cursor-default text-slate2 md:pl-6">
+              <i class="bi bi-check2 text-accent mt-0.5 text-xl shrink-0"></i>
+              <span>Priority support</span>
+            </div>
+
+            <!-- Horizontal solid line for mobile -->
+            <div class="order-5 md:hidden w-full border-t border-solid border-ink/20 my-2"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Design Inspirations Section -->
+      <section id="inspirations" class="mt-16 sm:mt-20 relative py-12 sm:py-16 overflow-hidden">
+        <!-- Blueprint Grid Pattern -->
+        <div
+          class="absolute z-0 inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_70%)] pointer-events-none">
+        </div>
+        <div class="relative z-10">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+            <div class="max-w-2xl">
+              <div
+                class="inline-flex items-center gap-2 text-accent font-display text-xs font-bold uppercase tracking-[0.2em] mb-4">
+                <span class="h-px w-8 bg-accent"></span>
+                Curated Styles
+              </div>
+              <h2
+                class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink leading-[1.1]">
+                Design Inspirations
+              </h2>
+              <p class="mt-6 text-lg text-slate2 leading-relaxed max-w-xl">
+                Every business has a unique voice. We help you choose the right visual direction before we write a
+                single
+                line of code.
+              </p>
+            </div>
+
+            <!-- Editorial Category Tabs -->
+            <div role="tablist" aria-label="Project categories"
+              class="flex items-center gap-8 border-b border-border md:border-none overflow-x-auto pb-2 scrollbar-hide">
+              <button onclick="switchInspiration('landing')" id="tab-landing" role="tab" aria-selected="true"
+                aria-controls="inspiration-display"
+                class="inspiration-tab active group relative pb-3 font-display text-sm font-extrabold uppercase tracking-widest text-ink transition-all">
+                Landing Pages
+                <span class="absolute bottom-0 left-0 h-0.5 w-full bg-accent transition-all duration-300"></span>
+              </button>
+              <button onclick="switchInspiration('ecommerce')" id="tab-ecommerce" role="tab" aria-selected="false"
+                aria-controls="inspiration-display"
+                class="inspiration-tab group relative pb-3 font-display text-sm font-extrabold uppercase tracking-widest text-slate2 hover:text-ink transition-all">
+                E-Commerce
+                <span
+                  class="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full"></span>
+              </button>
+              <button onclick="switchInspiration('dashboards')" id="tab-dashboards" role="tab" aria-selected="false"
+                aria-controls="inspiration-display"
+                class="inspiration-tab group relative pb-3 font-display text-sm font-extrabold uppercase tracking-widest text-slate2 hover:text-ink transition-all">
+                Dashboards
+                <span
+                  class="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full"></span>
+              </button>
+            </div>
+          </div>
+          <!-- Dynamic Content Area -->
+          <div id="inspiration-display" class="relative min-h-[500px]">
+            <div id="inspiration-content"
+              class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center transition-all duration-500 opacity-100">
+              <!-- Initial content (Dashboards) -->
+              <div class="lg:col-span-7 relative group">
+                <!-- Stacked Page Preview Effect -->
+                <div
+                  class="relative z-20 rounded-2xl border border-border bg-white p-2 shadow-2xl transition-transform duration-500 group-hover:-translate-y-2">
+                  <img src="" class="rounded-xl w-full aspect-[16/10] object-cover"
+                    alt="Modern Dashboard Design Inspiration">
+                </div>
+                <div
+                  class="absolute -top-6 -right-6 z-10 w-2/3 rounded-2xl border border-border bg-white p-2 shadow-xl transition-transform duration-700 group-hover:-translate-y-4 group-hover:translate-x-2">
+                  <img src="" class="rounded-xl w-full aspect-[16/10] object-cover"
+                    alt="E-commerce Website Design Inspiration">
+                </div>
+              </div>
+
+              <div class="lg:col-span-5 flex flex-col justify-center">
+                <div class="flex items-center gap-3 mb-6">
+                  <span
+                    class="px-3 py-1 bg-accent/10 rounded-full text-[10px] font-bold uppercase tracking-widest text-accent">Tech</span>
+                  <span
+                    class="px-3 py-1 bg-slate-100 rounded-full text-[10px] font-bold uppercase tracking-widest text-slate2">Modern</span>
+                  <span
+                    class="px-3 py-1 bg-slate-100 rounded-full text-[10px] font-bold uppercase tracking-widest text-slate2">Clean</span>
+                </div>
+                <h3 class="font-display text-3xl sm:text-4xl font-extrabold text-ink mb-6">Nexus Admin Suite</h3>
+                <p class="text-lg text-slate2 leading-relaxed mb-8">
+                  A data-rich internal tool designed for maximum productivity. This style focuses on clear typography,
+                  modular components, and a sophisticated muted palette.
+                </p>
+                <div class="flex flex-col gap-4">
+                  <div class="flex items-center gap-3 text-sm font-semibold text-ink">
+                    <i class="bi bi-file-pdf text-accent text-lg"></i>
+                    Full 3-Page Design PDF Included
+                  </div>
+                </div>
+                <a href="#"
+                  class="mt-10 inline-flex items-center gap-2 font-display text-sm font-extrabold text-ink hover:text-accent transition">
+                  Explore gallery <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" data-anchor="" class="relative bg-white py-20 lg:py-28 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-slate-50 to-white pointer-events-none"></div>
+      <div
+        class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_100%,#000_70%,transparent_100%)] pointer-events-none">
+      </div>
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+        <!-- Section Header -->
+        <div class="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
+          <div
+            class="inline-flex items-center gap-2 rounded-full border border-border bg-white px-3 py-1.5 text-xs font-display font-semibold text-slate2 shadow-sm mb-6">
+            <i class="bi bi-chat-text-fill text-accent"></i>
+            <span id="typewriter-text"></span><span id="typewriter-cursor"
+              style="display:inline-block;width:1px;height:0.9em;background:currentColor;margin-left:0;vertical-align:middle;animation:blink 0.8s step-end infinite;"></span>
+          </div>
+          <h2 class="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-ink">
+            Tell us what you need—get a clear quote
+          </h2>
+          <p class="mt-5 text-lg sm:text-xl text-slate2 leading-relaxed">
+            No pressure, no jargon. We’ll reply with a recommended package, timeline, and total cost.
+          </p>
+          <div class="mt-6 flex items-center justify-center gap-2">
+            <span class="flex h-2.5 w-2.5 rounded-full bg-emerald-500 relative">
+              <span
+                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            </span>
+            <p class="text-sm font-display font-semibold text-slate2">Most replies within 1 business day</p>
+          </div>
+        </div>
+
+        <!-- 3-Step Process (Sketch Infographic) -->
+        <div class="relative max-w-5xl mx-auto mb-16 sm:mb-24 z-0">
+
+          <!-- Connecting dashed line -->
+          <div class="hidden md:block absolute top-12 left-[16%] right-[16%] border-t-2 border-dashed border-ink -z-10"
+            style="border-radius: 50% 50% 0 0 / 20px 20px 0 0;"></div>
+
+          <div class="grid md:grid-cols-3 gap-8 md:gap-12">
+            <!-- Step 1 -->
+            <div class="relative group z-0">
+              <!-- Sketchy offset background -->
+              <div
+                class="absolute inset-0 bg-slate-50 rounded-3xl border-2 border-dashed border-ink translate-x-3 translate-y-3 -z-10 transition-transform group-hover:translate-x-4 group-hover:translate-y-4">
+              </div>
+
+              <div
+                class="rounded-3xl border-2 border-ink bg-white p-7 relative -rotate-1 group-hover:rotate-0 transition-transform duration-300 h-full flex flex-col shadow-sm">
+                <div class="flex items-center justify-between mb-4 relative z-10">
+                  <div
+                    class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-dashed border-emerald-300 bg-emerald-50 text-emerald-600">
+                    <i class="bi bi-telephone text-2xl"></i>
+                  </div>
+                  <div
+                    class="font-display font-black text-slate-200 text-6xl italic -rotate-6 select-none leading-none -mr-2">
+                    01</div>
+                </div>
+                <h4 class="font-display text-xl font-extrabold text-ink relative z-10 mt-2">Quick call + goals</h4>
+                <p class="mt-3 text-slate2 leading-relaxed text-sm relative z-10">We learn what you do, who you serve,
+                  and what the site must achieve.</p>
+
+                <!-- Mobile down arrow -->
+                <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 md:hidden text-ink text-3xl">
+                  <i class="bi bi-arrow-down"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="relative group mt-8 md:mt-0 z-0">
+              <div
+                class="absolute inset-0 bg-slate-50 rounded-3xl border-2 border-dashed border-ink translate-x-3 translate-y-3 -z-10 transition-transform group-hover:translate-x-4 group-hover:translate-y-4">
+              </div>
+
+              <div
+                class="rounded-3xl border-2 border-ink bg-white p-7 relative rotate-1 group-hover:rotate-0 transition-transform duration-300 h-full flex flex-col shadow-sm">
+                <div class="flex items-center justify-between mb-4 relative z-10">
+                  <div
+                    class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-dashed border-blue-300 bg-blue-50 text-blue-600">
+                    <i class="bi bi-palette text-2xl"></i>
+                  </div>
+                  <div
+                    class="font-display font-black text-slate-200 text-6xl italic rotate-3 select-none leading-none -mr-2">
+                    02</div>
+                </div>
+                <h4 class="font-display text-xl font-extrabold text-ink relative z-10 mt-2">Design + build</h4>
+                <p class="mt-3 text-slate2 leading-relaxed text-sm relative z-10">You get a clean layout, clear copy
+                  structure, and quick feedback points.</p>
+
+                <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 md:hidden text-ink text-3xl">
+                  <i class="bi bi-arrow-down"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="relative group mt-8 md:mt-0 z-0">
+              <div
+                class="absolute inset-0 bg-slate-50 rounded-3xl border-2 border-dashed border-ink translate-x-3 translate-y-3 -z-10 transition-transform group-hover:translate-x-4 group-hover:translate-y-4">
+              </div>
+
+              <div
+                class="rounded-3xl border-2 border-ink bg-white p-7 relative -rotate-1 group-hover:rotate-0 transition-transform duration-300 h-full flex flex-col shadow-sm">
+                <div class="flex items-center justify-between mb-4 relative z-10">
+                  <div
+                    class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-dashed border-amber-300 bg-amber-50 text-amber-600">
+                    <i class="bi bi-rocket-takeoff text-2xl"></i>
+                  </div>
+                  <div
+                    class="font-display font-black text-slate-200 text-6xl italic -rotate-3 select-none leading-none -mr-2">
+                    03</div>
+                </div>
+                <h4 class="font-display text-xl font-extrabold text-ink relative z-10 mt-2">Launch + handoff</h4>
+                <p class="mt-3 text-slate2 leading-relaxed text-sm relative z-10">We publish the site, test everything,
+                  and show you how to manage it.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content: Form & FAQ -->
+        <div class="grid gap-10 lg:grid-cols-12 lg:items-start">
+
+          <!-- Left Column: Form -->
+          <div class="lg:col-span-7 xl:col-span-8">
+            <div class="rounded-3xl border border-border bg-white p-6 sm:p-8 shadow-soft">
+              <div class="mb-6 border-b border-border pb-5 flex items-center gap-4">
+                <div
+                  class="h-10 w-10 sm:h-12 sm:w-12 rounded-2xl border border-border bg-white flex items-center justify-center shadow-sm shrink-0 p-2">
+                  <img id="quote-logo" src="" alt="" class="h-full w-auto">
+                </div>
+                <div>
+                  <h3 class="font-display text-2xl font-extrabold tracking-tight text-ink">Request a Quote
+                  </h3>
+                  <p class="text-slate2 text-sm mt-1">Answer what you can. Not sure? Just tell us your goal.</p>
+                </div>
+              </div>
+
+              <form id="quoteForm" class="space-y-6 relative" novalidate="">
+                <!-- Step Indicator -->
+                <div class="flex items-center justify-between mb-2">
+                  <span id="stepIndicator"
+                    class="text-xs font-display font-bold uppercase tracking-wider text-[#64748b]">Step 1 of 2</span>
+                  <div class="flex gap-1">
+                    <div id="dot1" class="h-1.5 w-6 rounded-full bg-ink transition-colors"></div>
+                    <div id="dot2" class="h-1.5 w-6 rounded-full bg-[#cbd5e1] transition-colors"></div>
+                  </div>
+                </div>
+
+                <!-- STEP 1 -->
+                <div id="step1" class="space-y-6 transition-opacity duration-300">
+                  <div>
+                    <h4
+                      class="font-display text-sm font-bold text-ink uppercase tracking-wider mb-4 flex items-center gap-2">
+                      <i class="bi bi-person-circle text-accent"></i> Your Details
+                    </h4>
+                    <div class="grid gap-4 sm:grid-cols-2">
+                      <!-- Name -->
+                      <div class="relative">
+                        <input id="name" name="name" type="text" placeholder=" " autocomplete="name"
+                          class="peer w-full rounded-xl border border-border bg-slate-50/50 px-4 pb-2 pt-6 text-sm text-ink placeholder-transparent shadow-sm focus:border-ink focus:ring-1 focus:ring-ink transition-colors focus:outline-none"
+                          required="">
+                        <label for="name"
+                          class="absolute left-4 top-4 z-10 origin-[0] -translate-y-2.5 scale-75 transform text-[#64748b] font-display font-normal transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-2.5 peer-focus:scale-75 peer-focus:text-ink cursor-text">Name</label>
+                        <i
+                          class="bi bi-check-lg absolute right-4 top-4 text-emerald-500 hidden opacity-0 transition-opacity duration-300 pointer-events-none text-lg"></i>
+                      </div>
+
+                      <!-- Business -->
+                      <div class="relative">
+                        <input id="business" name="business" type="text" placeholder=" " autocomplete="organization"
+                          class="peer w-full rounded-xl border border-border bg-slate-50/50 px-4 pb-2 pt-6 text-sm text-ink placeholder-transparent shadow-sm focus:border-ink focus:ring-1 focus:ring-ink transition-colors focus:outline-none"
+                          required="">
+                        <label for="business"
+                          class="absolute left-4 top-4 z-10 origin-[0] -translate-y-2.5 scale-75 transform text-[#64748b] font-display font-normal transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-2.5 peer-focus:scale-75 peer-focus:text-ink cursor-text">Business
+                          name</label>
+                        <i
+                          class="bi bi-check-lg absolute right-4 top-4 text-emerald-500 hidden opacity-0 transition-opacity duration-300 pointer-events-none text-lg"></i>
+                      </div>
+
+                      <!-- Email -->
+                      <div class="relative">
+                        <input id="email" name="email" type="email" placeholder=" " autocomplete="email"
+                          class="peer w-full rounded-xl border border-border bg-slate-50/50 px-4 pb-2 pt-6 text-sm text-ink placeholder-transparent shadow-sm focus:border-ink focus:ring-1 focus:ring-ink transition-colors focus:outline-none"
+                          required="">
+                        <label for="email"
+                          class="absolute left-4 top-4 z-10 origin-[0] -translate-y-2.5 scale-75 transform text-[#64748b] font-display font-normal transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-2.5 peer-focus:scale-75 peer-focus:text-ink cursor-text">Email</label>
+                        <i
+                          class="bi bi-check-lg absolute right-4 top-4 text-emerald-500 hidden opacity-0 transition-opacity duration-300 pointer-events-none text-lg"></i>
+                      </div>
+
+                      <!-- Phone -->
+                      <div class="relative">
+                        <input id="phone" name="phone" type="tel" placeholder=" " autocomplete="tel"
+                          class="peer w-full rounded-xl border border-border bg-slate-50/50 px-4 pb-2 pt-6 text-sm text-ink placeholder-transparent shadow-sm focus:border-ink focus:ring-1 focus:ring-ink transition-colors focus:outline-none">
+                        <label for="phone"
+                          class="absolute left-4 top-4 z-10 origin-[0] -translate-y-2.5 scale-75 transform text-[#64748b] font-display font-normal transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-2.5 peer-focus:scale-75 peer-focus:text-ink cursor-text">Phone
+                          (optional)</label>
+                        <i
+                          class="bi bi-check-lg absolute right-4 top-4 text-emerald-500 hidden opacity-0 transition-opacity duration-300 pointer-events-none text-lg"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="pt-2">
+                    <button type="button" id="nextBtn"
+                      class="inline-flex items-center justify-center gap-2 rounded-xl bg-ink px-8 py-3 font-display text-base font-semibold text-white shadow-soft hover:bg-slate-800 transition focus-ring w-full sm:w-auto">
+                      Next Step
+                      <i class="bi bi-arrow-right"></i>
+                    </button>
+                    <p id="step1Error" class="text-xs text-red-500 mt-2 hidden">Please fill in all required fields.</p>
+                  </div>
+                </div>
+
+                <!-- STEP 2 -->
+                <div id="step2" class="space-y-6 hidden transition-opacity duration-300 opacity-0">
+                  <!-- Section 2: Project Needs -->
+                  <div>
+                    <h4
+                      class="font-display text-sm font-bold text-ink uppercase tracking-wider mb-4 flex items-center gap-2">
+                      <i class="bi bi-laptop text-accent"></i> Project Requirements
+                    </h4>
+                    <div class="grid gap-4 sm:grid-cols-2">
+                      <div class="sm:col-span-2 relative">
+                        <input id="website" name="website" type="url" placeholder=" " autocomplete="url"
+                          class="peer w-full rounded-xl border border-border bg-slate-50/50 px-4 pb-2 pt-6 text-sm text-ink placeholder-transparent shadow-sm focus:border-ink focus:ring-1 focus:ring-ink transition-colors focus:outline-none">
+                        <label for="website"
+                          class="absolute left-4 top-4 z-10 origin-[0] -translate-y-2.5 scale-75 transform text-[#64748b] font-display font-normal transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-2.5 peer-focus:scale-75 peer-focus:text-ink cursor-text">Current
+                          website (optional)</label>
+                        <i
+                          class="bi bi-check-lg absolute right-4 top-4 text-emerald-500 hidden opacity-0 transition-opacity duration-300 pointer-events-none text-lg"></i>
+                      </div>
+
+                      <!-- Selects do not easily support floating labels without hacky CSS or JS, so we keep them standard but with focus rings -->
+                      <div>
+                        <label class="font-display text-xs font-normal text-[#64748b] pl-1" for="need">What do you
+                          need?</label>
+                        <select id="need" name="need"
+                          class="mt-1 w-full rounded-xl border border-border bg-slate-50/50 px-3.5 py-3 text-ink shadow-sm focus:border-ink focus:ring-1 focus:ring-ink focus:outline-none transition-colors text-sm">
+                          <option>New website</option>
+                          <option>Redesign / refresh</option>
+                          <option>Add pages / updates</option>
+                          <option>Booking or payments</option>
+                          <option>Not sure yet</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label class="font-display text-xs font-normal text-[#64748b] pl-1" for="pages">Pages
+                          needed</label>
+                        <select id="pages" name="pages"
+                          class="mt-1 w-full rounded-xl border border-border bg-slate-50/50 px-3.5 py-3 text-ink shadow-sm focus:border-ink focus:ring-1 focus:ring-ink focus:outline-none transition-colors text-sm">
+                          <option>1 page</option>
+                          <option>3–5 pages</option>
+                          <option>6+ pages</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label class="font-display text-xs font-normal text-[#64748b] pl-1" for="budget">Budget
+                          range</label>
+                        <select id="budget" name="budget"
+                          class="mt-1 w-full rounded-xl border border-border bg-slate-50/50 px-3.5 py-3 text-ink shadow-sm focus:border-ink focus:ring-1 focus:ring-ink focus:outline-none transition-colors text-sm">
+                          <option>Under $500</option>
+                          <option>$500–$1,500</option>
+                          <option>$1,500–$3,000</option>
+                          <option>$3,000+</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label class="font-display text-xs font-normal text-[#64748b] pl-1"
+                          for="timeline">Timeline</label>
+                        <select id="timeline" name="timeline"
+                          class="mt-1 w-full rounded-xl border border-border bg-slate-50/50 px-3.5 py-3 text-ink shadow-sm focus:border-ink focus:ring-1 focus:ring-ink focus:outline-none transition-colors text-sm">
+                          <option>ASAP</option>
+                          <option>2–4 weeks</option>
+                          <option>1–2 months</option>
+                          <option>Flexible</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Section 3: Goals -->
+                  <div>
+                    <h4
+                      class="font-display text-sm font-bold text-ink uppercase tracking-wider mb-4 flex items-center gap-2">
+                      <i class="bi bi-bullseye text-accent"></i> Business Goals
+                    </h4>
+                    <div class="relative">
+                      <textarea id="goal" name="goal" rows="3" placeholder=" "
+                        class="peer w-full rounded-xl border border-border bg-slate-50/50 px-4 pb-2 pt-6 text-sm text-ink placeholder-transparent shadow-sm focus:border-ink focus:ring-1 focus:ring-ink transition-colors focus:outline-none"
+                        required=""></textarea>
+                      <label for="goal"
+                        class="absolute left-4 top-4 z-10 origin-[0] -translate-y-2.5 scale-75 transform text-[#64748b] font-display font-normal transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-2.5 peer-focus:scale-75 peer-focus:text-ink cursor-text">What
+                        should the site help customers do?</label>
+                      <i
+                        class="bi bi-check-lg absolute right-4 top-4 text-emerald-500 hidden opacity-0 transition-opacity duration-300 pointer-events-none text-lg"></i>
+                    </div>
+                  </div>
+
+                  <div
+                    class="pt-5 border-t border-border flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <div class="flex items-center gap-4 w-full sm:w-auto">
+                      <button type="button" id="backBtn" aria-label="Go back"
+                        class="inline-flex items-center justify-center text-slate2 hover:text-ink transition focus-ring p-1">
+                        <i class="bi bi-arrow-left text-base font-extrabold"></i>
+                      </button>
+                      <button type="submit" id="submitBtn" aria-label="Submit quote request"
+                        class="inline-flex items-center gap-3 bg-[#0f1117] text-white px-7 py-3.5 rounded-xl font-display text-base font-semibold hover:bg-slate-800 active:scale-[0.98] transition-all focus-ring">
+                        Send Request <span class="text-base" aria-hidden="true">→</span>
+                      </button>
+                    </div>
+                    <p class="text-xs text-slate2 text-center sm:text-right max-w-[220px]">
+                      We'll only use your info to reply to your request. No spam.
+                    </p>
+                  </div>
+                </div>
+
+                <div id="formMsg"
+                  class="hidden mt-4 rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-ink flex items-start gap-3">
+                  <i class="bi bi-check-circle-fill text-emerald-600 mt-0.5 text-lg"></i>
+                  <div>
+                    <span class="font-display font-semibold block mb-0.5">Quote request sent successfully!</span>
+                    <span class="text-slate2">This demo form will open your email client with the details.</span>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Right Column: FAQs -->
+          <div class="lg:col-span-5 xl:col-span-4 space-y-6 lg:sticky lg:top-24">
+
+            <div class="bg-white rounded-3xl border border-border bg-slate-50/50 p-6 sm:p-8">
+              <div class="flex items-center gap-3 mb-6">
+                <div
+                  class="flex h-10 w-10 items-center justify-center rounded-xl bg-white border border-border shadow-sm shrink-0">
+                  <i class="bi bi-question-lg text-accent text-lg"></i>
+                </div>
+                <h3 class="font-display text-xl font-extrabold tracking-tight text-ink">Common Questions</h3>
+              </div>
+
+              <div class="space-y-3">
+                <details
+                  class="group rounded-xl border border-border bg-white p-4 shadow-sm transition-all hover:border-slate-300">
+                  <summary
+                    class="cursor-pointer list-none flex items-center justify-between gap-4 focus-ring px-1 py-1">
+                    <span class="font-display text-base font-extrabold text-ink">How long does it take?</span>
+                    <i class="bi bi-plus-lg text-slate2 group-open:rotate-45 transition"></i>
+                  </summary>
+                  <p class="mt-3 px-1 text-sm leading-relaxed text-slate2">
+                    Simple sites can be ready in just a few days. Bigger sites usually take 1–2 weeks. We’ll give you a
+                    fast timeline before we begin.
+                  </p>
+                </details>
+
+                <details
+                  class="group rounded-xl border border-border bg-white p-4 shadow-sm transition-all hover:border-slate-300">
+                  <summary
+                    class="cursor-pointer list-none flex items-center justify-between gap-4 focus-ring px-1 py-1">
+                    <span class="font-display text-base font-extrabold text-ink">Do I own my website?</span>
+                    <i class="bi bi-plus-lg text-slate2 group-open:rotate-45 transition"></i>
+                  </summary>
+                  <p class="mt-3 px-1 text-sm leading-relaxed text-slate2">
+                    Yes. You own the site and its content. We provide a clear handoff so you’re not stuck.
+                  </p>
+                </details>
+
+                <details
+                  class="group rounded-xl border border-border bg-white p-4 shadow-sm transition-all hover:border-slate-300">
+                  <summary
+                    class="cursor-pointer list-none flex items-center justify-between gap-4 focus-ring px-1 py-1">
+                    <span class="font-display text-base font-extrabold text-ink">What if I need changes later?</span>
+                    <i class="bi bi-plus-lg text-slate2 group-open:rotate-45 transition"></i>
+                  </summary>
+                  <p class="mt-3 px-1 text-sm leading-relaxed text-slate2">
+                    You can make simple edits yourself, or we can handle updates for you. Monthly care is optional.
+                  </p>
+                </details>
+
+                <details
+                  class="group rounded-xl border border-border bg-white p-4 shadow-sm transition-all hover:border-slate-300">
+                  <summary
+                    class="cursor-pointer list-none flex items-center justify-between gap-4 focus-ring px-1 py-1">
+                    <span class="font-display text-base font-extrabold text-ink">Help with domain & hosting?</span>
+                    <i class="bi bi-plus-lg text-slate2 group-open:rotate-45 transition"></i>
+                  </summary>
+                  <p class="mt-3 px-1 text-sm leading-relaxed text-slate2">
+                    Yes—setup help is included so everything is connected correctly.
+                  </p>
+                </details>
+              </div>
+
+              <div class="mt-8 pt-6 border-t border-border">
+                <h4 class="font-display text-sm font-bold text-ink mb-2">Still have questions?</h4>
+                <a href="mailto:hiezy.info@gmail.com"
+                  class="inline-flex items-center gap-2 text-sm text-accent hover:text-ink transition font-medium focus-ring rounded-md"
+                  style="cursor: default;">
+                  <i class="bi bi-envelope"></i> Email us directly
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-border bg-white/60">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid gap-8 md:grid-cols-3 md:items-start">
+        <div>
+          <a href="#home" class="group inline-flex flex-col items-start focus-ring rounded-lg px-2 py-1"
+            style="cursor: default;">
+            <img id="footer-logo" src="" alt="" class="h-7 w-auto">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-slate2 mt-1">Web Solutions</span>
+          </a>
+          <p class="mt-4 text-sm text-slate2">Affordable website design for small and medium businesses that want a
+            professional look without breaking their budget.
+          </p>
+        </div>
+
+        <div class="md:justify-self-center">
+          <div class="font-display text-sm font-extrabold text-ink">Contact</div>
+          <div class="mt-3 space-y-2 text-sm text-slate2">
+            <div class="flex items-center gap-2"><i class="bi bi-envelope text-accent"></i> <a
+                class="hover:text-ink transition focus-ring rounded-md px-1" href="mailto:hiezy.info@gmail.com"
+                style="cursor: default;">hiezy.info@gmail.com</a></div>
+            <div class="flex items-center gap-2"><i class="bi bi-geo-alt text-accent"></i> <span class="">Service area:
+                Remote + Vancouver &amp; Lower Mainland BC, Canada</span></div>
+          </div>
+        </div>
+
+        <div class="md:justify-self-end">
+          <div class="font-display text-sm font-extrabold text-ink">Quick links</div>
+          <div class="mt-3 grid gap-2 text-sm">
+            <a href="#home" class="text-slate2 hover:text-ink transition focus-ring rounded-md px-1 w-fit"
+              style="cursor: default;">Home</a>
+            <a href="#services" class="text-slate2 hover:text-ink transition focus-ring rounded-md px-1 w-fit"
+              style="cursor: default;">Packages &amp; Work</a>
+            <a href="#contact" class="text-slate2 hover:text-ink transition focus-ring rounded-md px-1 w-fit"
+              style="cursor: default;">Contact</a>
+          </div>
+
+        </div>
+      </div>
+
+      <div
+        class="mt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-t border-border pt-6">
+        <div class="text-xs font-display text-slate2">© <span id="year">2026</span> Hiezy Web Solutions. All rights
+          reserved.</div>
+        <div class="text-xs font-display text-slate2">Affordability, Accessibility, and Quality</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden', !isHidden);
+      menuBtn.setAttribute('aria-expanded', String(isHidden));
+      menuBtn.setAttribute('aria-label', isHidden ? 'Close menu' : 'Open menu');
+      menuBtn.querySelector('i')?.classList.toggle('bi-x-lg', isHidden);
+      menuBtn.querySelector('i')?.classList.toggle('bi-list', !isHidden);
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.nav-link-mobile').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        const icon = menuBtn.querySelector('i');
+        if (icon) { icon.classList.add('bi-list'); icon.classList.remove('bi-x-lg'); }
+      });
+    });
+
+    // Active nav underline based on scroll position
+    const sections = [
+      { id: 'home', nav: document.querySelector('[data-nav="home"]') },
+      { id: 'services', nav: document.querySelector('[data-nav="services"]') },
+      { id: 'contact', nav: document.querySelector('[data-nav="contact"]') }
+    ];
+
+    const setActive = (id) => {
+      sections.forEach(s => s.nav?.classList.remove('active-underline', 'text-ink'));
+      const found = sections.find(s => s.id === id);
+      if (found?.nav) {
+        found.nav.classList.add('active-underline', 'text-ink');
+      }
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter(e => e.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible?.target?.id) setActive(visible.target.id);
+    }, { root: null, threshold: [0.25, 0.4, 0.6] });
+
+    ['home', 'services', 'contact'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    // Form Wizard & Validation Logic
+    const quoteForm = document.getElementById('quoteForm');
+    const step1 = document.getElementById('step1');
+    const step2 = document.getElementById('step2');
+    const nextBtn = document.getElementById('nextBtn');
+    const backBtn = document.getElementById('backBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const stepIndicator = document.getElementById('stepIndicator');
+    const dot1 = document.getElementById('dot1');
+    const dot2 = document.getElementById('dot2');
+    const step1Error = document.getElementById('step1Error');
+    const formMsg = document.getElementById('formMsg');
+
+    // Live validation
+    const inputs = quoteForm.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], input[type="url"], textarea');
+    inputs.forEach(input => {
+      input.addEventListener('input', () => {
+        const checkIcon = input.parentElement.querySelector('.bi-check-lg');
+        if (!checkIcon) return;
+        let isValid = false;
+
+        if (input.type === 'email') {
+          isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value);
+        } else if (input.type === 'url') {
+          isValid = input.value === '' || /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/.test(input.value);
+        } else if (input.type === 'tel') {
+          isValid = input.value === '' || input.value.length > 6;
+        } else {
+          isValid = input.value.trim().length > 1;
+        }
+
+        if (isValid && input.required || isValid && input.value !== '') {
+          checkIcon.classList.remove('hidden');
+          setTimeout(() => checkIcon.classList.remove('opacity-0'), 10);
+          input.classList.remove('border-red-500/50');
+        } else {
+          checkIcon.classList.add('opacity-0');
+          setTimeout(() => checkIcon.classList.add('hidden'), 300);
+        }
+      });
+    });
+
+    // Wizard Navigation
+    nextBtn?.addEventListener('click', () => {
+      // Validate step 1 required fields
+      const req1 = ['name', 'business', 'email'];
+      let ok = true;
+      req1.forEach(id => {
+        const el = document.getElementById(id);
+        if (!el.value.trim() || (el.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value))) {
+          ok = false;
+          el.classList.add('border-red-500/50');
+        }
+      });
+
+      if (!ok) {
+        step1Error.classList.remove('hidden');
+        return;
+      }
+
+      step1Error.classList.add('hidden');
+
+      // Transition to Step 2
+      step1.classList.add('opacity-0');
+      setTimeout(() => {
+        step1.classList.add('hidden');
+        step2.classList.remove('hidden');
+        setTimeout(() => step2.classList.remove('opacity-0'), 50);
+      }, 300);
+
+      stepIndicator.textContent = 'Step 2 of 2';
+      dot1.classList.replace('bg-ink', 'bg-[#cbd5e1]');
+      dot2.classList.replace('bg-[#cbd5e1]', 'bg-ink');
+    });
+
+    backBtn?.addEventListener('click', () => {
+      step2.classList.add('opacity-0');
+      setTimeout(() => {
+        step2.classList.add('hidden');
+        step1.classList.remove('hidden');
+        setTimeout(() => step1.classList.remove('opacity-0'), 50);
+      }, 300);
+
+      stepIndicator.textContent = 'Step 1 of 2';
+      dot2.classList.replace('bg-ink', 'bg-[#cbd5e1]');
+      dot1.classList.replace('bg-[#cbd5e1]', 'bg-ink');
+    });
+
+    // Form Submission
+    function enc(v) { return encodeURIComponent((v || '').toString().trim()); }
+
+    quoteForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Validate Step 2
+      const goalEl = document.getElementById('goal');
+      if (!goalEl.value.trim()) {
+        goalEl.classList.add('border-red-500/50');
+        return;
+      }
+
+      // Simulate loading spinner
+      const originalHtml = submitBtn.innerHTML;
+      submitBtn.innerHTML = `<i class="bi bi-arrow-repeat animate-spin text-lg"></i> <span>Sending...</span>`;
+      submitBtn.disabled = true;
+      submitBtn.classList.add('opacity-80', 'cursor-not-allowed');
+
+      setTimeout(() => {
+        // Success
+        submitBtn.innerHTML = originalHtml;
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-80', 'cursor-not-allowed');
+
+        step2.classList.add('hidden');
+        stepIndicator.parentElement.classList.add('hidden');
+        formMsg.classList.remove('hidden');
+
+        // Email logic
+        const data = new FormData(quoteForm);
+        const subject = `Quick Quote Request — ${data.get('business') || 'New inquiry'}`;
+        const body =
+          `Name: ${data.get('name') || ''}\nBusiness: ${data.get('business') || ''}\nEmail: ${data.get('email') || ''}\nPhone: ${data.get('phone') || ''}\nCurrent website: ${data.get('website') || ''}\n\nNeed: ${data.get('need') || ''}\nPages: ${data.get('pages') || ''}\nBudget: ${data.get('budget') || ''}\nTimeline: ${data.get('timeline') || ''}\n\nGoal:\n${data.get('goal') || ''}\n\n— Sent from hiezy.com`;
+
+        const mailto = `mailto:hiezy.info@gmail.com?subject=${enc(subject)}&body=${enc(body)}`;
+        window.location.href = mailto;
+        formMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 800);
+    });
+  </script>
+
+  <script>
+    // 3D Tilt Effect for the Featured Pricing Card (Physics-based Lerp)
+    const tiltCard = document.getElementById('tilt-card');
+    if (tiltCard) {
+      let targetX = 0;
+      let targetY = 0;
+      let targetTranslateY = 0;
+
+      let currentX = 0;
+      let currentY = 0;
+      let currentTranslateY = 0;
+
+      let isHovering = false;
+      let animationFrameId = null;
+
+      function updateTilt() {
+        // If we've left the card and it has smoothly returned back to flat, stop the animation loop
+        if (!isHovering && Math.abs(targetX - currentX) < 0.01 && Math.abs(targetY - currentY) < 0.01 && Math.abs(targetTranslateY - currentTranslateY) < 0.01) {
+          tiltCard.style.transform = `perspective(1000px) translateY(0px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+          cancelAnimationFrame(animationFrameId);
+          return;
+        }
+
+        // Use a faster ease for hover-in, and a slower, gentler ease for hover-out (to match side cards)
+        const ease = isHovering ? 0.15 : 0.05;
+
+        // Lerp formula for buttery smooth physics
+        currentX += (targetX - currentX) * ease;
+        currentY += (targetY - currentY) * ease;
+        currentTranslateY += (targetTranslateY - currentTranslateY) * ease;
+
+        const scale = isHovering ? 1.02 : 1;
+
+        tiltCard.style.transform = `perspective(1000px) translateY(${currentTranslateY}px) rotateX(${currentX}deg) rotateY(${currentY}deg) scale3d(${scale}, ${scale}, ${scale})`;
+
+        animationFrameId = requestAnimationFrame(updateTilt);
+      }
+
+      tiltCard.addEventListener('mousemove', (e) => {
+        const rect = tiltCard.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        // Calculate target tilt amounts (-10 to 10 degrees)
+        targetX = ((y - centerY) / centerY) * -10;
+        targetY = ((x - centerX) / centerX) * 10;
+      });
+
+      tiltCard.addEventListener('mouseenter', () => {
+        isHovering = true;
+        targetTranslateY = -8; // 8px lift (matches the -translate-y-2 of other cards)
+        tiltCard.style.zIndex = '10';
+        tiltCard.style.transition = 'none'; // We handle the smoothing entirely via JS physics now
+        cancelAnimationFrame(animationFrameId);
+        updateTilt();
+      });
+
+      tiltCard.addEventListener('mouseleave', () => {
+        isHovering = false;
+        targetX = 0;
+        targetY = 0;
+        targetTranslateY = 0;
+        tiltCard.style.zIndex = '1';
+        // The loop will automatically continue lerping back to 0,0 smoothly
+      });
+    }
+
+    // Apply the exact same Physics Lerp engine to the side cards (Lift only)
+    const sideCards = document.querySelectorAll('.js-lift-card');
+    sideCards.forEach(card => {
+      let targetTranslateY = 0;
+      let currentTranslateY = 0;
+      let isHovering = false;
+      let animationFrameId = null;
+
+      function updateLift() {
+        if (!isHovering && Math.abs(targetTranslateY - currentTranslateY) < 0.01) {
+          card.style.transform = `translateY(0px)`;
+          cancelAnimationFrame(animationFrameId);
+          return;
+        }
+
+        // Exact same physics speeds as the middle card
+        const ease = isHovering ? 0.15 : 0.05;
+        currentTranslateY += (targetTranslateY - currentTranslateY) * ease;
+
+        card.style.transform = `translateY(${currentTranslateY}px)`;
+        animationFrameId = requestAnimationFrame(updateLift);
+      }
+
+      card.addEventListener('mouseenter', () => {
+        isHovering = true;
+        targetTranslateY = -8; // 8px lift
+        card.style.transition = 'none'; // Override CSS
+        cancelAnimationFrame(animationFrameId);
+        updateLift();
+      });
+
+      card.addEventListener('mouseleave', () => {
+        isHovering = false;
+        targetTranslateY = 0;
+      });
+    });
+
+    // Design Inspirations Hub Logic
+    // Data is loaded from data/content.js → HIEZY.inspirations
+    const inspirationData = HIEZY.inspirations;
+
+    let currentCategory = 'landing';
+    let currentProjectIndex = 0;
+
+    function renderInspiration() {
+      const data = inspirationData[currentCategory][currentProjectIndex];
+      const container = document.getElementById('inspiration-content');
+
+      // Phase 1: Start exit animation
+      container.classList.add('inspiration-exit');
+
+      setTimeout(() => {
+        // Phase 2: Update HTML content
+        container.innerHTML = `
+          <div class="lg:col-span-7 relative group">
+            <div class="relative z-20 rounded-2xl border border-border bg-white p-2 shadow-2xl transition-transform duration-500 group-hover:-translate-y-2">
+              <img src="${data.img1}" class="rounded-xl w-full aspect-[16/10] object-cover" alt="Primary Page">
+            </div>
+            <div class="absolute -top-6 -right-6 z-10 w-2/3 rounded-2xl border border-border bg-white p-2 shadow-xl transition-transform duration-700 group-hover:-translate-y-4 group-hover:translate-x-2">
+              <img src="${data.img2}" class="rounded-xl w-full aspect-[16/10] object-cover" alt="Secondary Page">
+            </div>
+            
+            <!-- Mini Carousel Controls -->
+            <div class="absolute -bottom-6 right-0 z-30 flex items-center gap-2">
+              <button onclick="cycleProject(-1)" aria-label="Previous portfolio project" class="h-12 w-12 rounded-full bg-white border border-border shadow-lg flex items-center justify-center text-ink hover:text-accent hover:border-accent transition-all active:scale-95">
+                <i class="bi bi-arrow-left" aria-hidden="true"></i>
+              </button>
+              <button onclick="cycleProject(1)" aria-label="Next portfolio project" class="h-12 w-12 rounded-full bg-white border border-border shadow-lg flex items-center justify-center text-ink hover:text-accent hover:border-accent transition-all active:scale-95">
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+          
+          <div class="lg:col-span-5 flex flex-col justify-center">
+            <div class="flex items-center gap-3 mb-6">
+              ${data.tags.map((tag, index) => `
+                <span class="px-3 py-1 ${index === 0 ? 'bg-accent/10 text-accent' : 'bg-slate-100 text-slate2'} rounded-full text-[10px] font-bold uppercase tracking-widest">${tag}</span>
+              `).join('')}
+            </div>
+            <h3 class="font-display text-3xl sm:text-4xl font-extrabold text-ink mb-6">${data.title}</h3>
+            <p class="text-lg text-slate2 leading-relaxed mb-8">${data.description}</p>
+            <div class="flex flex-col gap-4">
+              <div class="flex items-center gap-3 text-sm font-semibold text-ink">
+                <i class="bi bi-file-pdf text-accent text-lg"></i>
+                Full 3-Page Design PDF Included
+              </div>
+            </div>
+            <a href="inspirations.html" class="mt-10 inline-flex items-center gap-2 font-display text-sm font-extrabold text-ink hover:text-accent transition">
+              Explore gallery <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        `;
+
+        // Phase 3: Start entrance animation
+        // Double rAF is the most reliable way to trigger transitions after DOM updates in Safari
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            container.classList.remove('inspiration-exit');
+          });
+        });
+      }, 400);
+    }
+
+    function switchInspiration(category) {
+      if (currentCategory === category) return;
+      currentCategory = category;
+      currentProjectIndex = 0;
+
+      const tabs = document.querySelectorAll('.inspiration-tab');
+      tabs.forEach(tab => {
+        tab.classList.remove('active', 'text-ink');
+        tab.classList.add('text-slate2');
+        const line = tab.querySelector('span');
+        if (line) line.style.width = '0';
+      });
+
+      const activeTab = document.getElementById(`tab-${category}`);
+      if (activeTab) {
+        activeTab.classList.add('active', 'text-ink');
+        activeTab.classList.remove('text-slate2');
+        const line = activeTab.querySelector('span');
+        if (line) line.style.width = '100%';
+      }
+
+      renderInspiration();
+    }
+
+    function cycleProject(direction) {
+      const projects = inspirationData[currentCategory];
+      currentProjectIndex = (currentProjectIndex + direction + projects.length) % projects.length;
+      renderInspiration();
+    }
+
+    // Initialize the first inspiration on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      // ── Inject logo from content.js → HIEZY.brand ──
+      ['nav-logo', 'footer-logo'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.src = HIEZY.brand.logo;
+          el.alt = HIEZY.brand.logoAlt;
+        }
+      });
+
+      // Inject favicon/square logo to quote form
+      const quoteLogo = document.getElementById('quote-logo');
+      if (quoteLogo) {
+        quoteLogo.src = HIEZY.brand.favicon;
+        quoteLogo.alt = HIEZY.brand.logoAlt;
+      }
+      // Inject logo to trusted section
+      const trustedLogo = document.getElementById('trusted-hiezy-logo');
+      if (trustedLogo) {
+        trustedLogo.src = HIEZY.brand.logo;
+      }
+      // Ensure the container has the base transition classes
+      const container = document.getElementById('inspiration-content');
+      if (container) {
+        container.classList.add('transition-all', 'duration-500', 'ease-in-out');
+      }
+      renderInspiration();
+
+      // Video Player Logic
+      const introVideo = document.getElementById('introVideo');
+      const videoOverlay = document.getElementById('videoOverlay');
+      const playIcon = document.getElementById('playIcon');
+
+      if (introVideo && videoOverlay) {
+        videoOverlay.addEventListener('click', () => {
+          introVideo.play();
+          videoOverlay.classList.add('opacity-0', 'pointer-events-none');
+        });
+
+        introVideo.addEventListener('click', () => {
+          introVideo.pause();
+          videoOverlay.classList.remove('opacity-0', 'pointer-events-none');
+        });
+
+        introVideo.addEventListener('ended', () => {
+          videoOverlay.classList.remove('opacity-0', 'pointer-events-none');
+          introVideo.load(); // Reset to show the first frame/poster
+        });
+      }
+    });
+
+    // Typewriter loop for contact badge
+    (function () {
+      const phrases = [
+        "Let's build together...",
+        "Got a project in mind..?",
+        "We'd love to help...",
+        "Start with a free quote..."
+      ];
+      const el = document.getElementById('typewriter-text');
+      if (!el) return;
+
+      let phraseIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+
+      function type() {
+        const current = phrases[phraseIndex];
+        if (isDeleting) {
+          el.textContent = current.substring(0, charIndex - 1);
+          charIndex--;
+        } else {
+          el.textContent = current.substring(0, charIndex + 1);
+          charIndex++;
+        }
+
+        let delay = isDeleting ? 50 : 90;
+
+        if (!isDeleting && charIndex === current.length) {
+          delay = 1800; // pause at end before erasing
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          delay = 400; // pause before typing next
+        }
+
+        setTimeout(type, delay);
+      }
+
+      setTimeout(type, 800); // start after page renders
+    })();
+  </script>
+</body>
+
+</html>

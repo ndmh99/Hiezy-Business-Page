@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap link for Search Engines
+Sitemap: https://hiezy.com/sitemap.xml
