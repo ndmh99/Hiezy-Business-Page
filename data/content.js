@@ -19,7 +19,7 @@ const HIEZY = {
   brand: {
     logo: "assets/images/brand/hiezy-logo.png",
     favicon: "assets/images/brand/favicon.png",
-    logoAlt: "hiezy logo",
+    logoAlt: "Hiezy logo",
     name: "Hiezy Web Solutions"
   },
 
