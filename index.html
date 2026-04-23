@@ -78,7 +78,7 @@
           "name": "What if I need changes later?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "You can make simple edits yourself, or we can handle updates for you. Monthly care is optional."
+            "text": "You can make simple edits yourself, or we can handle updates for you. Our monthly care plan includes a free custom domain and priority support."
           }
         },
         {
@@ -116,14 +116,19 @@
             accent2: "var(--accent-2)",
             border: "var(--border)",
           },
+          animation: {
+            marquee: 'marquee 25s linear infinite',
+            float: 'float 3s ease-in-out infinite'
+          },
           keyframes: {
             marquee: {
               '0%': { transform: 'translateX(0%)' },
               '100%': { transform: 'translateX(-100%)' }
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' }
             }
-          },
-          animation: {
-            marquee: 'marquee 25s linear infinite'
           }
         }
       }
@@ -134,6 +139,74 @@
   <style>
     :root {
       --accent-rgb: 29, 78, 216;
+    }
+
+    /* Google Translate widget custom styling */
+    .gtranslate_wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    .gtranslate_wrapper select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-color: transparent;
+      border: 1px solid #e2e8f0;
+      border-radius: 9999px;
+      padding: 4px 28px 4px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      font-family: inherit;
+      color: #475569;
+      cursor: pointer;
+      outline: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .gtranslate_wrapper select:hover {
+      border-color: #1d4ed8;
+      color: #1d4ed8;
+    }
+
+    /* Hide the Google bar injected by GTranslate */
+    .goog-te-banner-frame,
+    #goog-gt-tt,
+    .goog-te-balloon-frame {
+      display: none !important;
+    }
+
+    body {
+      top: 0 !important;
+    }
+
+    /* Hide Default Scrollbar (using Perimeter Bar as primary indicator) */
+    ::-webkit-scrollbar {
+      width: 0px;
+      background: transparent; /* Optional: just make it invisible */
+    }
+    html {
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE/Edge */
+    }
+
+    /* Perimeter Bar Glow Effects */
+    #progress-top { box-shadow: 0 2px 8px rgba(29, 78, 216, 0.4); }
+    #progress-right { box-shadow: -2px 0 8px rgba(29, 78, 216, 0.4); }
+    #progress-bottom { box-shadow: 0 -2px 8px rgba(29, 78, 216, 0.4); }
+    #progress-left { box-shadow: 2px 0 8px rgba(29, 78, 216, 0.4); }
+
+    /* Scroll Reveal Styles */
+    .reveal-init {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .active-reveal {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
     }
   </style>
 </head>
@@ -162,7 +235,7 @@
         </nav>
 
         <div class="flex items-center gap-2 sm:gap-3">
-          <div class="flex items-center gap-3 sm:gap-5 border-r border-border pr-4 sm:pr-6 mr-1 sm:mr-2">
+          <div class="hidden md:flex items-center gap-3 sm:gap-5 border-r border-border pr-4 sm:pr-6 mr-1 sm:mr-2">
             <a href="https://www.instagram.com/hiezydotcom/" target="_blank" rel="noopener noreferrer"
               class="text-slate2 hover:text-accent transition-colors" aria-label="Instagram">
               <i class="bi bi-instagram text-lg"></i>
@@ -175,6 +248,11 @@
               class="text-slate2 hover:text-accent transition-colors" aria-label="LinkedIn">
               <i class="bi bi-linkedin text-lg"></i>
             </a>
+          </div>
+
+          <!-- Google Translate -->
+          <div class="hidden md:flex items-center">
+            <div class="gtranslate_wrapper"></div>
           </div>
 
           <button id="menuBtn"
@@ -273,7 +351,8 @@
               <i class="bi bi-linkedin text-xl"></i>
             </a>
           </div>
-          <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Vancouver, BC</div>
+          <!-- Google Translate (mobile) -->
+          <div class="gtranslate_wrapper"></div>
         </div>
       </div>
     </div>
@@ -532,7 +611,7 @@
                       style="border-image: none; margin: 0px; color: rgb(11, 18, 32);">Our Post-Launch Care</span></h4>
                   <p class="text-slate2 text-sm mt-2 leading-relaxed">We offer 30 days of free post-launch support for
                     technical adjustments or refinements. After 30 days, we offer optional monthly care plans starting
-                    at $49/mo.<br></p>
+                    at $49/mo which include a free custom domain.<br></p>
                 </div>
               </div>
             </div>
@@ -589,7 +668,7 @@
               </div>
 
               <div
-                class="absolute -bottom-6 -right-6 bg-accent text-white px-6 py-4 rounded-2xl shadow-xl hidden sm:block">
+                class="absolute -bottom-6 -right-6 bg-accent text-white px-6 py-4 rounded-2xl shadow-xl hidden sm:block animate-float">
                 <div class="text-[10px] font-bold uppercase tracking-widest opacity-80">Guaranteed</div>
                 <div class="font-display font-bold">100% Launch Success</div>
               </div>
@@ -633,14 +712,12 @@
           </div>
 
           <ul class="mt-6 space-y-3 text-slate2">
+            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Design consulting</span>
+            </li>
             <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>1 page (clean layout +
                 strong CTA)</span></li>
             <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Contact section or
                 simple form</span></li>
-            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>30-day post-launch
-                support</span></li>
-            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Domain & hosting setup
-                help</span></li>
             <li class="flex gap-3 text-[#64748b]"><i class="bi bi-x mt-0.5 text-xl text-[#e11d48]"></i><span
                 class="line-through">SEO
                 setup</span></li>
@@ -653,6 +730,10 @@
             <li class="flex gap-3 text-[#64748b]"><i class="bi bi-x mt-0.5 text-xl text-[#e11d48]"></i><span
                 class="line-through">Payments or
                 bookings</span></li>
+            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>30-day post-launch
+                support</span></li>
+            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Domain & hosting setup
+                help</span></li>
           </ul>
 
           <div class="mt-auto pt-7 flex flex-col gap-4">
@@ -662,14 +743,12 @@
               Get a free quote
               <i class="bi bi-arrow-right"></i>
             </a>
-            <div class="text-xs font-display text-slate2 opacity-0 pointer-events-none select-none">
-              Great fit if you want a clean site that feels established.
-            </div>
+
           </div>
         </article>
 
         <article id="tilt-card" style="transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);"
-          class="flex flex-col h-full relative rounded-2xl border border-border bg-white/80 p-7 shadow-soft cursor-default">
+          class="flex flex-col h-full relative rounded-2xl border border-accent/30 bg-white p-7 shadow-[0_20px_80px_-20px_rgba(29,78,216,0.35)] cursor-default">
           <div
             class="absolute -top-3 left-6 inline-flex items-center gap-2 rounded-full bg-accent px-3 py-1 text-xs font-display font-semibold text-white shadow-soft">
             <i class="bi bi-stars"></i>
@@ -692,16 +771,14 @@
           </div>
 
           <ul class="mt-6 space-y-3 text-slate2">
-            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Up to 5 pages (Home,
+            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Design consulting</span>
+            </li>
+            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Up to 5+ pages (Home,
                 About, etc.)</span></li>
             <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Custom forms &amp; clear
                 pathways</span></li>
             <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Free SEO setup
                 (basics)</span></li>
-            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>30-day post-launch
-                support</span></li>
-            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Domain & hosting setup
-                help</span></li>
             <li class="flex gap-3 text-[#64748b]"><i class="bi bi-x mt-0.5 text-xl text-[#e11d48]"></i><span
                 class="line-through">Logins or
                 accounts</span></li>
@@ -711,6 +788,10 @@
             <li class="flex gap-3 text-[#64748b]"><i class="bi bi-x mt-0.5 text-xl text-[#e11d48]"></i><span
                 class="line-through">Payments or
                 bookings</span></li>
+            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>30-day post-launch
+                support</span></li>
+            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Domain & hosting setup
+                help</span></li>
           </ul>
 
           <div class="mt-auto pt-7 flex flex-col gap-4">
@@ -720,9 +801,7 @@
               Get a free quote
               <i class="bi bi-arrow-right"></i>
             </a>
-            <div class="text-xs font-display text-slate2">
-              Great fit if you want a clean site that feels established.
-            </div>
+
           </div>
         </article>
 
@@ -743,6 +822,8 @@
           </div>
 
           <ul class="mt-6 space-y-3 text-slate2">
+            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Design consulting</span>
+            </li>
             <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Complex custom
                 pages (more than 10)</span></li>
             <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Custom forms &amp; clear
@@ -768,9 +849,7 @@
               Get a free quote
               <i class="bi bi-arrow-right"></i>
             </a>
-            <div class="text-xs font-display text-slate2 opacity-0 pointer-events-none select-none">
-              Great fit if you want a clean site that feels established.
-            </div>
+
           </div>
         </article>
       </div>
@@ -816,9 +895,8 @@
                 <i class="bi bi-life-preserver text-accent text-4xl leading-none pt-1"></i>
                 <div>
                   <h3 class="font-display text-2xl font-extrabold text-ink">Monthly care</h3>
-                  <p class="text-sm font-medium text-slate2 mt-1">Starting at $49/mo. Small updates handled for you—so
-                    your site stays
-                    fresh.</p>
+                  <p class="text-sm font-medium text-slate2 mt-1">Starting at $49/mo. Includes a free custom domain and
+                    small updates handled for you.</p>
                 </div>
               </div>
             </div>
@@ -831,29 +909,31 @@
 
             <div class="order-7 md:order-none flex gap-4 cursor-default text-slate2 md:pl-6">
               <i class="bi bi-check2 text-accent mt-0.5 text-xl shrink-0"></i>
-              <span>Updates, backups, and small fixes</span>
+              <span>Frequent updates, backups, and fixes</span>
             </div>
 
-            <!-- Row 2 -->
-            <div class="order-3 md:order-none flex gap-4 cursor-default text-slate2">
-              <i class="bi bi-check2 text-accent mt-0.5 text-xl shrink-0"></i>
-              <span>Clear handoff and instructions</span>
-            </div>
 
-            <div class="order-8 md:order-none flex gap-4 cursor-default text-slate2 md:pl-6">
-              <i class="bi bi-check2 text-accent mt-0.5 text-xl shrink-0"></i>
-              <span>Content tweaks (hours, photos, promos)</span>
-            </div>
 
             <!-- Row 3 -->
-            <div class="order-4 md:order-none flex gap-4 cursor-default text-slate2">
+            <div class="order-3 md:order-none flex gap-4 cursor-default text-slate2">
               <i class="bi bi-check2 text-accent mt-0.5 text-xl shrink-0"></i>
               <span>Optional help available when needed</span>
             </div>
 
-            <div class="order-9 md:order-none flex gap-4 cursor-default text-slate2 md:pl-6">
+            <div class="order-8 md:order-none flex gap-4 cursor-default text-slate2 md:pl-6">
               <i class="bi bi-check2 text-accent mt-0.5 text-xl shrink-0"></i>
               <span>Priority support</span>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="order-4 md:order-none flex gap-4 cursor-default text-slate2">
+              <i class="bi bi-check2 text-accent mt-0.5 text-xl shrink-0"></i>
+              <span>1-year custom domain</span>
+            </div>
+
+            <div class="order-9 md:order-none flex gap-4 cursor-default text-slate2 md:pl-6">
+              <i class="bi bi-check2 text-accent mt-0.5 text-xl shrink-0"></i>
+              <span class="font-bold text-ink">Free custom domain included</span>
             </div>
 
             <!-- Horizontal solid line for mobile -->
@@ -966,7 +1046,8 @@
     <section class="mx-auto max-w-7xl px-6 py-0">
       <div class="pb-14">
         <div class="flex items-center justify-center gap-3 mb-12">
-          <span class="text-xs tracking-[0.2em] uppercase text-[#64748b] font-semibold">TRUSTED BY</span>
+          <span class="text-xs tracking-[0.2em] uppercase text-[#64748b] font-semibold">—</span>
+          <span class="text-xs tracking-[0.2em] uppercase text-[#64748b] font-semibold">BRANDS THAT TRUSTED</span>
           <img id="trusted-hiezy-logo" src="" alt="HIEZY" class="h-10 w-auto pointer-events-none">
           <span class="text-xs tracking-[0.2em] uppercase text-[#64748b] font-semibold">—</span>
         </div>
@@ -1402,7 +1483,8 @@
                     <i class="bi bi-plus-lg text-slate2 group-open:rotate-45 transition"></i>
                   </summary>
                   <p class="mt-3 px-1 text-sm leading-relaxed text-slate2">
-                    You can make simple edits yourself, or we can handle updates for you. Monthly care is optional.
+                    You can make simple edits yourself, or we can handle updates for you. Our monthly care plan includes
+                    a free custom domain and priority support.
                   </p>
                 </details>
 
@@ -1997,22 +2079,29 @@
     })();
   </script>
 
-  <!-- Scroll Progress Bar -->
-  <div id="scroll-progress-container"
-    class="fixed bottom-0 left-0 w-full h-[5px] bg-slate-200/40 z-[10000] pointer-events-none">
-    <div id="scroll-progress-bar" class="h-full bg-accent w-0 rounded-r-full transition-all duration-75"
-      style="background-color: #1d4ed8;">
-    </div>
+  <!-- Perimeter Progress Bar -->
+  <div id="scroll-progress-perimeter" class="fixed inset-0 z-[10000] pointer-events-none">
+    <div id="progress-top" class="absolute top-0 left-0 h-[4px] bg-accent transition-all duration-75"
+      style="background-color: #1d4ed8; width: 0%;"></div>
+    <div id="progress-right" class="absolute top-0 right-0 w-[4px] bg-accent transition-all duration-75"
+      style="background-color: #1d4ed8; height: 0%;"></div>
+    <div id="progress-bottom" class="absolute bottom-0 right-0 h-[4px] bg-accent transition-all duration-75"
+      style="background-color: #1d4ed8; width: 0%;"></div>
+    <div id="progress-left" class="absolute bottom-0 left-0 w-[4px] bg-accent transition-all duration-75"
+      style="background-color: #1d4ed8; height: 0%;"></div>
   </div>
 
   <script>
-    // Scroll Progress Bar Logic
+    // Perimeter Progress Bar Logic
     (function () {
-      const progressBar = document.getElementById('scroll-progress-bar');
-      if (!progressBar) {
-        console.error("Progress bar element not found");
-        return;
-      }
+      const bars = {
+        top: document.getElementById('progress-top'),
+        right: document.getElementById('progress-right'),
+        bottom: document.getElementById('progress-bottom'),
+        left: document.getElementById('progress-left')
+      };
+
+      if (!bars.top) return;
 
       function updateScrollProgress() {
         const windowHeight = window.innerHeight;
@@ -2020,14 +2109,53 @@
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         const scrollDistance = documentHeight - windowHeight;
 
+        const W = window.innerWidth;
+        const H = window.innerHeight;
+        const Total = 2 * (W + H);
+
         if (scrollDistance <= 0) {
-          progressBar.style.width = '0%';
+          resetBars();
           return;
         }
 
-        const scrollPercent = (scrollTop / scrollDistance) * 100;
-        // Keep a tiny 0.5% width at the start so it's visible even at the top
-        progressBar.style.width = Math.max(0.5, Math.min(scrollPercent, 100)) + '%';
+        const scrollPercent = scrollTop / scrollDistance;
+        const currentLength = Total * scrollPercent;
+
+        // Top bar
+        if (currentLength <= W) {
+          bars.top.style.width = (currentLength / W) * 100 + '%';
+          bars.right.style.height = '0%';
+          bars.bottom.style.width = '0%';
+          bars.left.style.height = '0%';
+        }
+        // Right bar
+        else if (currentLength <= (W + H)) {
+          bars.top.style.width = '100%';
+          bars.right.style.height = ((currentLength - W) / H) * 100 + '%';
+          bars.bottom.style.width = '0%';
+          bars.left.style.height = '0%';
+        }
+        // Bottom bar
+        else if (currentLength <= (2 * W + H)) {
+          bars.top.style.width = '100%';
+          bars.right.style.height = '100%';
+          bars.bottom.style.width = ((currentLength - (W + H)) / W) * 100 + '%';
+          bars.left.style.height = '0%';
+        }
+        // Left bar
+        else {
+          bars.top.style.width = '100%';
+          bars.right.style.height = '100%';
+          bars.bottom.style.width = '100%';
+          bars.left.style.height = ((currentLength - (2 * W + H)) / H) * 100 + '%';
+        }
+      }
+
+      function resetBars() {
+        bars.top.style.width = '0%';
+        bars.right.style.height = '0%';
+        bars.bottom.style.width = '0%';
+        bars.left.style.height = '0%';
       }
 
       window.addEventListener('scroll', updateScrollProgress, { passive: true });
@@ -2037,6 +2165,58 @@
   </script>
 
   <script src="https://platform.aminos.ai/w/chat_plugin.js" data-bot-id="8335"></script>
+
+  <!-- Google Translate -->
+  <script>window.gtranslateSettings = { "default_language": "en", "native_language_names": true, "languages": ["en", "fr", "zh-CN"], "wrapper_selector": ".gtranslate_wrapper" }</script>
+  <script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
+  <!-- Back to Top Button -->
+  <button id="backToTop" 
+    class="fixed bottom-8 left-1/2 -translate-x-1/2 z-[9999] h-12 w-12 rounded-full bg-white shadow-xl border border-border flex items-center justify-center text-accent opacity-0 pointer-events-none transition-all duration-300 hover:bg-accent hover:text-white hover:-translate-y-2 focus-ring"
+    aria-label="Back to top">
+    <i class="bi bi-arrow-up text-xl"></i>
+  </button>
+
+  <script>
+    // Back to Top Logic (Only visible at the very end)
+    (function() {
+      const btn = document.getElementById('backToTop');
+      if (!btn) return;
+
+      window.addEventListener('scroll', () => {
+        const scrollPos = window.pageYOffset + window.innerHeight;
+        const pageBottom = document.documentElement.scrollHeight;
+        
+        // Show if within 100px of the bottom
+        if (scrollPos >= pageBottom - 100) {
+          btn.classList.remove('opacity-0', 'pointer-events-none');
+        } else {
+          btn.classList.add('opacity-0', 'pointer-events-none');
+        }
+      }, { passive: true });
+
+      btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+
+    // Scroll Reveal Logic
+    (function() {
+      const revealElements = document.querySelectorAll('section, article, .js-reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active-reveal');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      revealElements.forEach(el => {
+        el.classList.add('reveal-init');
+        observer.observe(el);
+      });
+    })();
+  </script>
 </body>
+
 
 </html>
