@@ -816,7 +816,7 @@
               <div
                 class="absolute -bottom-6 -right-6 bg-accent text-white px-6 py-4 rounded-2xl shadow-xl hidden sm:block animate-float">
                 <div class="text-[10px] font-bold uppercase tracking-widest opacity-80">Guaranteed</div>
-                <div class="font-display font-bold">100% Launch Success</div>
+                <div class="font-display font-bold"><span id="success-count" class="inline-block tabular-nums text-right min-w-[1.8em]">0</span>% Launch Success</div>
               </div>
             </div>
           </div>
@@ -2664,6 +2664,36 @@
         document.body.appendChild(script);
       });
     }
+
+    // Success Count Animation
+    (function () {
+      const target = document.getElementById('success-count');
+      if (!target) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCount(target, 0, 100, 2000);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      observer.observe(target);
+
+      function animateCount(el, start, end, duration) {
+        let startTime = null;
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp;
+          const progress = Math.min((timestamp - startTime) / duration, 1);
+          el.textContent = Math.floor(progress * (end - start) + start);
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          }
+        }
+        window.requestAnimationFrame(step);
+      }
+    })();
   </script>
 </body>
 
