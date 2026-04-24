@@ -2510,21 +2510,28 @@
       let progress = 0;
       let targetProgress = 0;
       let isFullyLoaded = false;
+      let assetsCounted = false;
 
       // Update UI elements
       const updateUI = () => {
-        if (bar) bar.style.width = progress + '%';
-        if (knob) knob.style.left = progress + '%';
-        if (percentage) percentage.innerText = Math.floor(progress) + '%';
+        const displayProgress = Math.min(Math.floor(progress), 100);
+        if (bar) bar.style.width = displayProgress + '%';
+        if (knob) knob.style.left = displayProgress + '%';
+        if (percentage) percentage.innerText = displayProgress + '%';
       };
 
       // Smooth progress animation using Lerp
       const animateProgress = () => {
-        if (isFullyLoaded && progress >= 100) return;
+        if (isFullyLoaded && progress >= 100) {
+          progress = 100;
+          updateUI();
+          return;
+        }
 
         if (progress < targetProgress) {
           // Smoothly approach target
-          progress += (targetProgress - progress) * 0.1 + 0.2;
+          const diff = targetProgress - progress;
+          progress += diff * 0.08 + 0.1; // Smooth ease-out
           if (progress > targetProgress) progress = targetProgress;
           updateUI();
         }
@@ -2540,22 +2547,26 @@
       let loadedAssets = 0;
 
       const incrementAssets = () => {
+        if (isFullyLoaded) return;
         loadedAssets++;
         if (totalAssets > 0) {
-          // Progress from 20% to 95% based on actual assets
-          targetProgress = 20 + (loadedAssets / totalAssets) * 75;
+          // Map asset progress to 20% - 99% range
+          targetProgress = 20 + (loadedAssets / totalAssets) * 79;
         }
       };
 
       const initAssetTracking = () => {
+        if (assetsCounted) return;
+        assetsCounted = true;
+
         const images = Array.from(document.querySelectorAll('img'));
         const videos = Array.from(document.querySelectorAll('video'));
-
         const assets = [...images, ...videos];
+        
         totalAssets = assets.length;
 
         if (totalAssets === 0) {
-          targetProgress = 95;
+          targetProgress = 99;
           return;
         }
 
@@ -2568,7 +2579,6 @@
               asset.addEventListener('error', incrementAssets, { once: true });
             }
           } else if (asset.tagName === 'VIDEO') {
-            // Check if video is already ready to play
             if (asset.readyState >= 3) {
               incrementAssets();
             } else {
@@ -2579,24 +2589,14 @@
         });
       };
 
-      // Initial bump to show activity
-      targetProgress = 20;
-
-      // Start tracking assets once DOM is parsed
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initAssetTracking);
-      } else {
-        initAssetTracking();
-      }
-
       const finishLoading = () => {
         if (isFullyLoaded) return;
         isFullyLoaded = true;
         targetProgress = 100;
 
-        // Wait for smooth animation to reach near 100%
+        // Force transition once progress reaches 100%
         const checkFinish = setInterval(() => {
-          if (progress >= 99.5) {
+          if (progress >= 99.9) {
             clearInterval(checkFinish);
             progress = 100;
             updateUI();
@@ -2605,24 +2605,36 @@
               if (preloader) {
                 preloader.style.transform = 'translateY(-100%)';
                 preloader.style.pointerEvents = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling if disabled
               }
-              // Load heavy third-party scripts only after preloader is gone
               setTimeout(loadThirdPartyScripts, 200);
             }, 600);
           }
         }, 50);
       };
 
-      // The window.load event is our ultimate signal that everything is ready
-      window.addEventListener('load', finishLoading);
+      // Initial activity bump
+      targetProgress = 20;
 
-      // Fallback: If something hangs, don't keep the user waiting forever
+      // Lifecycle listeners
+      if (document.readyState === 'complete') {
+        finishLoading();
+      } else {
+        window.addEventListener('load', finishLoading);
+        if (document.readyState === 'interactive') {
+          initAssetTracking();
+        } else {
+          document.addEventListener('DOMContentLoaded', initAssetTracking);
+        }
+      }
+
+      // Fallback: Max 6 seconds wait time for any hanging assets
       setTimeout(() => {
         if (!isFullyLoaded) {
-          console.warn('Preloader timeout: forcing finish');
+          console.log('Preloader: Handing off to final state.');
           finishLoading();
         }
-      }, 5000);
+      }, 6000);
 
     })();
 
