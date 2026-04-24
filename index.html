@@ -185,18 +185,33 @@
     /* Hide Default Scrollbar (using Perimeter Bar as primary indicator) */
     ::-webkit-scrollbar {
       width: 0px;
-      background: transparent; /* Optional: just make it invisible */
+      background: transparent;
+      /* Optional: just make it invisible */
     }
+
     html {
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none; /* IE/Edge */
+      scrollbar-width: none;
+      /* Firefox */
+      -ms-overflow-style: none;
+      /* IE/Edge */
     }
 
     /* Perimeter Bar Glow Effects */
-    #progress-top { box-shadow: 0 2px 8px rgba(29, 78, 216, 0.4); }
-    #progress-right { box-shadow: -2px 0 8px rgba(29, 78, 216, 0.4); }
-    #progress-bottom { box-shadow: 0 -2px 8px rgba(29, 78, 216, 0.4); }
-    #progress-left { box-shadow: 2px 0 8px rgba(29, 78, 216, 0.4); }
+    #progress-top {
+      box-shadow: 0 2px 8px rgba(29, 78, 216, 0.4);
+    }
+
+    #progress-right {
+      box-shadow: -2px 0 8px rgba(29, 78, 216, 0.4);
+    }
+
+    #progress-bottom {
+      box-shadow: 0 -2px 8px rgba(29, 78, 216, 0.4);
+    }
+
+    #progress-left {
+      box-shadow: 2px 0 8px rgba(29, 78, 216, 0.4);
+    }
 
     /* Scroll Reveal Styles */
     .reveal-init {
@@ -204,9 +219,35 @@
       transform: translateY(30px);
       transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
     }
+
     .active-reveal {
       opacity: 1 !important;
       transform: translateY(0) !important;
+    }
+
+    /* Laser-Scan Border Effect */
+    @property --laser-angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+
+    .laser-scan-container {
+      position: absolute;
+      inset: -2px;
+      border-radius: 1rem;
+      padding: 2px;
+      z-index: -1;
+      background: conic-gradient(from var(--laser-angle), transparent 70%, #1d4ed8, #60a5fa, #1d4ed8, transparent 100%);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      -webkit-mask-composite: destination-out;
+      animation: laser-rotate 4s linear infinite;
+      opacity: 0.6;
+    }
+
+    @keyframes laser-rotate {
+      to { --laser-angle: 360deg; }
     }
 
     /* Preloader Styles */
@@ -293,6 +334,7 @@
         width: 220px;
         height: 4px;
       }
+
       #preloader-knob {
         width: 12px;
         height: 12px;
@@ -312,13 +354,13 @@
     </div>
     <div id="preloader-percentage">0%</div>
     <script>
-      (function() {
-        const logo = document.getElementById('preloader-logo');
-        if (logo && typeof HIEZY !== 'undefined') {
-          logo.src = HIEZY.brand.logo;
-          logo.alt = HIEZY.brand.logoAlt;
-        }
-      })();
+        (function () {
+          const logo = document.getElementById('preloader-logo');
+          if (logo && typeof HIEZY !== 'undefined') {
+            logo.src = HIEZY.brand.logo;
+            logo.alt = HIEZY.brand.logoAlt;
+          }
+        })();
     </script>
   </div>
   <!-- Global header (sticky) -->
@@ -678,7 +720,7 @@
         <div class="grid gap-16 lg:grid-cols-12 lg:items-start">
           <div class="lg:col-span-5">
             <div class="space-y-2 mb-8">
-              <span class="text-xs font-bold tracking-[0.3em] uppercase text-accent">Studio Standards</span>
+              <span class="text-xs font-bold tracking-[0.3em] uppercase text-accent">Hiezy Standards</span>
               <h2 class="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-ink leading-[1.1]"><span
                   class="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-ink leading-[1.1]"
                   style="border-image: none; margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse))); margin-right: 0px; margin-bottom: calc(0.5rem * var(--tw-space-y-reverse)); margin-left: 0px; color: rgb(11, 18, 32);">How
@@ -804,8 +846,8 @@
 
       <!-- Service tiers & starting prices -->
       <div class="mt-12 grid gap-6 lg:grid-cols-3">
-        <article
-          class="js-lift-card flex flex-col h-full rounded-2xl border border-border bg-white/70 p-7 shadow-soft-hover">
+        <article id="pricing-card-basic"
+          class="js-lift-card flex flex-col h-full rounded-2xl border border-border bg-white/70 p-7 shadow-soft-hover" style="will-change: transform, opacity, box-shadow;">
           <div class="flex items-start justify-between gap-4">
             <div class="w-full h-[7.5rem]">
               <h2 class="font-display text-xl font-extrabold text-ink">Basic Landing Page</h2>
@@ -820,30 +862,14 @@
             </div>
           </div>
 
-          <ul class="mt-6 space-y-3 text-slate2">
-            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Design consulting</span>
-            </li>
-            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>1 page (clean layout +
-                strong CTA)</span></li>
-            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Contact section or
-                simple form</span></li>
-            <li class="flex gap-3 text-[#64748b]"><i class="bi bi-x mt-0.5 text-xl text-[#e11d48]"></i><span
-                class="line-through">SEO
-                setup</span></li>
-            <li class="flex gap-3 text-[#64748b]"><i class="bi bi-x mt-0.5 text-xl text-[#e11d48]"></i><span
-                class="line-through">Logins or
-                accounts</span></li>
-            <li class="flex gap-3 text-[#64748b]"><i class="bi bi-x mt-0.5 text-xl text-[#e11d48]"></i><span
-                class="line-through">Dashboards
-                or admin views</span></li>
-            <li class="flex gap-3 text-[#64748b]"><i class="bi bi-x mt-0.5 text-xl text-[#e11d48]"></i><span
-                class="line-through">Payments or
-                bookings</span></li>
-            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>30-day post-launch
-                support</span></li>
-            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Domain & hosting setup
-                help</span></li>
-          </ul>
+          <div class="mt-6 space-y-4">
+            <div class="text-[10px] font-bold uppercase tracking-widest text-accent">Core Build</div>
+            <ul class="space-y-3 text-slate2">
+              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>1 page (clean layout + strong CTA)</span></li>
+              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Contact section or simple form</span></li>
+              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Basic SEO setup</span></li>
+            </ul>
+          </div>
 
           <div class="mt-auto pt-7 flex flex-col gap-4">
             <a href="#contact"
@@ -852,12 +878,15 @@
               Get a free quote
               <i class="bi bi-arrow-right"></i>
             </a>
-
           </div>
         </article>
 
-        <article id="tilt-card" style="transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);"
-          class="flex flex-col h-full relative rounded-2xl border border-accent/30 bg-white p-7 shadow-[0_20px_80px_-20px_rgba(29,78,216,0.35)] cursor-default">
+        <article id="pricing-card-business"
+          class="flex flex-col h-full relative rounded-2xl border border-accent/30 bg-white p-7 shadow-[0_20px_80px_-20px_rgba(29,78,216,0.35)] cursor-default overflow-visible" style="will-change: transform, opacity, box-shadow;">
+          
+          <!-- Laser-Scan Border Effect -->
+          <div class="laser-scan-container"></div>
+
           <div
             class="absolute -top-3 left-6 inline-flex items-center gap-2 rounded-full bg-accent px-3 py-1 text-xs font-display font-semibold text-white shadow-soft">
             <i class="bi bi-stars"></i>
@@ -879,29 +908,14 @@
             </div>
           </div>
 
-          <ul class="mt-6 space-y-3 text-slate2">
-            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Design consulting</span>
-            </li>
-            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Up to 5+ pages (Home,
-                About, etc.)</span></li>
-            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Custom forms &amp; clear
-                pathways</span></li>
-            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Free SEO setup
-                (basics)</span></li>
-            <li class="flex gap-3 text-[#64748b]"><i class="bi bi-x mt-0.5 text-xl text-[#e11d48]"></i><span
-                class="line-through">Logins or
-                accounts</span></li>
-            <li class="flex gap-3 text-[#64748b]"><i class="bi bi-x mt-0.5 text-xl text-[#e11d48]"></i><span
-                class="line-through">Dashboards
-                or admin views</span></li>
-            <li class="flex gap-3 text-[#64748b]"><i class="bi bi-x mt-0.5 text-xl text-[#e11d48]"></i><span
-                class="line-through">Payments or
-                bookings</span></li>
-            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>30-day post-launch
-                support</span></li>
-            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Domain & hosting setup
-                help</span></li>
-          </ul>
+          <div class="mt-6">
+            <ul class="space-y-3 text-slate2">
+              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span class="font-bold text-ink">Everything in Basic</span></li>
+              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Up to 5+ pages (Home, About, etc.)</span></li>
+              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Custom forms & clear pathways</span></li>
+              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Standard SEO setup</span></li>
+            </ul>
+          </div>
 
           <div class="mt-auto pt-7 flex flex-col gap-4">
             <a href="#contact"
@@ -910,12 +924,11 @@
               Get a free quote
               <i class="bi bi-arrow-right"></i>
             </a>
-
           </div>
         </article>
 
-        <article
-          class="js-lift-card flex flex-col h-full rounded-2xl border border-border bg-white/70 p-7 shadow-soft-hover">
+        <article id="pricing-card-advanced"
+          class="js-lift-card flex flex-col h-full rounded-2xl border border-border bg-white/70 p-7 shadow-soft-hover" style="will-change: transform, opacity, box-shadow;">
           <div class="flex items-start justify-between gap-4">
             <div class="w-full h-[7.5rem]">
               <h2 class="font-display text-xl font-extrabold text-ink">Advanced Site &amp; Software</h2>
@@ -930,26 +943,15 @@
             </div>
           </div>
 
-          <ul class="mt-6 space-y-3 text-slate2">
-            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Design consulting</span>
-            </li>
-            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Complex custom
-                pages (more than 10)</span></li>
-            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Custom forms &amp; clear
-                pathways</span></li>
-            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Advanced SEO
-                setup</span></li>
-            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Logins / accounts (when
-                needed)</span></li>
-            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Dashboards or admin
-                views</span></li>
-            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Payments or bookings (as
-                needed)</span></li>
-            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>30-day post-launch
-                support</span></li>
-            <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Domain & hosting setup
-                help</span></li>
-          </ul>
+          <div class="mt-6">
+            <ul class="space-y-3 text-slate2">
+              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span class="font-bold text-ink">Everything in Business</span></li>
+              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Complex custom pages (10+)</span></li>
+              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Logins / Accounts / Dashboards</span></li>
+              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Advanced SEO setup</span></li>
+              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Payments or Bookings integration</span></li>
+            </ul>
+          </div>
 
           <div class="mt-auto pt-7 flex flex-col gap-4">
             <a href="#contact"
@@ -958,15 +960,115 @@
               Get a free quote
               <i class="bi bi-arrow-right"></i>
             </a>
-
           </div>
         </article>
       </div>
 
-      <p class="mt-6 text-sm font-display text-slate2">
-        Final pricing depends on pages, content readiness, and any special features. We’ll quote the total before we
-        begin.
-      </p>
+      <!-- Option 3: The Signature Seal & Studio Standard -->
+      <div class="mt-20 relative py-10">
+        <!-- Background Blueprint Crosshair (Decorative) -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03]">
+          <div class="w-px h-full bg-ink"></div>
+          <div class="h-px w-full bg-ink absolute"></div>
+        </div>
+
+        <div class="relative max-w-5xl mx-auto px-2 sm:px-4">
+          <!-- True 3-Column Blueprint Grid -->
+          <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-2 sm:gap-12 lg:gap-16">
+
+            <!-- Left Features -->
+            <div class="space-y-10 sm:space-y-16 text-right py-4">
+              <!-- Feature 1 -->
+              <div class="relative group">
+                <div class="absolute -right-4 sm:-right-8 top-1/2 w-3 sm:w-6 h-px bg-slate-300"></div>
+                <h4
+                  class="font-display text-[9px] sm:text-sm font-extrabold text-ink uppercase tracking-widest mb-1 flex items-center gap-1 justify-end">
+                  <span class="truncate">Design</span>
+                  <i class="bi bi-check-lg text-accent text-[10px] sm:text-base font-black"></i>
+                </h4>
+                <p class="text-[8px] sm:text-xs text-slate2 leading-tight">Collaborative sessions for brand mapping.</p>
+              </div>
+
+              <!-- Feature 2 -->
+              <div class="relative group">
+                <div class="absolute -right-4 sm:-right-8 top-1/2 w-3 sm:w-6 h-px bg-slate-300"></div>
+                <h4
+                  class="font-display text-[9px] sm:text-sm font-extrabold text-ink uppercase tracking-widest mb-1 flex items-center gap-1 justify-end">
+                  <span class="truncate">30-Day Care</span>
+                  <i class="bi bi-check-lg text-accent text-[10px] sm:text-base font-black"></i>
+                </h4>
+                <p class="text-[8px] sm:text-xs text-slate2 leading-tight">Technical refinements post-launch.</p>
+              </div>
+            </div>
+
+            <!-- Central Seal -->
+            <div class="flex flex-col items-center justify-center">
+              <div class="relative w-24 h-24 sm:w-40 sm:h-40 flex items-center justify-center">
+                <!-- Rotating Text Path -->
+                <svg viewBox="0 0 100 100"
+                  class="absolute inset-0 w-full h-full animate-[spin_10s_linear_infinite] opacity-20">
+                  <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
+                  <text class="text-[8px] font-display font-bold uppercase tracking-[0.2em] fill-ink">
+                    <textPath xlink:href="#circlePath">
+                      • Hiezy Care Standard • Hand-Crafted • Hiezy Care Standard • Hand-Crafted
+                    </textPath>
+                  </text>
+                </svg>
+
+                <!-- Inner Badge -->
+                <div
+                  class="h-16 w-16 sm:h-24 sm:w-24 rounded-full bg-white border border-border shadow-xl flex flex-col items-center justify-center p-2 sm:p-4 text-center z-10">
+                  <img id="seal-logo" src="" alt="Hiezy Logo" class="h-6 sm:h-10 w-auto mb-0.5 sm:mb-1 object-contain">
+                  <div
+                    class="text-[6px] sm:text-[8px] font-display font-black text-ink uppercase tracking-tighter leading-none">
+                    Care<br>Standard</div>
+                </div>
+
+                <!-- Verified Check -->
+                <div
+                  class="absolute -bottom-1 right-2 sm:-bottom-2 sm:right-6 h-5 w-5 sm:h-8 sm:w-8 rounded-full bg-accent text-white grid place-items-center shadow-lg z-20">
+                  <i class="bi bi-patch-check-fill text-[8px] sm:text-sm"></i>
+                </div>
+              </div>
+              <div class="mt-4 text-center hidden sm:block">
+                <div class="font-body italic text-slate2 text-sm">"Our personal guarantee of support."</div>
+              </div>
+            </div>
+
+            <!-- Right Features -->
+            <div class="space-y-10 sm:space-y-16 text-left py-4">
+              <!-- Feature 3 -->
+              <div class="relative group">
+                <div class="absolute -left-4 sm:-left-8 top-1/2 w-3 sm:w-6 h-px bg-slate-300"></div>
+                <h4
+                  class="font-display text-[9px] sm:text-sm font-extrabold text-ink uppercase tracking-widest mb-1 flex items-center gap-1">
+                  <i class="bi bi-check-lg text-accent text-[10px] sm:text-base font-black"></i>
+                  <span class="truncate">Setup</span>
+                </h4>
+                <p class="text-[8px] sm:text-xs text-slate2 leading-tight">Domain and hosting precision.</p>
+              </div>
+
+              <!-- Feature 4 -->
+              <div class="relative group">
+                <div class="absolute -left-4 sm:-left-8 top-1/2 w-3 sm:w-6 h-px bg-slate-300"></div>
+                <h4
+                  class="font-display text-[9px] sm:text-sm font-extrabold text-ink uppercase tracking-widest mb-1 flex items-center gap-1">
+                  <i class="bi bi-check-lg text-accent text-[10px] sm:text-base font-black"></i>
+                  <span class="truncate">Ownership</span>
+                </h4>
+                <p class="text-[8px] sm:text-xs text-slate2 leading-tight">You own every file and domain.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      </div>
+
+      </div>
+      </div>
+      </div>
 
 
 
@@ -1031,18 +1133,18 @@
 
             <div class="order-8 md:order-none flex gap-4 cursor-default text-slate2 md:pl-6">
               <i class="bi bi-check2 text-accent mt-0.5 text-xl shrink-0"></i>
-              <span>Priority support</span>
+              <span>Priority support 24/7</span>
             </div>
 
             <!-- Row 4 -->
             <div class="order-4 md:order-none flex gap-4 cursor-default text-slate2">
               <i class="bi bi-check2 text-accent mt-0.5 text-xl shrink-0"></i>
-              <span>1-year custom domain</span>
+              <span>Custom domain & hosting service can be added optionally</span>
             </div>
 
             <div class="order-9 md:order-none flex gap-4 cursor-default text-slate2 md:pl-6">
               <i class="bi bi-check2 text-accent mt-0.5 text-xl shrink-0"></i>
-              <span class="font-bold text-ink">Free custom domain included</span>
+              <span class="font-bold text-ink">Custom domain & hosting fees included</span>
             </div>
 
             <!-- Horizontal solid line for mobile -->
@@ -1908,7 +2010,118 @@
   </script>
 
   <script>
-    // Reusable 3D Tilt Effect (Physics-based Lerp)
+    // HIEZY Unified Physics Engine
+    (function () {
+      const cards = [
+        document.getElementById('pricing-card-basic'),
+        document.getElementById('pricing-card-business'),
+        document.getElementById('pricing-card-advanced')
+      ];
+
+      if (!cards[0] || !cards[1] || !cards[2]) return;
+
+      const state = cards.map(() => ({
+        currentY: 0, targetY: 0,
+        currentX: 0, targetX: 0, // for recoil
+        currentOpacity: 1, targetOpacity: 1,
+        currentShadow: 10, targetShadow: 10,
+        currentTiltX: 0, targetTiltX: 0,
+        currentTiltY: 0, targetTiltY: 0
+      }));
+
+      let hoveredIndex = null;
+
+      function lerp(start, end, amt) {
+        return (1 - amt) * start + amt * end;
+      }
+
+      function updatePhysics() {
+        let isMoving = false;
+
+        cards.forEach((card, i) => {
+          const s = state[i];
+
+          // Set targets based on global hoveredIndex
+          if (hoveredIndex === null) {
+            s.targetY = 0;
+            s.targetX = 0;
+            s.targetOpacity = 1;
+            s.targetShadow = 10;
+            s.targetTiltX = 0;
+            s.targetTiltY = 0;
+          } else if (hoveredIndex === i) {
+            s.targetY = -15;
+            s.targetX = 0;
+            s.targetOpacity = 1;
+            s.targetShadow = 40;
+            // Tilt handled by mousemove if middle card
+          } else {
+            s.targetY = 0;
+            s.targetOpacity = 0.6;
+            s.targetShadow = 5;
+            
+            // Kinetic Displacement (Recoil)
+            const dist = i - hoveredIndex;
+            s.targetX = dist > 0 ? 15 : -15;
+          }
+
+          // Apply Lerp
+          const ease = 0.12;
+          s.currentY = lerp(s.currentY, s.targetY, ease);
+          s.currentX = lerp(s.currentX, s.targetX, ease);
+          s.currentOpacity = lerp(s.currentOpacity, s.targetOpacity, ease);
+          s.currentShadow = lerp(s.currentShadow, s.targetShadow, ease);
+          s.currentTiltX = lerp(s.currentTiltX, s.targetTiltX, ease);
+          s.currentTiltY = lerp(s.currentTiltY, s.targetTiltY, ease);
+
+          // Render
+          const isMobile = window.innerWidth < 1024;
+          const xPos = isMobile ? 0 : s.currentX; // Disable recoil on mobile stack
+          const scale = hoveredIndex === i ? 1.02 : 1;
+          
+          let transform = `translateY(${s.currentY}px) translateX(${xPos}px) scale(${scale})`;
+          
+          // Special 3D tilt for the middle card if hovered
+          if (i === 1 && hoveredIndex === 1 && !isMobile) {
+            transform = `perspective(1000px) translateY(${s.currentY}px) rotateX(${s.currentTiltX}deg) rotateY(${s.currentTiltY}deg) scale(1.03)`;
+          }
+
+          card.style.transform = transform;
+          card.style.opacity = s.currentOpacity;
+          card.style.zIndex = hoveredIndex === i ? '20' : '1';
+          
+          // Elevation-Responsive Shadow
+          const shadowAlpha = hoveredIndex === i ? 0.35 : 0.1;
+          const shadowColor = i === 1 ? `rgba(29, 78, 216, ${shadowAlpha})` : `rgba(0, 0, 0, ${shadowAlpha})`;
+          card.style.boxShadow = `0 ${s.currentShadow / 2}px ${s.currentShadow}px -${s.currentShadow / 4}px ${shadowColor}`;
+
+          if (Math.abs(s.targetY - s.currentY) > 0.01 || Math.abs(s.targetX - s.currentX) > 0.01) isMoving = true;
+        });
+
+        requestAnimationFrame(updatePhysics);
+      }
+
+      cards.forEach((card, i) => {
+        card.addEventListener('mouseenter', () => hoveredIndex = i);
+        card.addEventListener('mouseleave', () => hoveredIndex = null);
+        
+        if (i === 1) { // Middle card mousemove for tilt
+          card.addEventListener('mousemove', (e) => {
+            if (hoveredIndex !== 1) return;
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            state[i].targetTiltX = ((y - centerY) / centerY) * -8;
+            state[i].targetTiltY = ((x - centerX) / centerX) * 8;
+          });
+        }
+      });
+
+      requestAnimationFrame(updatePhysics);
+    })();
+
     function setupTiltEffect(cardId, tiltIntensity = 10, liftAmount = -8) {
       const card = document.getElementById(cardId);
       if (!card) return;
@@ -1958,45 +2171,7 @@
       });
     }
 
-    setupTiltEffect('tilt-card');
     setupTiltEffect('hero-tilt-group', 5, -5); // Tilt the entire hero mockup group together
-
-    // Apply the exact same Physics Lerp engine to the side cards (Lift only)
-    const sideCards = document.querySelectorAll('.js-lift-card');
-    sideCards.forEach(card => {
-      let targetTranslateY = 0;
-      let currentTranslateY = 0;
-      let isHovering = false;
-      let animationFrameId = null;
-
-      function updateLift() {
-        if (!isHovering && Math.abs(targetTranslateY - currentTranslateY) < 0.01) {
-          card.style.transform = `translateY(0px)`;
-          cancelAnimationFrame(animationFrameId);
-          return;
-        }
-
-        // Exact same physics speeds as the middle card
-        const ease = isHovering ? 0.15 : 0.05;
-        currentTranslateY += (targetTranslateY - currentTranslateY) * ease;
-
-        card.style.transform = `translateY(${currentTranslateY}px)`;
-        animationFrameId = requestAnimationFrame(updateLift);
-      }
-
-      card.addEventListener('mouseenter', () => {
-        isHovering = true;
-        targetTranslateY = -8; // 8px lift
-        card.style.transition = 'none'; // Override CSS
-        cancelAnimationFrame(animationFrameId);
-        updateLift();
-      });
-
-      card.addEventListener('mouseleave', () => {
-        isHovering = false;
-        targetTranslateY = 0;
-      });
-    });
 
     // Design Inspirations Hub Logic
     // Data is loaded from data/content.js → HIEZY.inspirations
@@ -2097,7 +2272,7 @@
     // Initialize the first inspiration on page load
     document.addEventListener('DOMContentLoaded', () => {
       // ── Inject logo from content.js → HIEZY.brand ──
-      ['nav-logo', 'footer-logo'].forEach(id => {
+      ['nav-logo', 'footer-logo', 'seal-logo'].forEach(id => {
         const el = document.getElementById(id);
         if (el) {
           el.src = HIEZY.brand.logo;
@@ -2278,37 +2453,37 @@
   <!-- Google Translate -->
   <script>window.gtranslateSettings = { "default_language": "en", "native_language_names": true, "languages": ["en", "fr", "zh-CN"], "wrapper_selector": ".gtranslate_wrapper" }</script>
   <!-- Back to Top Button -->
-  <button id="backToTop" 
+  <button id="backToTop"
     class="fixed bottom-8 left-1/2 -translate-x-1/2 z-[9999] h-12 w-12 rounded-full bg-white shadow-xl border border-border flex items-center justify-center text-accent opacity-0 pointer-events-none transition-all duration-300 hover:bg-accent hover:text-white hover:-translate-y-2 focus-ring"
     aria-label="Back to top">
     <i class="bi bi-arrow-up text-xl"></i>
   </button>
 
   <script>
-    // Back to Top Logic (Only visible at the very end)
-    (function() {
-      const btn = document.getElementById('backToTop');
-      if (!btn) return;
+      // Back to Top Logic (Only visible at the very end)
+      (function () {
+        const btn = document.getElementById('backToTop');
+        if (!btn) return;
 
-      window.addEventListener('scroll', () => {
-        const scrollPos = window.pageYOffset + window.innerHeight;
-        const pageBottom = document.documentElement.scrollHeight;
-        
-        // Show if within 100px of the bottom
-        if (scrollPos >= pageBottom - 100) {
-          btn.classList.remove('opacity-0', 'pointer-events-none');
-        } else {
-          btn.classList.add('opacity-0', 'pointer-events-none');
-        }
-      }, { passive: true });
+        window.addEventListener('scroll', () => {
+          const scrollPos = window.pageYOffset + window.innerHeight;
+          const pageBottom = document.documentElement.scrollHeight;
 
-      btn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    })();
+          // Show if within 100px of the bottom
+          if (scrollPos >= pageBottom - 100) {
+            btn.classList.remove('opacity-0', 'pointer-events-none');
+          } else {
+            btn.classList.add('opacity-0', 'pointer-events-none');
+          }
+        }, { passive: true });
+
+        btn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      })();
 
     // Scroll Reveal Logic
-    (function() {
+    (function () {
       const revealElements = document.querySelectorAll('section, article, .js-reveal');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -2346,14 +2521,14 @@
       // Smooth progress animation using Lerp
       const animateProgress = () => {
         if (isFullyLoaded && progress >= 100) return;
-        
+
         if (progress < targetProgress) {
           // Smoothly approach target
           progress += (targetProgress - progress) * 0.1 + 0.2;
           if (progress > targetProgress) progress = targetProgress;
           updateUI();
         }
-        
+
         if (progress < 100 || !isFullyLoaded) {
           requestAnimationFrame(animateProgress);
         }
@@ -2375,7 +2550,7 @@
       const initAssetTracking = () => {
         const images = Array.from(document.querySelectorAll('img'));
         const videos = Array.from(document.querySelectorAll('video'));
-        
+
         const assets = [...images, ...videos];
         totalAssets = assets.length;
 
@@ -2418,7 +2593,7 @@
         if (isFullyLoaded) return;
         isFullyLoaded = true;
         targetProgress = 100;
-        
+
         // Wait for smooth animation to reach near 100%
         const checkFinish = setInterval(() => {
           if (progress >= 99.5) {
@@ -2440,7 +2615,7 @@
 
       // The window.load event is our ultimate signal that everything is ready
       window.addEventListener('load', finishLoading);
-      
+
       // Fallback: If something hangs, don't keep the user waiting forever
       setTimeout(() => {
         if (!isFullyLoaded) {

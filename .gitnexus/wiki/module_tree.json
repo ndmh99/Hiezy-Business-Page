@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Content Data",
+    "slug": "content-data",
+    "files": [
+      "data/content.js"
+    ]
+  },
+  {
+    "name": "Static Pages",
+    "slug": "static-pages",
+    "files": [
+      "index.html",
+      "inspirations.html"
+    ]
+  },
+  {
+    "name": "Site Configuration",
+    "slug": "site-configuration",
+    "files": [
+      "robots.txt",
+      "sitemap.xml"
+    ]
+  }
+]

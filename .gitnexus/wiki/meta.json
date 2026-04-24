@@ -1,0 +1,43 @@
+{
+  "fromCommit": "beec47fdfc41bfb4d103bac1825040eccd67d5d5",
+  "generatedAt": "2026-04-24T06:45:50.914Z",
+  "model": "openrouter/free",
+  "moduleFiles": {
+    "Content Data": [
+      "data/content.js"
+    ],
+    "Static Pages": [
+      "index.html",
+      "inspirations.html"
+    ],
+    "Site Configuration": [
+      "robots.txt",
+      "sitemap.xml"
+    ]
+  },
+  "moduleTree": [
+    {
+      "name": "Content Data",
+      "slug": "content-data",
+      "files": [
+        "data/content.js"
+      ]
+    },
+    {
+      "name": "Static Pages",
+      "slug": "static-pages",
+      "files": [
+        "index.html",
+        "inspirations.html"
+      ]
+    },
+    {
+      "name": "Site Configuration",
+      "slug": "site-configuration",
+      "files": [
+        "robots.txt",
+        "sitemap.xml"
+      ]
+    }
+  ]
+}
