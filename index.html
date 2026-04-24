@@ -208,10 +208,119 @@
       opacity: 1 !important;
       transform: translateY(0) !important;
     }
+
+    /* Preloader Styles */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      background: #ffffff;
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.8s cubic-bezier(0.85, 0, 0.15, 1);
+    }
+
+    .preloader-logo {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 2.5rem;
+      color: var(--ink);
+      letter-spacing: -0.05em;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: preloader-fade 0.8s ease forwards;
+    }
+
+    .preloader-bar-container {
+      width: 280px;
+      height: 6px;
+      background: rgba(29, 78, 216, 0.1);
+      border-radius: 999px;
+      position: relative;
+    }
+
+    #preloader-bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      background: var(--accent);
+      width: 0%;
+      border-radius: 999px;
+      transition: width 0.4s ease;
+    }
+
+    #preloader-knob {
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      width: 16px;
+      height: 16px;
+      background: #ffffff;
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: left 0.4s ease;
+      z-index: 2;
+    }
+
+    #preloader-percentage {
+      margin-top: 1rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--slate2);
+      letter-spacing: 0.05em;
+    }
+
+    .animate-preloader-fade {
+      animation: preloader-fade 0.8s ease forwards;
+    }
+
+    @keyframes preloader-fade {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .preloader-bar-container {
+        width: 220px;
+        height: 4px;
+      }
+      #preloader-knob {
+        width: 12px;
+        height: 12px;
+      }
+    }
   </style>
 </head>
 
 <body class="antialiased selection:bg-blue-200/60 selection:text-ink">
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <img id="preloader-logo" src="" alt="Hiezy Logo" class="preloader-logo h-20 w-auto mb-8 opacity-0">
+    <div class="preloader-bar-container">
+      <div id="preloader-bar"></div>
+      <div id="preloader-knob"></div>
+    </div>
+    <div id="preloader-percentage">0%</div>
+    <script>
+      (function() {
+        const logo = document.getElementById('preloader-logo');
+        if (logo && typeof HIEZY !== 'undefined') {
+          logo.src = HIEZY.brand.logo;
+          logo.alt = HIEZY.brand.logoAlt;
+        }
+      })();
+    </script>
+  </div>
   <!-- Global header (sticky) -->
   <header class="sticky top-0 z-50 border-b border-border bg-white/70 backdrop-blur-xl">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -2081,13 +2190,14 @@
 
   <!-- Perimeter Progress Bar -->
   <div id="scroll-progress-perimeter" class="fixed inset-0 z-[10000] pointer-events-none">
-    <div id="progress-top" class="absolute top-0 left-0 h-[4px] bg-accent transition-all duration-75"
+
+    <div id="progress-top" class="absolute top-0 left-0 h-[2px] sm:h-[4px] bg-accent transition-all duration-75"
       style="background-color: #1d4ed8; width: 0%;"></div>
-    <div id="progress-right" class="absolute top-0 right-0 w-[4px] bg-accent transition-all duration-75"
+    <div id="progress-right" class="absolute top-0 right-0 w-[2px] sm:w-[4px] bg-accent transition-all duration-75"
       style="background-color: #1d4ed8; height: 0%;"></div>
-    <div id="progress-bottom" class="absolute bottom-0 right-0 h-[4px] bg-accent transition-all duration-75"
+    <div id="progress-bottom" class="absolute bottom-0 right-0 h-[2px] sm:h-[4px] bg-accent transition-all duration-75"
       style="background-color: #1d4ed8; width: 0%;"></div>
-    <div id="progress-left" class="absolute bottom-0 left-0 w-[4px] bg-accent transition-all duration-75"
+    <div id="progress-left" class="absolute bottom-0 left-0 w-[2px] sm:w-[4px] bg-accent transition-all duration-75"
       style="background-color: #1d4ed8; height: 0%;"></div>
   </div>
 
@@ -2164,11 +2274,9 @@
     })();
   </script>
 
-  <script src="https://platform.aminos.ai/w/chat_plugin.js" data-bot-id="8335"></script>
 
   <!-- Google Translate -->
   <script>window.gtranslateSettings = { "default_language": "en", "native_language_names": true, "languages": ["en", "fr", "zh-CN"], "wrapper_selector": ".gtranslate_wrapper" }</script>
-  <script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
   <!-- Back to Top Button -->
   <button id="backToTop" 
     class="fixed bottom-8 left-1/2 -translate-x-1/2 z-[9999] h-12 w-12 rounded-full bg-white shadow-xl border border-border flex items-center justify-center text-accent opacity-0 pointer-events-none transition-all duration-300 hover:bg-accent hover:text-white hover:-translate-y-2 focus-ring"
@@ -2215,6 +2323,61 @@
         observer.observe(el);
       });
     })();
+
+
+    // Preloader Logic
+    (function () {
+      const preloader = document.getElementById('preloader');
+      const bar = document.getElementById('preloader-bar');
+      const knob = document.getElementById('preloader-knob');
+      const percentage = document.getElementById('preloader-percentage');
+
+      // Simulate progress for better UX
+      let progress = 0;
+      const interval = setInterval(() => {
+        progress += Math.random() * 30;
+        if (progress > 95) progress = 95;
+        if (bar) bar.style.width = progress + '%';
+        if (knob) knob.style.left = progress + '%';
+        if (percentage) percentage.innerText = Math.floor(progress) + '%';
+      }, 200);
+
+      const finishLoading = () => {
+        clearInterval(interval);
+        if (bar) bar.style.width = '100%';
+        if (knob) knob.style.left = '100%';
+        if (percentage) percentage.innerText = '100%';
+
+        setTimeout(() => {
+          if (preloader) {
+            preloader.style.transform = 'translateY(-100%)';
+            preloader.style.pointerEvents = 'none';
+          }
+
+          // Speed Improvement: Load heavy third-party scripts only after the page is ready
+          setTimeout(loadThirdPartyScripts, 200);
+        }, 600);
+      };
+
+      window.addEventListener('load', finishLoading);
+
+    })();
+
+    function loadThirdPartyScripts() {
+      const scripts = [
+        { src: "https://platform.aminos.ai/w/chat_plugin.js", attributes: { "data-bot-id": "8335" } },
+        { src: "https://cdn.gtranslate.net/widgets/latest/dropdown.js" }
+      ];
+
+      scripts.forEach(s => {
+        const script = document.createElement('script');
+        script.src = s.src;
+        if (s.attributes) {
+          Object.keys(s.attributes).forEach(key => script.setAttribute(key, s.attributes[key]));
+        }
+        document.body.appendChild(script);
+      });
+    }
   </script>
 </body>
 
