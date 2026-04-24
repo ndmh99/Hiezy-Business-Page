@@ -247,7 +247,9 @@
     }
 
     @keyframes laser-rotate {
-      to { --laser-angle: 360deg; }
+      to {
+        --laser-angle: 360deg;
+      }
     }
 
     /* Preloader Styles */
@@ -367,22 +369,19 @@
   <header class="sticky top-0 z-50 border-b border-border bg-white/70 backdrop-blur-xl">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between gap-3">
-        <a href="index.html#home" class="group inline-flex flex-col items-start focus-ring rounded-lg px-2 py-1"
-         >
+        <a href="#home" class="group inline-flex flex-col items-start focus-ring rounded-lg px-2 py-1">
           <img id="nav-logo" src="" alt="" class="h-7 w-auto">
           <span class="text-[10px] font-bold uppercase tracking-widest text-slate2 mt-1">Web Solutions</span>
         </a>
 
         <nav class="hidden md:flex items-center gap-1 rounded-full border border-border bg-white/60 px-2 py-1">
-          <a data-nav="home" href="index.html#home"
-            class="nav-link font-display text-sm font-semibold text-slate2 px-4 py-2 rounded-full hover:text-ink hover:bg-slate-900/[0.04] transition focus-ring"
-           >Home</a>
-          <a data-nav="services" href="index.html#services"
-            class="nav-link font-display text-sm font-semibold text-slate2 px-4 py-2 rounded-full hover:text-ink hover:bg-slate-900/[0.04] transition focus-ring"
-           >Packages &amp; Work</a>
-          <a data-nav="contact" href="index.html#contact"
-            class="nav-link font-display text-sm font-semibold text-slate2 px-4 py-2 rounded-full hover:text-ink hover:bg-slate-900/[0.04] transition focus-ring"
-           >Contact</a>
+          <a data-nav="home" href="#home"
+            class="nav-link font-display text-sm font-semibold text-slate2 px-4 py-2 rounded-full hover:text-ink hover:bg-slate-900/[0.04] transition focus-ring">Home</a>
+          <a data-nav="services" href="#services"
+            class="nav-link font-display text-sm font-semibold text-slate2 px-4 py-2 rounded-full hover:text-ink hover:bg-slate-900/[0.04] transition focus-ring">Packages
+            &amp; Work</a>
+          <a data-nav="contact" href="#contact"
+            class="nav-link font-display text-sm font-semibold text-slate2 px-4 py-2 rounded-full hover:text-ink hover:bg-slate-900/[0.04] transition focus-ring">Contact</a>
         </nav>
 
         <div class="flex items-center gap-2 sm:gap-3">
@@ -432,7 +431,7 @@
 
       <!-- Nav links -->
       <nav class="px-5 pt-2 pb-3">
-        <a href="index.html#home"
+        <a href="#home"
           class="sheet-link flex items-center gap-4 px-4 py-4 rounded-2xl text-ink hover:bg-slate-100/80 transition-colors group">
           <div
             class="h-10 w-10 rounded-xl bg-gradient-to-br from-blue-50 to-sky-50 border border-border grid place-items-center group-hover:from-blue-100 group-hover:to-sky-100 transition-colors">
@@ -444,7 +443,7 @@
           </div>
           <i class="bi bi-chevron-right text-slate-300 ml-auto"></i>
         </a>
-        <a href="index.html#services"
+        <a href="#services"
           class="sheet-link flex items-center gap-4 px-4 py-4 rounded-2xl text-ink hover:bg-slate-100/80 transition-colors group">
           <div
             class="h-10 w-10 rounded-xl bg-gradient-to-br from-violet-50 to-purple-50 border border-border grid place-items-center group-hover:from-violet-100 group-hover:to-purple-100 transition-colors">
@@ -456,7 +455,7 @@
           </div>
           <i class="bi bi-chevron-right text-slate-300 ml-auto"></i>
         </a>
-        <a href="index.html#contact"
+        <a href="#contact"
           class="sheet-link flex items-center gap-4 px-4 py-4 rounded-2xl text-ink hover:bg-slate-100/80 transition-colors group">
           <div
             class="h-10 w-10 rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 border border-border grid place-items-center group-hover:from-emerald-100 group-hover:to-teal-100 transition-colors">
@@ -532,14 +531,12 @@
 
             <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-3">
               <a href="#services"
-                class="inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-5 py-3 font-display text-sm font-semibold text-white shadow-soft hover:brightness-110 active:brightness-95 transition focus-ring"
-               >
+                class="inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-5 py-3 font-display text-sm font-semibold text-white shadow-soft hover:brightness-110 active:brightness-95 transition focus-ring">
                 See Our Packages
                 <i class="bi bi-arrow-right"></i>
               </a>
               <a href="#contact"
-                class="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-white/70 px-5 py-3 font-display text-sm font-semibold text-ink shadow-sm hover:bg-white transition focus-ring"
-               >
+                class="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-white/70 px-5 py-3 font-display text-sm font-semibold text-ink shadow-sm hover:bg-white transition focus-ring">
                 <i class="bi bi-telephone-outbound"></i>
                 Book a 15‑min Call
               </a>
@@ -847,7 +844,8 @@
       <!-- Service tiers & starting prices -->
       <div class="mt-12 grid gap-6 lg:grid-cols-3">
         <article id="pricing-card-basic"
-          class="js-lift-card flex flex-col h-full rounded-2xl border border-border bg-white/70 p-7 shadow-soft-hover" style="will-change: transform, opacity, box-shadow;">
+          class="js-lift-card flex flex-col h-full rounded-2xl border border-border bg-white/70 p-7 shadow-soft-hover"
+          style="will-change: transform, opacity, box-shadow;">
           <div class="flex items-start justify-between gap-4">
             <div class="w-full h-[7.5rem]">
               <h2 class="font-display text-xl font-extrabold text-ink">Basic Landing Page</h2>
@@ -865,16 +863,18 @@
           <div class="mt-6 space-y-4">
             <div class="text-[10px] font-bold uppercase tracking-widest text-accent">Core Build</div>
             <ul class="space-y-3 text-slate2">
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>1 page (clean layout + strong CTA)</span></li>
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Contact section or simple form</span></li>
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Basic SEO setup</span></li>
+              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>1 page (clean layout +
+                  strong CTA)</span></li>
+              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Contact section or
+                  simple form</span></li>
+              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Basic SEO setup</span>
+              </li>
             </ul>
           </div>
 
           <div class="mt-auto pt-7 flex flex-col gap-4">
             <a href="#contact"
-              class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border bg-white/70 px-5 py-3 font-display text-sm font-semibold text-ink hover:bg-white transition focus-ring"
-             >
+              class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border bg-white/70 px-5 py-3 font-display text-sm font-semibold text-ink hover:bg-white transition focus-ring">
               Get a free quote
               <i class="bi bi-arrow-right"></i>
             </a>
@@ -882,8 +882,9 @@
         </article>
 
         <article id="pricing-card-business"
-          class="flex flex-col h-full relative rounded-2xl border border-accent/30 bg-white p-7 shadow-[0_20px_80px_-20px_rgba(29,78,216,0.35)] cursor-default overflow-visible" style="will-change: transform, opacity, box-shadow;">
-          
+          class="flex flex-col h-full relative rounded-2xl border border-accent/30 bg-white p-7 shadow-[0_20px_80px_-20px_rgba(29,78,216,0.35)] cursor-default overflow-visible"
+          style="will-change: transform, opacity, box-shadow;">
+
           <!-- Laser-Scan Border Effect -->
           <div class="laser-scan-container"></div>
 
@@ -910,17 +911,20 @@
 
           <div class="mt-6">
             <ul class="space-y-3 text-slate2">
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span class="font-bold text-ink">Everything in Basic</span></li>
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Up to 5+ pages (Home, About, etc.)</span></li>
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Custom forms & clear pathways</span></li>
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Standard SEO setup</span></li>
+              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span
+                  class="font-bold text-ink">Everything in Basic</span></li>
+              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Up to 5+ pages (Home,
+                  About, etc.)</span></li>
+              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Custom forms & clear
+                  pathways</span></li>
+              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Standard SEO
+                  setup</span></li>
             </ul>
           </div>
 
           <div class="mt-auto pt-7 flex flex-col gap-4">
             <a href="#contact"
-              class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-5 py-3 font-display text-sm font-semibold text-white shadow-soft hover:brightness-110 active:brightness-95 transition focus-ring"
-             >
+              class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-5 py-3 font-display text-sm font-semibold text-white shadow-soft hover:brightness-110 active:brightness-95 transition focus-ring">
               Get a free quote
               <i class="bi bi-arrow-right"></i>
             </a>
@@ -928,7 +932,8 @@
         </article>
 
         <article id="pricing-card-advanced"
-          class="js-lift-card flex flex-col h-full rounded-2xl border border-border bg-white/70 p-7 shadow-soft-hover" style="will-change: transform, opacity, box-shadow;">
+          class="js-lift-card flex flex-col h-full rounded-2xl border border-border bg-white/70 p-7 shadow-soft-hover"
+          style="will-change: transform, opacity, box-shadow;">
           <div class="flex items-start justify-between gap-4">
             <div class="w-full h-[7.5rem]">
               <h2 class="font-display text-xl font-extrabold text-ink">Advanced Site &amp; Software</h2>
@@ -945,18 +950,22 @@
 
           <div class="mt-6">
             <ul class="space-y-3 text-slate2">
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span class="font-bold text-ink">Everything in Business</span></li>
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Complex custom pages (10+)</span></li>
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Logins / Accounts / Dashboards</span></li>
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Advanced SEO setup</span></li>
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Payments or Bookings integration</span></li>
+              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span
+                  class="font-bold text-ink">Everything in Business</span></li>
+              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Complex custom pages
+                  (10+)</span></li>
+              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Logins / Accounts /
+                  Dashboards</span></li>
+              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Advanced SEO
+                  setup</span></li>
+              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Payments or Bookings
+                  integration</span></li>
             </ul>
           </div>
 
           <div class="mt-auto pt-7 flex flex-col gap-4">
             <a href="#contact"
-              class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border bg-white/70 px-5 py-3 font-display text-sm font-semibold text-ink hover:bg-white transition focus-ring"
-             >
+              class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border bg-white/70 px-5 py-3 font-display text-sm font-semibold text-ink hover:bg-white transition focus-ring">
               Get a free quote
               <i class="bi bi-arrow-right"></i>
             </a>
@@ -1717,8 +1726,7 @@
               <div class="mt-8 pt-6 border-t border-border">
                 <h4 class="font-display text-sm font-bold text-ink mb-2">Still have questions?</h4>
                 <a href="mailto:hiezy.info@gmail.com"
-                  class="inline-flex items-center gap-2 text-sm text-accent hover:text-ink transition font-medium focus-ring rounded-md"
-                 >
+                  class="inline-flex items-center gap-2 text-sm text-accent hover:text-ink transition font-medium focus-ring rounded-md">
                   <i class="bi bi-envelope"></i> Email us directly
                 </a>
               </div>
@@ -1737,8 +1745,7 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid gap-8 md:grid-cols-3 md:items-start">
         <div>
-          <a href="index.html#home" class="group inline-flex flex-col items-start focus-ring rounded-lg px-2 py-1"
-           >
+          <a href="#home" class="group inline-flex flex-col items-start focus-ring rounded-lg px-2 py-1">
             <img id="footer-logo" src="" alt="" class="h-7 w-auto">
             <span class="text-[10px] font-bold uppercase tracking-widest text-slate2 mt-1">Web Solutions</span>
           </a>
@@ -1749,11 +1756,11 @@
           <div class="font-display text-sm font-extrabold text-ink">Contact</div>
           <div class="mt-3 space-y-2 text-sm text-slate2">
             <div class="flex items-center gap-2"><i class="bi bi-envelope text-accent"></i> <a
-                class="hover:text-ink transition focus-ring rounded-md px-1" href="mailto:hiezy.info@gmail.com"
-               >hiezy.info@gmail.com</a></div>
+                class="hover:text-ink transition focus-ring rounded-md px-1"
+                href="mailto:hiezy.info@gmail.com">hiezy.info@gmail.com</a></div>
             <div class="flex items-center gap-2"><i class="bi bi-telephone text-accent"></i> <a
-                class="hover:text-ink transition focus-ring rounded-md px-1" href="tel:+17786970065"
-               >+1 (778) 697-0065</a></div>
+                class="hover:text-ink transition focus-ring rounded-md px-1" href="tel:+17786970065">+1 (778)
+                697-0065</a></div>
             <div class="flex items-center gap-2"><i class="bi bi-geo-alt text-accent"></i> <span class="">Service area:
                 Remote + Vancouver &amp; Lower Mainland BC, Canada</span></div>
           </div>
@@ -1762,12 +1769,11 @@
         <div class="md:justify-self-end">
           <div class="font-display text-sm font-extrabold text-ink">Quick links</div>
           <div class="mt-3 grid gap-2 text-sm">
-            <a href="index.html#home" class="text-slate2 hover:text-ink transition focus-ring rounded-md px-1 w-fit"
-             >Home</a>
-            <a href="index.html#services" class="text-slate2 hover:text-ink transition focus-ring rounded-md px-1 w-fit"
-             >Packages &amp; Work</a>
-            <a href="index.html#contact" class="text-slate2 hover:text-ink transition focus-ring rounded-md px-1 w-fit"
-             >Contact</a>
+            <a href="#home" class="text-slate2 hover:text-ink transition focus-ring rounded-md px-1 w-fit">Home</a>
+            <a href="#services" class="text-slate2 hover:text-ink transition focus-ring rounded-md px-1 w-fit">Packages
+              &amp; Work</a>
+            <a href="#contact"
+              class="text-slate2 hover:text-ink transition focus-ring rounded-md px-1 w-fit">Contact</a>
           </div>
 
         </div>
@@ -2059,7 +2065,7 @@
             s.targetY = 0;
             s.targetOpacity = 0.6;
             s.targetShadow = 5;
-            
+
             // Kinetic Displacement (Recoil)
             const dist = i - hoveredIndex;
             s.targetX = dist > 0 ? 15 : -15;
@@ -2078,9 +2084,9 @@
           const isMobile = window.innerWidth < 1024;
           const xPos = isMobile ? 0 : s.currentX; // Disable recoil on mobile stack
           const scale = hoveredIndex === i ? 1.02 : 1;
-          
+
           let transform = `translateY(${s.currentY}px) translateX(${xPos}px) scale(${scale})`;
-          
+
           // Special 3D tilt for the middle card if hovered
           if (i === 1 && hoveredIndex === 1 && !isMobile) {
             transform = `perspective(1000px) translateY(${s.currentY}px) rotateX(${s.currentTiltX}deg) rotateY(${s.currentTiltY}deg) scale(1.03)`;
@@ -2089,7 +2095,7 @@
           card.style.transform = transform;
           card.style.opacity = s.currentOpacity;
           card.style.zIndex = hoveredIndex === i ? '20' : '1';
-          
+
           // Elevation-Responsive Shadow
           const shadowAlpha = hoveredIndex === i ? 0.35 : 0.1;
           const shadowColor = i === 1 ? `rgba(29, 78, 216, ${shadowAlpha})` : `rgba(0, 0, 0, ${shadowAlpha})`;
@@ -2104,7 +2110,7 @@
       cards.forEach((card, i) => {
         card.addEventListener('mouseenter', () => hoveredIndex = i);
         card.addEventListener('mouseleave', () => hoveredIndex = null);
-        
+
         if (i === 1) { // Middle card mousemove for tilt
           card.addEventListener('mousemove', (e) => {
             if (hoveredIndex !== 1) return;
@@ -2562,7 +2568,7 @@
         const images = Array.from(document.querySelectorAll('img'));
         const videos = Array.from(document.querySelectorAll('video'));
         const assets = [...images, ...videos];
-        
+
         totalAssets = assets.length;
 
         if (totalAssets === 0) {
