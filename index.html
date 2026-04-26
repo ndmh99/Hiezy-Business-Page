@@ -1830,7 +1830,7 @@
 
     // Close sheet on link click
     document.querySelectorAll('.sheet-link').forEach(a => {
-      a.addEventListener('click', () => setTimeout(closeSheet, 150));
+      a.addEventListener('click', () => closeSheet());
     });
 
     // Swipe-to-dismiss gesture on drag handle
