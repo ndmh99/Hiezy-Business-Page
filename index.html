@@ -95,7 +95,7 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="data/content.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -342,6 +342,39 @@
         height: 12px;
       }
     }
+
+    /* Neo-Brutalism Styles */
+    .btn-neobrutal {
+      position: relative;
+      border: 3px solid #000000 !important;
+      box-shadow: 4px 4px 0px 0px #000000 !important;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      border-radius: 12px !important;
+    }
+    .btn-neobrutal:hover {
+      transform: translate(-2px, -2px) !important;
+      box-shadow: 6px 6px 0px 0px #000000 !important;
+    }
+    .btn-neobrutal:active {
+      transform: translate(2px, 2px) !important;
+      box-shadow: 2px 2px 0px 0px #000000 !important;
+    }
+
+    .btn-neobrutal-secondary {
+      position: relative;
+      border: 2px solid #000000 !important;
+      box-shadow: 3px 3px 0px 0px #000000 !important;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      border-radius: 12px !important;
+    }
+    .btn-neobrutal-secondary:hover {
+      transform: translate(-1px, -1px) !important;
+      box-shadow: 4px 4px 0px 0px #000000 !important;
+    }
+    .btn-neobrutal-secondary:active {
+      transform: translate(1px, 1px) !important;
+      box-shadow: 1px 1px 0px 0px #000000 !important;
+    }
   </style>
 </head>
 
@@ -389,15 +422,15 @@
           <div class="hidden md:flex items-center gap-3 sm:gap-5 border-r border-border pr-4 sm:pr-6 mr-1 sm:mr-2">
             <a href="https://www.instagram.com/hiezydotcom/" target="_blank" rel="noopener noreferrer"
               class="text-slate2 hover:text-accent transition-colors" aria-label="Instagram">
-              <i class="bi bi-instagram text-lg"></i>
+              <i class="ti ti-brand-instagram text-lg"></i>
             </a>
             <a href="https://www.facebook.com/profile.php?id=61575414031314" target="_blank" rel="noopener noreferrer"
               class="text-slate2 hover:text-accent transition-colors" aria-label="Facebook">
-              <i class="bi bi-facebook text-lg"></i>
+              <i class="ti ti-brand-facebook text-lg"></i>
             </a>
             <a href="https://www.linkedin.com/in/dmhn" target="_blank" rel="noopener noreferrer"
               class="text-slate2 hover:text-accent transition-colors" aria-label="LinkedIn">
-              <i class="bi bi-linkedin text-lg"></i>
+              <i class="ti ti-brand-linkedin text-lg"></i>
             </a>
           </div>
 
@@ -409,7 +442,7 @@
           <button id="menuBtn"
             class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-white/70 hover:bg-white transition focus-ring"
             aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
-            <i class="bi bi-list text-xl text-ink" aria-hidden="true"></i>
+            <i class="ti ti-menu-2 text-xl text-ink" aria-hidden="true"></i>
           </button>
         </div>
       </div>
@@ -436,37 +469,37 @@
           class="sheet-link flex items-center gap-4 px-4 py-4 rounded-2xl text-ink hover:bg-slate-100/80 transition-colors group">
           <div
             class="h-10 w-10 rounded-xl bg-gradient-to-br from-blue-50 to-sky-50 border border-border grid place-items-center group-hover:from-blue-100 group-hover:to-sky-100 transition-colors">
-            <i class="bi bi-house text-accent text-lg"></i>
+            <i class="ti ti-home text-accent text-lg"></i>
           </div>
           <div>
             <div class="font-display text-[15px] font-bold text-ink">Home</div>
             <div class="text-xs text-slate2 mt-0.5">Overview & hero</div>
           </div>
-          <i class="bi bi-chevron-right text-slate-300 ml-auto"></i>
+          <i class="ti ti-chevron-right text-slate-300 ml-auto"></i>
         </a>
         <a href="#services"
           class="sheet-link flex items-center gap-4 px-4 py-4 rounded-2xl text-ink hover:bg-slate-100/80 transition-colors group">
           <div
             class="h-10 w-10 rounded-xl bg-gradient-to-br from-violet-50 to-purple-50 border border-border grid place-items-center group-hover:from-violet-100 group-hover:to-purple-100 transition-colors">
-            <i class="bi bi-box-seam text-violet-600 text-lg"></i>
+            <i class="ti ti-package text-violet-600 text-lg"></i>
           </div>
           <div>
             <div class="font-display text-[15px] font-bold text-ink">Packages & Work</div>
             <div class="text-xs text-slate2 mt-0.5">Pricing & portfolio</div>
           </div>
-          <i class="bi bi-chevron-right text-slate-300 ml-auto"></i>
+          <i class="ti ti-chevron-right text-slate-300 ml-auto"></i>
         </a>
         <a href="#contact"
           class="sheet-link flex items-center gap-4 px-4 py-4 rounded-2xl text-ink hover:bg-slate-100/80 transition-colors group">
           <div
             class="h-10 w-10 rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 border border-border grid place-items-center group-hover:from-emerald-100 group-hover:to-teal-100 transition-colors">
-            <i class="bi bi-chat-text text-emerald-600 text-lg"></i>
+            <i class="ti ti-message text-emerald-600 text-lg"></i>
           </div>
           <div>
             <div class="font-display text-[15px] font-bold text-ink">Contact</div>
             <div class="text-xs text-slate2 mt-0.5">Get a free quote</div>
           </div>
-          <i class="bi bi-chevron-right text-slate-300 ml-auto"></i>
+          <i class="ti ti-chevron-right text-slate-300 ml-auto"></i>
         </a>
       </nav>
 
@@ -478,11 +511,11 @@
         <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 mb-8">
           <a href="mailto:hiezy.info@gmail.com"
             class="flex items-center gap-2 text-slate2 hover:text-ink transition-colors">
-            <i class="bi bi-envelope text-accent"></i>
+            <i class="ti ti-mail text-accent"></i>
             <span class="text-[13px] font-medium">hiezy.info@gmail.com</span>
           </a>
           <a href="tel:+17786970065" class="flex items-center gap-2 text-slate2 hover:text-ink transition-colors">
-            <i class="bi bi-telephone text-accent"></i>
+            <i class="ti ti-phone text-accent"></i>
             <span class="text-[13px] font-medium">+1 (778) 697-0065</span>
           </a>
         </div>
@@ -491,15 +524,15 @@
           <div class="flex gap-5">
             <a href="https://www.instagram.com/hiezydotcom/" target="_blank" rel="noopener noreferrer"
               class="text-slate2 hover:text-accent transition-colors" aria-label="Instagram">
-              <i class="bi bi-instagram text-xl"></i>
+              <i class="ti ti-brand-instagram text-xl"></i>
             </a>
             <a href="https://www.facebook.com/profile.php?id=61575414031314" target="_blank" rel="noopener noreferrer"
               class="text-slate2 hover:text-accent transition-colors" aria-label="Facebook">
-              <i class="bi bi-facebook text-xl"></i>
+              <i class="ti ti-brand-facebook text-xl"></i>
             </a>
             <a href="https://www.linkedin.com/in/dmhn" target="_blank" rel="noopener noreferrer"
               class="text-slate2 hover:text-accent transition-colors" aria-label="LinkedIn">
-              <i class="bi bi-linkedin text-xl"></i>
+              <i class="ti ti-brand-linkedin text-xl"></i>
             </a>
           </div>
           <!-- Google Translate (mobile) -->
@@ -517,7 +550,9 @@
           <div class="lg:col-span-6">
             <div
               class="inline-flex items-center gap-2 rounded-full border border-border bg-white/70 px-3 py-1.5 text-xs font-display font-semibold text-slate2 shadow-sm">
-              <i class="bi bi-patch-check-fill text-accent"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-blue-600" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+              </svg>
               Professional sites starting at $149
             </div>
 
@@ -532,13 +567,13 @@
 
             <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-3">
               <a href="#services"
-                class="inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-5 py-3 font-display text-sm font-semibold text-white shadow-soft hover:brightness-110 active:brightness-95 transition focus-ring">
+                class="btn-neobrutal inline-flex items-center justify-center gap-2 bg-accent px-5 py-3 font-display text-sm font-semibold text-white focus-ring">
                 See Our Packages
-                <i class="bi bi-arrow-right"></i>
+                <i class="ti ti-arrow-right"></i>
               </a>
               <a href="#contact"
-                class="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-white/70 px-5 py-3 font-display text-sm font-semibold text-ink shadow-sm hover:bg-white transition focus-ring">
-                <i class="bi bi-telephone-outbound"></i>
+                class="btn-neobrutal-secondary inline-flex items-center justify-center gap-2 bg-white/70 px-5 py-3 font-display text-sm font-semibold text-ink focus-ring">
+                <i class="ti ti-phone-outgoing"></i>
                 Book a Talk
               </a>
             </div>
@@ -567,7 +602,7 @@
                     </div>
                     <div class="font-display text-xs font-semibold text-slate2">Preview — business-site.com</div>
                     <div class="h-8 w-8 rounded-xl border border-border bg-white/60 grid place-items-center">
-                      <i class="bi bi-phone text-slate2"></i>
+                      <i class="ti ti-device-mobile text-slate2"></i>
                     </div>
                   </div>
 
@@ -576,7 +611,7 @@
                       <div class="flex items-start gap-3">
                         <div
                           class="h-10 w-10 rounded-2xl bg-gradient-to-br from-green-600 to-sky-500 grid place-items-center text-white shadow-sm">
-                          <i class="bi bi-compass"></i>
+                          <i class="ti ti-compass"></i>
                         </div>
                         <div>
                           <div class="font-display font-extrabold text-ink leading-tight">Clean. Clear. Quick.</div>
@@ -588,17 +623,17 @@
                         <div
                           class="h-10 rounded-xl border border-border bg-white/70 px-4 flex items-center justify-between">
                           <span class="text-sm font-display font-semibold text-ink">Services</span>
-                          <i class="bi bi-chevron-right text-slate2"></i>
+                          <i class="ti ti-chevron-right text-slate2"></i>
                         </div>
                         <div
                           class="h-10 rounded-xl border border-border bg-white/70 px-4 flex items-center justify-between">
                           <span class="text-sm font-display font-semibold text-ink">About</span>
-                          <i class="bi bi-chevron-right text-slate2"></i>
+                          <i class="ti ti-chevron-right text-slate2"></i>
                         </div>
                         <div
                           class="h-10 rounded-xl border border-border bg-white/70 px-4 flex items-center justify-between">
                           <span class="text-sm font-display font-semibold text-ink">Contact</span>
-                          <i class="bi bi-chevron-right text-slate2"></i>
+                          <i class="ti ti-chevron-right text-slate2"></i>
                         </div>
                       </div>
 
@@ -649,7 +684,7 @@
                   <div class="glass shadow-soft rounded-2xl p-4 w-64">
                     <div class="flex items-center justify-between">
                       <div class="font-display text-xs font-semibold text-slate2">Typical outcome</div>
-                      <i class="bi bi-graph-up-arrow text-accent"></i>
+                      <img src="assets/icons/growth.gif?cb=1" alt="Typical outcome icon" class="w-8 h-8 object-contain">
                     </div>
                     <div class="mt-2 font-display text-sm font-bold text-ink">Turn visitors into customers</div>
                     <div class="mt-1 text-sm text-slate2">Make it easy for people to reach out and contact you and your
@@ -674,7 +709,7 @@
           <div class="flex gap-4">
             <div
               class="h-11 w-11 shrink-0 rounded-full border border-border bg-white grid place-items-center shadow-sm">
-              <i class="bi bi-currency-dollar text-accent text-lg"></i>
+              <i class="ti ti-coin text-accent text-xl"></i>
             </div>
             <div>
               <div class="font-display text-base font-extrabold tracking-tight text-ink">Clear and Fair Pricing</div>
@@ -685,7 +720,7 @@
           <div class="flex gap-4">
             <div
               class="h-11 w-11 shrink-0 rounded-full border border-border bg-white grid place-items-center shadow-sm">
-              <i class="bi bi-file-earmark-code text-accent text-lg"></i>
+              <i class="ti ti-file-code text-accent text-xl"></i>
             </div>
             <div>
               <div class="font-display text-base font-extrabold tracking-tight text-ink">You own your site &amp; apps
@@ -697,7 +732,7 @@
           <div class="flex gap-4">
             <div
               class="h-11 w-11 shrink-0 rounded-full border border-border bg-white grid place-items-center shadow-sm">
-              <i class="bi bi-shield-check text-accent text-lg"></i>
+              <i class="ti ti-shield-check text-accent text-xl"></i>
             </div>
             <div>
               <div class="font-display text-base font-extrabold tracking-tight text-ink">Post-launch support</div>
@@ -784,7 +819,7 @@
                     class="absolute inset-0 flex items-center justify-center bg-ink/10 transition-all duration-500 cursor-pointer group-hover:bg-ink/20">
                     <button id="playIcon"
                       class="h-20 w-20 rounded-full bg-accent flex items-center justify-center text-white transition-all duration-500 hover:scale-110 active:scale-95">
-                      <i class="bi bi-play-fill text-5xl ml-1"></i>
+                      <i class="ti ti-player-play text-5xl ml-1"></i>
                     </button>
                   </div>
                 </div>
@@ -796,7 +831,9 @@
                       <div class="text-xl font-display font-bold text-ink">Launch Foundation</div>
                     </div>
                     <div class="h-14 w-14 rounded-full border border-border flex items-center justify-center">
-                      <i class="bi bi-patch-check-fill text-accent text-2xl"></i>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9 text-blue-600" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+                      </svg>
                     </div>
                   </div>
 
@@ -855,29 +892,29 @@
             </div>
             <div
               class="h-11 w-11 shrink-0 rounded-full border border-border bg-white grid place-items-center shadow-sm">
-              <i class="bi bi-layout-text-window text-accent text-lg"></i>
+              <i class="ti ti-layout-dashboard text-accent text-lg"></i>
             </div>
           </div>
 
           <div class="mt-6 space-y-4">
             <div class="text-[10px] font-bold uppercase tracking-widest text-accent">Main Features</div>
             <ul class="space-y-3 text-slate2">
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>1 page (clean layout +
+              <li class="flex gap-3"><i class="ti ti-check text-accent mt-0.5 text-lg"></i><span>1 page (clean layout +
                   strong CTA)</span></li>
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Contact section or
+              <li class="flex gap-3"><i class="ti ti-check text-accent mt-0.5 text-lg"></i><span>Contact section or
                   simple form</span></li>
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Basic SEO setup</span>
+              <li class="flex gap-3"><i class="ti ti-check text-accent mt-0.5 text-lg"></i><span>Basic SEO setup</span>
               </li>
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span
+              <li class="flex gap-3"><i class="ti ti-check text-accent mt-0.5 text-lg"></i><span
                   class="font-bold text-ink">Hiezy Care Standard Package</span></li>
             </ul>
           </div>
 
           <div class="mt-auto pt-7 flex flex-col gap-4">
             <a href="#contact"
-              class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border bg-white/70 px-5 py-3 font-display text-sm font-semibold text-ink hover:bg-white transition focus-ring">
+              class="btn-neobrutal-secondary inline-flex w-full items-center justify-center gap-2 bg-white/70 px-5 py-3 font-display text-sm font-semibold text-ink focus-ring">
               Get a free quote
-              <i class="bi bi-arrow-right"></i>
+              <i class="ti ti-arrow-right"></i>
             </a>
           </div>
         </article>
@@ -891,7 +928,7 @@
 
           <div
             class="absolute -top-3 left-6 inline-flex items-center gap-2 rounded-full bg-accent px-3 py-1 text-xs font-display font-semibold text-white shadow-soft">
-            <i class="bi bi-stars"></i>
+            <i class="ti ti-stars"></i>
             Most popular
           </div>
 
@@ -906,30 +943,30 @@
             </div>
             <div
               class="h-16 w-16 shrink-0 rounded-full bg-gradient-to-br from-blue-600 to-sky-500 text-white grid place-items-center shadow-md">
-              <i class="bi bi-building text-2xl inline-block animate-ring"></i>
+              <i class="ti ti-building text-2xl inline-block animate-ring"></i>
             </div>
           </div>
 
           <div class="mt-6">
             <ul class="space-y-3 text-slate2">
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span
+              <li class="flex gap-3"><i class="ti ti-check text-accent mt-0.5 text-lg"></i><span
                   class="font-bold text-ink">Everything in Basic</span></li>
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Up to 5+ pages (Home,
+              <li class="flex gap-3"><i class="ti ti-check text-accent mt-0.5 text-lg"></i><span>Up to 5+ pages (Home,
                   About, etc.)</span></li>
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Custom forms & clear
+              <li class="flex gap-3"><i class="ti ti-check text-accent mt-0.5 text-lg"></i><span>Custom forms & clear
                   pathways</span></li>
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Standard SEO
+              <li class="flex gap-3"><i class="ti ti-check text-accent mt-0.5 text-lg"></i><span>Standard SEO
                   setup</span></li>
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span
+              <li class="flex gap-3"><i class="ti ti-check text-accent mt-0.5 text-lg"></i><span
                   class="font-bold text-ink">Hiezy Care Standard Package</span></li>
             </ul>
           </div>
 
           <div class="mt-auto pt-7 flex flex-col gap-4">
             <a href="#contact"
-              class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-5 py-3 font-display text-sm font-semibold text-white shadow-soft hover:brightness-110 active:brightness-95 transition focus-ring">
+              class="btn-neobrutal inline-flex w-full items-center justify-center gap-2 bg-accent px-5 py-3 font-display text-sm font-semibold text-white focus-ring">
               Get a free quote
-              <i class="bi bi-arrow-right"></i>
+              <i class="ti ti-arrow-right"></i>
             </a>
           </div>
         </article>
@@ -947,32 +984,32 @@
             </div>
             <div
               class="h-11 w-11 shrink-0 rounded-full border border-border bg-white grid place-items-center shadow-sm">
-              <i class="bi bi-braces-asterisk text-accent text-lg"></i>
+              <i class="ti ti-braces text-accent text-lg"></i>
             </div>
           </div>
 
           <div class="mt-6">
             <ul class="space-y-3 text-slate2">
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span
+              <li class="flex gap-3"><i class="ti ti-check text-accent mt-0.5 text-lg"></i><span
                   class="font-bold text-ink">Everything in Business</span></li>
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Complex custom pages
+              <li class="flex gap-3"><i class="ti ti-check text-accent mt-0.5 text-lg"></i><span>Complex custom pages
                   (10+)</span></li>
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Logins / Accounts /
+              <li class="flex gap-3"><i class="ti ti-check text-accent mt-0.5 text-lg"></i><span>Logins / Accounts /
                   Dashboards</span></li>
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Advanced SEO
+              <li class="flex gap-3"><i class="ti ti-check text-accent mt-0.5 text-lg"></i><span>Advanced SEO
                   setup</span></li>
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span>Payments or Bookings
+              <li class="flex gap-3"><i class="ti ti-check text-accent mt-0.5 text-lg"></i><span>Payments or Bookings
                   integration</span></li>
-              <li class="flex gap-3"><i class="bi bi-check2 text-accent mt-0.5 text-lg"></i><span
+              <li class="flex gap-3"><i class="ti ti-check text-accent mt-0.5 text-lg"></i><span
                   class="font-bold text-ink">Hiezy Care Standard Package</span></li>
             </ul>
           </div>
 
           <div class="mt-auto pt-7 flex flex-col gap-4">
             <a href="#contact"
-              class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border bg-white/70 px-5 py-3 font-display text-sm font-semibold text-ink hover:bg-white transition focus-ring">
+              class="btn-neobrutal-secondary inline-flex w-full items-center justify-center gap-2 bg-white/70 px-5 py-3 font-display text-sm font-semibold text-ink focus-ring">
               Get a free quote
-              <i class="bi bi-arrow-right"></i>
+              <i class="ti ti-arrow-right"></i>
             </a>
           </div>
         </article>
@@ -998,7 +1035,7 @@
                 <h4
                   class="font-display text-[9px] sm:text-sm font-extrabold text-ink uppercase tracking-widest mb-1 flex items-center gap-1 justify-end">
                   <span class="truncate">Design</span>
-                  <i class="bi bi-check-lg text-accent text-[10px] sm:text-base font-black"></i>
+                  <i class="ti ti-check text-accent text-[10px] sm:text-base font-black"></i>
                 </h4>
                 <p class="text-[8px] sm:text-xs text-slate2 leading-tight">Meetings to plan your brand and design.</p>
               </div>
@@ -1009,7 +1046,7 @@
                 <h4
                   class="font-display text-[9px] sm:text-sm font-extrabold text-ink uppercase tracking-widest mb-1 flex items-center gap-1 justify-end">
                   <span class="truncate">30-Day Care</span>
-                  <i class="bi bi-check-lg text-accent text-[10px] sm:text-base font-black"></i>
+                  <i class="ti ti-check text-accent text-[10px] sm:text-base font-black"></i>
                 </h4>
                 <p class="text-[8px] sm:text-xs text-slate2 leading-tight">Updates and fixes after your site goes live.
                 </p>
@@ -1043,7 +1080,7 @@
                 <!-- Verified Check -->
                 <div
                   class="absolute -bottom-1 right-2 sm:-bottom-2 sm:right-6 h-5 w-5 sm:h-8 sm:w-8 rounded-full bg-accent text-white grid place-items-center shadow-lg z-20">
-                  <i class="bi bi-patch-check-fill text-[8px] sm:text-sm"></i>
+                  <i class="ti ti-circle-check text-[8px] sm:text-sm"></i>
                 </div>
               </div>
               <div class="mt-4 text-center hidden sm:block">
@@ -1058,7 +1095,7 @@
                 <div class="absolute -left-4 sm:-left-8 top-1/2 w-3 sm:w-6 h-px bg-slate-300"></div>
                 <h4
                   class="font-display text-[9px] sm:text-sm font-extrabold text-ink uppercase tracking-widest mb-1 flex items-center gap-1">
-                  <i class="bi bi-check-lg text-accent text-[10px] sm:text-base font-black"></i>
+                  <i class="ti ti-check text-accent text-[10px] sm:text-base font-black"></i>
                   <span class="truncate">Setup</span>
                 </h4>
                 <p class="text-[8px] sm:text-xs text-slate2 leading-tight">Careful setup for your domain and hosting.
@@ -1070,7 +1107,7 @@
                 <div class="absolute -left-4 sm:-left-8 top-1/2 w-3 sm:w-6 h-px bg-slate-300"></div>
                 <h4
                   class="font-display text-[9px] sm:text-sm font-extrabold text-ink uppercase tracking-widest mb-1 flex items-center gap-1">
-                  <i class="bi bi-check-lg text-accent text-[10px] sm:text-base font-black"></i>
+                  <i class="ti ti-check text-accent text-[10px] sm:text-base font-black"></i>
                   <span class="truncate">Ownership</span>
                 </h4>
                 <p class="text-[8px] sm:text-xs text-slate2 leading-tight">You own all your files and domain.</p>
@@ -1109,8 +1146,8 @@
 
             <!-- Headers -->
             <div class="order-1 md:order-none relative pt-4 pb-2">
-              <div class="flex flex-col sm:flex-row items-start gap-5">
-                <i class="bi bi-box-arrow-in-down text-accent text-4xl leading-none pt-1"></i>
+              <div class="flex items-start gap-5">
+                <img src="assets/icons/target.webp" alt="One-time build icon" class="w-14 h-14 object-contain shrink-0 drop-shadow-md">
                 <div>
                   <h3 class="font-display text-2xl font-extrabold text-ink">One‑time build</h3>
                   <p class="text-sm font-medium text-slate2 mt-1">Launch it, own it, and manage it.</p>
@@ -1119,8 +1156,8 @@
             </div>
 
             <div class="order-6 md:order-none relative pt-4 pb-2 md:pl-6">
-              <div class="flex flex-col sm:flex-row items-start gap-5">
-                <i class="bi bi-life-preserver text-accent text-4xl leading-none pt-1"></i>
+              <div class="flex items-start gap-5">
+                <img src="assets/icons/calendar.webp" alt="Monthly care icon" class="w-12 h-12 object-contain shrink-0 drop-shadow-md">
                 <div>
                   <h3 class="font-display text-2xl font-extrabold text-ink">Monthly care</h3>
                   <p class="text-sm font-medium text-slate2 mt-1">Starting at $49/mo. Includes a free custom domain and
@@ -1131,12 +1168,12 @@
 
             <!-- Row 1 -->
             <div class="order-2 md:order-none flex gap-4 cursor-default text-slate2">
-              <i class="bi bi-check2 text-accent mt-0.5 text-xl shrink-0"></i>
+              <i class="ti ti-check text-accent mt-0.5 text-xl shrink-0"></i>
               <span>Great if you only need occasional changes</span>
             </div>
 
             <div class="order-7 md:order-none flex gap-4 cursor-default text-slate2 md:pl-6">
-              <i class="bi bi-check2 text-accent mt-0.5 text-xl shrink-0"></i>
+              <i class="ti ti-check text-accent mt-0.5 text-xl shrink-0"></i>
               <span>Frequent updates, backups, and fixes</span>
             </div>
 
@@ -1144,23 +1181,23 @@
 
             <!-- Row 3 -->
             <div class="order-3 md:order-none flex gap-4 cursor-default text-slate2">
-              <i class="bi bi-check2 text-accent mt-0.5 text-xl shrink-0"></i>
+              <i class="ti ti-check text-accent mt-0.5 text-xl shrink-0"></i>
               <span>Optional help available when needed</span>
             </div>
 
             <div class="order-8 md:order-none flex gap-4 cursor-default text-slate2 md:pl-6">
-              <i class="bi bi-check2 text-accent mt-0.5 text-xl shrink-0"></i>
+              <i class="ti ti-check text-accent mt-0.5 text-xl shrink-0"></i>
               <span>Priority support 24/7</span>
             </div>
 
             <!-- Row 4 -->
             <div class="order-4 md:order-none flex gap-4 cursor-default text-slate2">
-              <i class="bi bi-check2 text-accent mt-0.5 text-xl shrink-0"></i>
+              <i class="ti ti-check text-accent mt-0.5 text-xl shrink-0"></i>
               <span>Custom domain & hosting service can be added optionally</span>
             </div>
 
             <div class="order-9 md:order-none flex gap-4 cursor-default text-slate2 md:pl-6">
-              <i class="bi bi-check2 text-accent mt-0.5 text-xl shrink-0"></i>
+              <i class="ti ti-check text-accent mt-0.5 text-xl shrink-0"></i>
               <span class="font-bold text-ink">Custom domain & hosting fees included</span>
             </div>
 
@@ -1251,15 +1288,10 @@
                   A data-rich internal tool designed for maximum productivity. This style focuses on clear typography,
                   modular components, and a sophisticated muted palette.
                 </p>
-                <div class="flex flex-col gap-4">
-                  <div class="flex items-center gap-3 text-sm font-semibold text-ink">
-                    <i class="bi bi-file-pdf text-accent text-lg"></i>
-                    Full 3-Page Design PDF Included
-                  </div>
-                </div>
+
                 <a href="#"
-                  class="mt-10 inline-flex items-center gap-2 font-display text-sm font-extrabold text-ink hover:text-accent transition">
-                  Explore gallery <i class="bi bi-arrow-right"></i>
+                  class="btn-neobrutal-secondary mt-6 inline-flex items-center justify-center gap-2 bg-white px-5 py-2.5 font-display text-sm font-semibold text-ink focus-ring">
+                  Explore gallery <i class="ti ti-arrow-right"></i>
                 </a>
               </div>
             </div>
@@ -1345,8 +1377,8 @@
         <!-- Section Header -->
         <div class="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
           <div
-            class="inline-flex items-center gap-2 rounded-full border border-border bg-white px-3 py-1.5 text-xs font-display font-semibold text-slate2 shadow-sm mb-6">
-            <i class="bi bi-chat-text-fill text-accent"></i>
+            class="inline-flex items-center gap-2 rounded-full border-2 border-ink bg-yellow-300 px-4 h-9 text-xs font-display font-bold text-ink shadow-[3px_3px_0_0_#000] mb-6">
+            <i class="ti ti-message-circle text-ink"></i>
             <span id="typewriter-text"></span><span id="typewriter-cursor"
               style="display:inline-block;width:1px;height:0.9em;background:currentColor;margin-left:0;vertical-align:middle;animation:blink 0.8s step-end infinite;"></span>
           </div>
@@ -1383,10 +1415,7 @@
               <div
                 class="rounded-3xl border-2 border-ink bg-white p-7 relative -rotate-1 group-hover:rotate-0 transition-transform duration-300 h-full flex flex-col shadow-sm">
                 <div class="flex items-center justify-between mb-4 relative z-10">
-                  <div
-                    class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-dashed border-emerald-300 bg-emerald-50 text-emerald-600">
-                    <i class="bi bi-telephone text-2xl"></i>
-                  </div>
+                  <img src="assets/icons/chat.webp" alt="Quick call + goals icon" class="w-14 h-14 object-contain shrink-0 drop-shadow-md">
                   <div
                     class="font-display font-black text-slate-200 text-6xl italic -rotate-6 select-none leading-none -mr-2">
                     01</div>
@@ -1397,7 +1426,7 @@
 
                 <!-- Mobile down arrow -->
                 <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 md:hidden text-ink text-3xl">
-                  <i class="bi bi-arrow-down"></i>
+                  <i class="ti ti-arrow-down"></i>
                 </div>
               </div>
             </div>
@@ -1411,10 +1440,7 @@
               <div
                 class="rounded-3xl border-2 border-ink bg-white p-7 relative rotate-1 group-hover:rotate-0 transition-transform duration-300 h-full flex flex-col shadow-sm">
                 <div class="flex items-center justify-between mb-4 relative z-10">
-                  <div
-                    class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-dashed border-blue-300 bg-blue-50 text-blue-600">
-                    <i class="bi bi-palette text-2xl"></i>
-                  </div>
+                  <img src="assets/icons/palette.webp" alt="Design + build icon" class="w-14 h-14 object-contain shrink-0 drop-shadow-md">
                   <div
                     class="font-display font-black text-slate-200 text-6xl italic rotate-3 select-none leading-none -mr-2">
                     02</div>
@@ -1424,7 +1450,7 @@
                   structure, and quick feedback points.</p>
 
                 <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 md:hidden text-ink text-3xl">
-                  <i class="bi bi-arrow-down"></i>
+                  <i class="ti ti-arrow-down"></i>
                 </div>
               </div>
             </div>
@@ -1438,10 +1464,7 @@
               <div
                 class="rounded-3xl border-2 border-ink bg-white p-7 relative -rotate-1 group-hover:rotate-0 transition-transform duration-300 h-full flex flex-col shadow-sm">
                 <div class="flex items-center justify-between mb-4 relative z-10">
-                  <div
-                    class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-dashed border-amber-300 bg-amber-50 text-amber-600">
-                    <i class="bi bi-rocket-takeoff text-2xl"></i>
-                  </div>
+                  <img src="assets/icons/rocket.webp" alt="Launch + handoff icon" class="w-14 h-14 object-contain shrink-0 drop-shadow-md">
                   <div
                     class="font-display font-black text-slate-200 text-6xl italic -rotate-3 select-none leading-none -mr-2">
                     03</div>
@@ -1488,7 +1511,7 @@
                   <div>
                     <h4
                       class="font-display text-sm font-bold text-ink uppercase tracking-wider mb-4 flex items-center gap-2">
-                      <i class="bi bi-person-circle text-accent"></i> Your Details
+                      <i class="ti ti-user-circle text-accent"></i> Your Details
                     </h4>
                     <div class="grid gap-4 sm:grid-cols-2">
                       <!-- Name -->
@@ -1499,7 +1522,7 @@
                         <label for="name"
                           class="absolute left-4 top-4 z-10 origin-[0] -translate-y-2.5 scale-75 transform text-[#64748b] font-display font-normal transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-2.5 peer-focus:scale-75 peer-focus:text-ink cursor-text">Name</label>
                         <i
-                          class="bi bi-check-lg absolute right-4 top-4 text-emerald-500 hidden opacity-0 transition-opacity duration-300 pointer-events-none text-lg"></i>
+                          class="ti ti-check absolute right-4 top-4 text-emerald-500 hidden opacity-0 transition-opacity duration-300 pointer-events-none text-lg"></i>
                       </div>
 
                       <!-- Business -->
@@ -1511,7 +1534,7 @@
                           class="absolute left-4 top-4 z-10 origin-[0] -translate-y-2.5 scale-75 transform text-[#64748b] font-display font-normal transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-2.5 peer-focus:scale-75 peer-focus:text-ink cursor-text">Business
                           name</label>
                         <i
-                          class="bi bi-check-lg absolute right-4 top-4 text-emerald-500 hidden opacity-0 transition-opacity duration-300 pointer-events-none text-lg"></i>
+                          class="ti ti-check absolute right-4 top-4 text-emerald-500 hidden opacity-0 transition-opacity duration-300 pointer-events-none text-lg"></i>
                       </div>
 
                       <!-- Email -->
@@ -1522,7 +1545,7 @@
                         <label for="email"
                           class="absolute left-4 top-4 z-10 origin-[0] -translate-y-2.5 scale-75 transform text-[#64748b] font-display font-normal transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-2.5 peer-focus:scale-75 peer-focus:text-ink cursor-text">Email</label>
                         <i
-                          class="bi bi-check-lg absolute right-4 top-4 text-emerald-500 hidden opacity-0 transition-opacity duration-300 pointer-events-none text-lg"></i>
+                          class="ti ti-check absolute right-4 top-4 text-emerald-500 hidden opacity-0 transition-opacity duration-300 pointer-events-none text-lg"></i>
                       </div>
 
                       <!-- Phone -->
@@ -1533,16 +1556,16 @@
                           class="absolute left-4 top-4 z-10 origin-[0] -translate-y-2.5 scale-75 transform text-[#64748b] font-display font-normal transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-2.5 peer-focus:scale-75 peer-focus:text-ink cursor-text">Phone
                           (optional)</label>
                         <i
-                          class="bi bi-check-lg absolute right-4 top-4 text-emerald-500 hidden opacity-0 transition-opacity duration-300 pointer-events-none text-lg"></i>
+                          class="ti ti-check absolute right-4 top-4 text-emerald-500 hidden opacity-0 transition-opacity duration-300 pointer-events-none text-lg"></i>
                       </div>
                     </div>
                   </div>
 
                   <div class="pt-2">
                     <button type="button" id="nextBtn"
-                      class="inline-flex items-center justify-center gap-2 rounded-xl bg-ink px-8 py-3 font-display text-base font-semibold text-white shadow-soft hover:bg-slate-800 transition focus-ring w-full sm:w-auto">
+                      class="btn-neobrutal inline-flex items-center justify-center gap-2 bg-white px-8 py-3 font-display text-base font-semibold text-ink focus-ring w-full sm:w-auto">
                       Next Step
-                      <i class="bi bi-arrow-right"></i>
+                      <i class="ti ti-arrow-right"></i>
                     </button>
                     <p id="step1Error" class="text-xs text-red-500 mt-2 hidden">Please fill in all required fields.</p>
                   </div>
@@ -1554,7 +1577,7 @@
                   <div>
                     <h4
                       class="font-display text-sm font-bold text-ink uppercase tracking-wider mb-4 flex items-center gap-2">
-                      <i class="bi bi-laptop text-accent"></i> Project Requirements
+                      <i class="ti ti-laptop text-accent"></i> Project Requirements
                     </h4>
                     <div class="grid gap-4 sm:grid-cols-2">
                       <div class="sm:col-span-2 relative">
@@ -1564,7 +1587,7 @@
                           class="absolute left-4 top-4 z-10 origin-[0] -translate-y-2.5 scale-75 transform text-[#64748b] font-display font-normal transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-2.5 peer-focus:scale-75 peer-focus:text-ink cursor-text">Current
                           website (optional)</label>
                         <i
-                          class="bi bi-check-lg absolute right-4 top-4 text-emerald-500 hidden opacity-0 transition-opacity duration-300 pointer-events-none text-lg"></i>
+                          class="ti ti-check absolute right-4 top-4 text-emerald-500 hidden opacity-0 transition-opacity duration-300 pointer-events-none text-lg"></i>
                       </div>
 
                       <!-- Selects do not easily support floating labels without hacky CSS or JS, so we keep them standard but with focus rings -->
@@ -1619,7 +1642,7 @@
                   <div>
                     <h4
                       class="font-display text-sm font-bold text-ink uppercase tracking-wider mb-4 flex items-center gap-2">
-                      <i class="bi bi-bullseye text-accent"></i> Business Goals
+                      <i class="ti ti-target-arrow text-accent"></i> Business Goals
                     </h4>
                     <div class="relative">
                       <textarea id="goal" name="goal" rows="3" placeholder=" "
@@ -1629,7 +1652,7 @@
                         class="absolute left-4 top-4 z-10 origin-[0] -translate-y-2.5 scale-75 transform text-[#64748b] font-display font-normal transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-2.5 peer-focus:scale-75 peer-focus:text-ink cursor-text">What
                         should the site help customers do?</label>
                       <i
-                        class="bi bi-check-lg absolute right-4 top-4 text-emerald-500 hidden opacity-0 transition-opacity duration-300 pointer-events-none text-lg"></i>
+                        class="ti ti-check absolute right-4 top-4 text-emerald-500 hidden opacity-0 transition-opacity duration-300 pointer-events-none text-lg"></i>
                     </div>
                   </div>
 
@@ -1638,10 +1661,10 @@
                     <div class="flex items-center gap-4 w-full sm:w-auto">
                       <button type="button" id="backBtn" aria-label="Go back"
                         class="inline-flex items-center justify-center text-slate2 hover:text-ink transition focus-ring p-1">
-                        <i class="bi bi-arrow-left text-base font-extrabold"></i>
+                        <i class="ti ti-arrow-left text-base font-extrabold"></i>
                       </button>
                       <button type="submit" id="submitBtn" aria-label="Submit quote request"
-                        class="inline-flex items-center gap-3 bg-[#0f1117] text-white px-7 py-3.5 rounded-xl font-display text-base font-semibold hover:bg-slate-800 active:scale-[0.98] transition-all focus-ring">
+                        class="btn-neobrutal inline-flex items-center gap-3 bg-white text-ink px-7 py-3.5 font-display text-base font-semibold focus-ring">
                         Send Request <span class="text-base" aria-hidden="true">→</span>
                       </button>
                     </div>
@@ -1653,7 +1676,7 @@
 
                 <div id="formMsg"
                   class="hidden mt-4 rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-ink flex items-start gap-3">
-                  <i class="bi bi-check-circle-fill text-emerald-600 mt-0.5 text-lg"></i>
+                  <i class="ti ti-circle-check text-emerald-600 mt-0.5 text-lg"></i>
                   <div>
                     <span class="font-display font-semibold block mb-0.5">Quote request sent successfully!</span>
                     <span class="text-slate2">We'll be in touch within 1 business day.</span>
@@ -1670,7 +1693,7 @@
               <div class="flex items-center gap-3 mb-6">
                 <div
                   class="flex h-10 w-10 items-center justify-center rounded-xl bg-white border border-border shadow-sm shrink-0">
-                  <i class="bi bi-question-lg text-accent text-lg"></i>
+                  <i class="ti ti-question-mark text-accent text-lg"></i>
                 </div>
                 <h3 class="font-display text-xl font-extrabold tracking-tight text-ink">Common Questions</h3>
               </div>
@@ -1681,7 +1704,7 @@
                   <summary
                     class="cursor-pointer list-none flex items-center justify-between gap-4 focus-ring px-1 py-1">
                     <span class="font-display text-base font-extrabold text-ink">How long does it take?</span>
-                    <i class="bi bi-plus-lg text-slate2 group-open:rotate-45 transition"></i>
+                    <i class="ti ti-plus text-slate2 group-open:rotate-45 transition"></i>
                   </summary>
                   <p class="mt-3 px-1 text-sm leading-relaxed text-slate2">
                     Simple sites can be ready in just a few days. Bigger sites usually take 1–2 weeks. We’ll give you a
@@ -1694,7 +1717,7 @@
                   <summary
                     class="cursor-pointer list-none flex items-center justify-between gap-4 focus-ring px-1 py-1">
                     <span class="font-display text-base font-extrabold text-ink">Do I own my website?</span>
-                    <i class="bi bi-plus-lg text-slate2 group-open:rotate-45 transition"></i>
+                    <i class="ti ti-plus text-slate2 group-open:rotate-45 transition"></i>
                   </summary>
                   <p class="mt-3 px-1 text-sm leading-relaxed text-slate2">
                     Yes. Full ownership, files, and a clear handoff — so you're always in control.
@@ -1706,7 +1729,7 @@
                   <summary
                     class="cursor-pointer list-none flex items-center justify-between gap-4 focus-ring px-1 py-1">
                     <span class="font-display text-base font-extrabold text-ink">What if I need changes later?</span>
-                    <i class="bi bi-plus-lg text-slate2 group-open:rotate-45 transition"></i>
+                    <i class="ti ti-plus text-slate2 group-open:rotate-45 transition"></i>
                   </summary>
                   <p class="mt-3 px-1 text-sm leading-relaxed text-slate2">
                     You can make simple edits yourself, or we can handle updates for you. Our monthly care plan includes
@@ -1719,7 +1742,7 @@
                   <summary
                     class="cursor-pointer list-none flex items-center justify-between gap-4 focus-ring px-1 py-1">
                     <span class="font-display text-base font-extrabold text-ink">Help with domain & hosting?</span>
-                    <i class="bi bi-plus-lg text-slate2 group-open:rotate-45 transition"></i>
+                    <i class="ti ti-plus text-slate2 group-open:rotate-45 transition"></i>
                   </summary>
                   <p class="mt-3 px-1 text-sm leading-relaxed text-slate2">
                     We provide expert setup help to get your domain and hosting connected.
@@ -1733,7 +1756,7 @@
                 <h4 class="font-display text-sm font-bold text-ink mb-2">Still have questions?</h4>
                 <a href="mailto:hiezy.info@gmail.com"
                   class="inline-flex items-center gap-2 text-sm text-accent hover:text-ink transition font-medium focus-ring rounded-md">
-                  <i class="bi bi-envelope"></i> Email us directly
+                  <i class="ti ti-mail"></i> Email us directly
                 </a>
               </div>
             </div>
@@ -1761,13 +1784,13 @@
         <div class="md:justify-self-center">
           <div class="font-display text-sm font-extrabold text-ink">Contact</div>
           <div class="mt-3 space-y-2 text-sm text-slate2">
-            <div class="flex items-center gap-2"><i class="bi bi-envelope text-accent"></i> <a
+            <div class="flex items-center gap-2"><i class="ti ti-mail text-accent"></i> <a
                 class="hover:text-ink transition focus-ring rounded-md px-1"
                 href="mailto:hiezy.info@gmail.com">hiezy.info@gmail.com</a></div>
-            <div class="flex items-center gap-2"><i class="bi bi-telephone text-accent"></i> <a
+            <div class="flex items-center gap-2"><i class="ti ti-phone text-accent"></i> <a
                 class="hover:text-ink transition focus-ring rounded-md px-1" href="tel:+17786970065">+1 (778)
                 697-0065</a></div>
-            <div class="flex items-center gap-2"><i class="bi bi-geo-alt text-accent"></i> <span class="">Service area:
+            <div class="flex items-center gap-2"><i class="ti ti-map-pin text-accent"></i> <span class="">Service area:
                 Remote + BC, ON - Canada</span></div>
           </div>
         </div>
@@ -1811,7 +1834,7 @@
       mobileOverlay.classList.remove('opacity-0', 'pointer-events-none');
       mobileOverlay.classList.add('opacity-100');
       menuBtn.setAttribute('aria-expanded', 'true');
-      menuBtn.querySelector('i')?.classList.replace('bi-list', 'bi-x-lg');
+      menuBtn.querySelector('i')?.classList.replace('ti-menu-2', 'ti-x');
       document.body.style.overflow = 'hidden';
     }
 
@@ -1821,7 +1844,7 @@
       mobileOverlay.classList.remove('opacity-100');
       mobileOverlay.classList.add('opacity-0', 'pointer-events-none');
       menuBtn.setAttribute('aria-expanded', 'false');
-      menuBtn.querySelector('i')?.classList.replace('bi-x-lg', 'bi-list');
+      menuBtn.querySelector('i')?.classList.replace('ti-x', 'ti-menu-2');
       document.body.style.overflow = '';
     }
 
@@ -1908,7 +1931,7 @@
     const inputs = quoteForm.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], input[type="url"], textarea');
     inputs.forEach(input => {
       input.addEventListener('input', () => {
-        const checkIcon = input.parentElement.querySelector('.bi-check-lg');
+        const checkIcon = input.parentElement.querySelector('.ti-check');
         if (!checkIcon) return;
         let isValid = false;
 
@@ -1994,7 +2017,7 @@
 
       // Simulate loading spinner
       const originalHtml = submitBtn.innerHTML;
-      submitBtn.innerHTML = `<i class="bi bi-arrow-repeat animate-spin text-lg"></i> <span>Sending...</span>`;
+      submitBtn.innerHTML = `<i class="ti ti-refresh-dot animate-spin text-lg"></i> <span>Sending...</span>`;
       submitBtn.disabled = true;
       submitBtn.classList.add('opacity-80', 'cursor-not-allowed');
 
@@ -2213,10 +2236,10 @@
             <!-- Mini Carousel Controls -->
             <div class="absolute -bottom-6 right-0 z-30 flex items-center gap-2">
               <button onclick="cycleProject(-1)" aria-label="Previous portfolio project" class="h-12 w-12 rounded-full bg-white border border-border shadow-lg flex items-center justify-center text-ink hover:text-accent hover:border-accent transition-all active:scale-95">
-                <i class="bi bi-arrow-left" aria-hidden="true"></i>
+                <i class="ti ti-arrow-left" aria-hidden="true"></i>
               </button>
               <button onclick="cycleProject(1)" aria-label="Next portfolio project" class="h-12 w-12 rounded-full bg-white border border-border shadow-lg flex items-center justify-center text-ink hover:text-accent hover:border-accent transition-all active:scale-95">
-                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                <i class="ti ti-arrow-right" aria-hidden="true"></i>
               </button>
             </div>
           </div>
@@ -2229,14 +2252,9 @@
             </div>
             <h3 class="font-display text-3xl sm:text-4xl font-extrabold text-ink mb-6">${data.title}</h3>
             <p class="text-lg text-slate2 leading-relaxed mb-8">${data.description}</p>
-            <div class="flex flex-col gap-4">
-              <div class="flex items-center gap-3 text-sm font-semibold text-ink">
-                <i class="bi bi-file-pdf text-accent text-lg"></i>
-                Full 3-Page Design PDF Included
-              </div>
-            </div>
-            <a href="inspirations.html" class="mt-10 inline-flex items-center gap-2 font-display text-sm font-extrabold text-ink hover:text-accent transition">
-              Explore gallery <i class="bi bi-arrow-right"></i>
+
+            <a href="inspirations.html" class="btn-neobrutal-secondary mt-6 inline-flex items-center justify-center gap-2 bg-white px-5 py-2.5 font-display text-sm font-semibold text-ink focus-ring">
+              Explore gallery <i class="ti ti-arrow-right"></i>
             </a>
           </div>
         `;
@@ -2366,7 +2384,7 @@
         } else if (isDeleting && charIndex === 0) {
           isDeleting = false;
           phraseIndex = (phraseIndex + 1) % phrases.length;
-          delay = 400; // pause before typing next
+          delay = 0; // no delay when starting next phrase
         }
 
         setTimeout(type, delay);
@@ -2468,7 +2486,7 @@
   <button id="backToTop"
     class="fixed bottom-8 left-1/2 -translate-x-1/2 z-[9999] h-12 w-12 rounded-full bg-white shadow-xl border border-border flex items-center justify-center text-accent opacity-0 pointer-events-none transition-all duration-300 hover:bg-accent hover:text-white hover:-translate-y-2 focus-ring"
     aria-label="Back to top">
-    <i class="bi bi-arrow-up text-xl"></i>
+    <i class="ti ti-arrow-up text-xl"></i>
   </button>
 
   <script>
