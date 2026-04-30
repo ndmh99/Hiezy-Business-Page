@@ -1234,6 +1234,10 @@ video {
   color: var(--accent)
 }
 
+.text-accent-2 {
+  color: var(--accent-2)
+}
+
 .text-ink {
   color: var(--ink)
 }
