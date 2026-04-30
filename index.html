@@ -100,7 +100,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&amp;display=swap"
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&amp;display=swap"
     rel="stylesheet">
 
   <script>
@@ -115,6 +115,9 @@
             accent: "var(--accent)",
             accent2: "var(--accent-2)",
             border: "var(--border)",
+          },
+          fontFamily: {
+            sansita: ["Sansita", "sans-serif"],
           },
           animation: {
             marquee: 'marquee 25s linear infinite',
@@ -350,6 +353,7 @@
       box-shadow: 3px 3px 0px 0px #000000 !important;
       transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
       border-radius: 12px !important;
+      font-family: "Sansita", sans-serif !important;
     }
     .btn-neobrutal:hover {
       transform: translate(-1px, -1px) !important;
@@ -366,6 +370,7 @@
       box-shadow: 3px 3px 0px 0px #000000 !important;
       transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
       border-radius: 12px !important;
+      font-family: "Sansita", sans-serif !important;
     }
     .btn-neobrutal-secondary:hover {
       transform: translate(-1px, -1px) !important;
@@ -567,12 +572,12 @@
 
             <div class="mt-8 flex flex-row items-stretch sm:items-center gap-3">
               <a href="#services"
-                class="btn-neobrutal flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-accent px-3 sm:px-5 py-3 font-display text-sm font-semibold text-white focus-ring">
+                class="btn-neobrutal flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-accent px-3 sm:px-5 py-3 font-sansita text-sm font-semibold text-white focus-ring">
                 See Our Packages
                 <i class="ti ti-arrow-right"></i>
               </a>
               <a href="#contact"
-                class="btn-neobrutal-secondary flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-white/70 px-3 sm:px-5 py-3 font-display text-sm font-semibold text-ink focus-ring">
+                class="btn-neobrutal-secondary flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-white/70 px-3 sm:px-5 py-3 font-sansita text-sm font-semibold text-ink focus-ring">
                 <i class="ti ti-phone-outgoing"></i>
                 Book a Talk
               </a>
@@ -753,7 +758,7 @@
         <div class="grid gap-16 lg:grid-cols-12 lg:items-start">
           <div class="lg:col-span-5">
             <div class="space-y-2 mb-8">
-              <span class="text-xs font-bold tracking-[0.3em] uppercase text-accent">Hiezy Standards</span>
+              <span class="text-xs font-bold tracking-[0.3em] uppercase text-accent">Hiezy Care Standards</span>
               <h2 class="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-ink leading-[1.1]"><span
                   class="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-ink leading-[1.1]"
                   style="border-image: none; margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse))); margin-right: 0px; margin-bottom: calc(0.5rem * var(--tw-space-y-reverse)); margin-left: 0px; color: rgb(11, 18, 32);">How
@@ -912,7 +917,7 @@
 
           <div class="mt-auto pt-7 flex flex-col gap-4">
             <a href="#contact"
-              class="btn-neobrutal-secondary inline-flex w-full items-center justify-center gap-2 bg-white/70 px-5 py-3 font-display text-sm font-semibold text-ink focus-ring">
+              class="btn-neobrutal-secondary inline-flex w-full items-center justify-center gap-2 bg-white/70 px-5 py-3 font-sansita text-sm font-semibold text-ink focus-ring">
               Get a free quote
               <i class="ti ti-arrow-right"></i>
             </a>
@@ -964,7 +969,7 @@
 
           <div class="mt-auto pt-7 flex flex-col gap-4">
             <a href="#contact"
-              class="btn-neobrutal inline-flex w-full items-center justify-center gap-2 bg-accent px-5 py-3 font-display text-sm font-semibold text-white focus-ring">
+              class="btn-neobrutal inline-flex w-full items-center justify-center gap-2 bg-accent px-5 py-3 font-sansita text-sm font-semibold text-white focus-ring">
               Get a free quote
               <i class="ti ti-arrow-right"></i>
             </a>
@@ -1007,7 +1012,7 @@
 
           <div class="mt-auto pt-7 flex flex-col gap-4">
             <a href="#contact"
-              class="btn-neobrutal-secondary inline-flex w-full items-center justify-center gap-2 bg-white/70 px-5 py-3 font-display text-sm font-semibold text-ink focus-ring">
+              class="btn-neobrutal-secondary inline-flex w-full items-center justify-center gap-2 bg-white/70 px-5 py-3 font-sansita text-sm font-semibold text-ink focus-ring">
               Get a free quote
               <i class="ti ti-arrow-right"></i>
             </a>
@@ -1290,7 +1295,7 @@
                 </p>
 
                 <a href="#"
-                  class="btn-neobrutal-secondary mt-6 inline-flex items-center justify-center gap-2 bg-white px-5 py-2.5 font-display text-sm font-semibold text-ink focus-ring">
+                  class="btn-neobrutal-secondary mt-6 inline-flex items-center justify-center gap-2 bg-white px-5 py-2.5 font-sansita text-sm font-semibold text-ink focus-ring">
                   Explore gallery <i class="ti ti-arrow-right"></i>
                 </a>
               </div>
@@ -1469,7 +1474,7 @@
 
                   <div class="pt-6 mt-auto flex flex-col">
                     <button type="button" id="nextBtn"
-                      class="btn-neobrutal inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-3.5 font-display text-base font-bold focus-ring w-full">
+                      class="btn-neobrutal inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-3.5 font-sansita text-base font-bold focus-ring w-full">
                       Next Step
                       <i class="ti ti-arrow-right"></i>
                     </button>
@@ -1522,7 +1527,7 @@
                       <i class="ti ti-arrow-left text-xl font-black"></i>
                     </button>
                     <button type="submit" id="submitBtn" aria-label="Submit"
-                      class="btn-neobrutal inline-flex items-center justify-center gap-3 bg-white text-ink px-8 py-3.5 font-display text-base font-bold focus-ring flex-1">
+                      class="btn-neobrutal inline-flex items-center justify-center gap-3 bg-white text-ink px-8 py-3.5 font-sansita text-base font-bold focus-ring flex-1">
                       Send Request →
                     </button>
                   </div>
@@ -2124,7 +2129,7 @@
             <h3 class="font-display text-3xl sm:text-4xl font-extrabold text-ink mb-6">${data.title}</h3>
             <p class="text-lg text-slate2 leading-relaxed mb-8">${data.description}</p>
 
-            <a href="inspirations.html" class="btn-neobrutal-secondary mt-6 inline-flex items-center justify-center gap-2 bg-white px-5 py-2.5 font-display text-sm font-semibold text-ink focus-ring">
+            <a href="inspirations.html" class="btn-neobrutal-secondary mt-6 inline-flex items-center justify-center gap-2 bg-white px-5 py-2.5 font-sansita text-sm font-semibold text-ink focus-ring">
               Explore gallery <i class="ti ti-arrow-right"></i>
             </a>
           </div>
