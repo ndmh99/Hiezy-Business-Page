@@ -566,10 +566,12 @@
   <header class="sticky top-0 z-50 border-b border-border bg-white/70 backdrop-blur-xl">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between gap-3">
-        <a href="#home" class="group inline-flex flex-col items-start focus-ring rounded-lg px-2 py-1">
-          <img id="nav-logo" src="" alt="" class="h-7 w-auto">
-          <span class="text-[10px] font-bold uppercase tracking-widest text-slate2 mt-1">Web Solutions</span>
-        </a>
+        <div class="self-start -ml-4 sm:-ml-6 lg:-ml-8" style="filter: drop-shadow(4px 4px 10px rgba(11, 18, 32, 0.25)); z-index: 10;">
+          <a href="#home" class="relative flex flex-col items-start focus-ring pl-4 sm:pl-6 lg:pl-8 pr-10 pt-2 pb-4 bg-ink" style="clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);">
+            <img id="nav-logo" src="assets/images/brand/hiezy-logo-white.png" alt="Hiezy logo" class="h-14 sm:h-16 w-auto -mb-3">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-white relative z-10">Web Solutions</span>
+          </a>
+        </div>
 
         <nav class="hidden md:flex items-center gap-1 rounded-full border border-border bg-white/60 px-2 py-1">
           <a data-nav="home" href="#home"
@@ -2285,7 +2287,7 @@
     // Initialize the first inspiration on page load
     document.addEventListener('DOMContentLoaded', () => {
       // ── Inject logo from content.js → HIEZY.brand ──
-      ['nav-logo', 'footer-logo', 'seal-logo'].forEach(id => {
+      ['footer-logo', 'seal-logo'].forEach(id => {
         const el = document.getElementById(id);
         if (el) {
           el.src = HIEZY.brand.logo;
