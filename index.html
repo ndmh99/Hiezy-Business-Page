@@ -380,6 +380,164 @@
       transform: translate(1px, 1px) !important;
       box-shadow: 1px 1px 0px 0px #000000 !important;
     }
+
+    /* Browser Window Styles */
+    .browser-container {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .browser-tabs-head {
+      background-color: #353535;
+      height: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-left: 20px;
+    }
+
+    .browser-tab-open {
+      width: 140px;
+      height: 34px;
+      border-radius: 7px 7px 0 0;
+      background-color: #515151;
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px;
+      position: relative;
+    }
+
+    .browser-tab-open span {
+      color: #fff;
+      font-size: 11px;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .browser-close-tab {
+      color: #fff;
+      font-size: 10px;
+      opacity: 0.7;
+      cursor: pointer;
+    }
+
+    .browser-rounded-l, .browser-rounded-r {
+      position: absolute;
+      background-color: #515151;
+      width: 20px;
+      height: 24px;
+      bottom: 0;
+      overflow: hidden;
+    }
+
+    .browser-rounded-l {
+      right: -20px;
+    }
+
+    .browser-rounded-r {
+      left: -20px;
+    }
+
+    .browser-mask-round-l {
+      width: 100%;
+      height: 100%;
+      background-color: #353535;
+      border-radius: 0 0 0 10px;
+    }
+
+    .browser-mask-round-r {
+      width: 100%;
+      height: 100%;
+      background-color: #353535;
+      border-radius: 0 0 10px 0;
+    }
+
+    .browser-window-opt {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      gap: 2px;
+      padding-right: 5px;
+    }
+
+    .browser-window-opt button {
+      height: 32px;
+      width: 42px;
+      border: none;
+      background-color: transparent;
+      transition: background-color 0.2s;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 14px;
+    }
+
+    .browser-window-opt button:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .browser-window-opt .window-close:hover {
+      background-color: #e81123 !important;
+    }
+
+    .browser-head-browser {
+      background-color: #515151;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .browser-head-browser button {
+      width: 28px;
+      height: 28px;
+      border: none;
+      background-color: transparent;
+      color: #fff;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      transition: background-color 0.2s;
+      font-size: 14px;
+    }
+
+    .browser-head-browser button:hover:not(:disabled) {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .browser-head-browser button:disabled {
+      opacity: 0.3;
+    }
+
+    .browser-address-bar {
+      flex: 1;
+      background-color: #202124;
+      border: 2px solid transparent;
+      height: 28px;
+      border-radius: 14px;
+      color: #fff;
+      padding: 0 12px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: border-color 0.2s;
+    }
+
+    .browser-address-bar:hover {
+      background-color: #292a2d;
+    }
+
+    .browser-star {
+      font-size: 14px;
+      opacity: 0.8;
+    }
   </style>
 </head>
 
@@ -608,21 +766,36 @@
 
               <div id="hero-tilt-group" class="relative" style="transform-style: preserve-3d;">
                 <div id="hero-card"
-                  class="relative rounded-[2rem] border border-border bg-white sm:bg-white/70 shadow-soft overflow-hidden"
+                  class="relative rounded-xl border border-border bg-[#353535] shadow-soft overflow-hidden browser-container"
                   style="transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);">
-                  <div class="flex items-center justify-between px-5 py-4 border-b border-border">
-                    <div class="flex items-center gap-2">
-                      <span class="h-2.5 w-2.5 rounded-full bg-red-400/80"></span>
-                      <span class="h-2.5 w-2.5 rounded-full bg-amber-400/80"></span>
-                      <span class="h-2.5 w-2.5 rounded-full bg-emerald-400/80"></span>
+                  
+                  <!-- New Browser UI -->
+                  <div class="browser-tabs-head">
+                    <div class="browser-tabs">
+                      <div class="browser-tab-open">
+                        <div class="browser-rounded-r"><div class="browser-mask-round-r"></div></div>
+                        <span>Hiezy Web Solutions</span>
+                        <div class="browser-close-tab">✕</div>
+                        <div class="browser-rounded-l"><div class="browser-mask-round-l"></div></div>
+                      </div>
                     </div>
-                    <div class="font-display text-xs font-semibold text-slate2">Preview — business-site.com</div>
-                    <div class="h-8 w-8 rounded-xl border border-border bg-white sm:bg-white/60 grid place-items-center">
-                      <i class="ti ti-device-mobile text-slate2 sm:text-slate2"></i>
+                    <div class="browser-window-opt">
+                      <button>−</button>
+                      <button>□</button>
+                      <button class="window-close">✕</button>
                     </div>
                   </div>
+                  <div class="browser-head-browser">
+                    <button>←</button>
+                    <button disabled>→</button>
+                    <div class="browser-address-bar">
+                      <span>hiezy.com</span>
+                      <span class="browser-star">✰</span>
+                    </div>
+                    <button>⋮</button>
+                  </div>
 
-                  <div class="grid md:grid-cols-5">
+                  <div class="grid md:grid-cols-5 border-t border-border bg-white rounded-b-lg overflow-hidden border">
                     <div class="md:col-span-2 p-5 border-b md:border-b-0 md:border-r border-border">
                       <div class="flex items-start gap-3">
                         <div
@@ -843,7 +1016,7 @@
                 <div class="pt-0 p-8 sm:p-10">
                   <div class="flex items-center justify-between mb-8">
                     <div>
-                      <div class="text-xs font-bold text-slate2 uppercase tracking-widest mb-1">Standard Package</div>
+                      <div class="text-xs font-bold text-slate2 uppercase tracking-widest mb-1">Hiezy Care Standard Package</div>
                       <div class="text-xl font-display font-bold text-ink">Launch Foundation</div>
                     </div>
                     <div class="h-14 w-14 rounded-full border border-border flex items-center justify-center">
@@ -856,18 +1029,52 @@
                   <div class="grid grid-cols-2 gap-8 border-t border-border pt-8">
                     <div>
                       <div class="text-[10px] font-bold text-accent uppercase tracking-widest mb-2">Audit Status</div>
-                      <div class="text-sm font-bold text-ink">Production Ready</div>
+                      <div class="text-sm font-bold text-ink flex items-center gap-2">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                        </span>
+                        Production Ready
+                      </div>
                     </div>
                     <div>
                       <div class="text-[10px] font-bold text-accent uppercase tracking-widest mb-2">Service Fee</div>
                       <div class="text-sm font-bold text-ink">Included</div>
                     </div>
                   </div>
+
+                  <!-- Option 2: Micro-Icon Feature Grid -->
+                  <div class="mt-8 grid grid-cols-4 gap-4 pt-6 border-t border-border/50">
+                    <div class="flex flex-col items-center gap-1.5">
+                      <div class="h-10 w-10 rounded-lg bg-slate-50 border border-border/40 flex items-center justify-center text-slate2">
+                        <i class="ti ti-messages text-xl"></i>
+                      </div>
+                      <span class="text-[10px] font-bold uppercase tracking-tight text-slate text-center leading-tight">Consult</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-1.5">
+                      <div class="h-10 w-10 rounded-lg bg-slate-50 border border-border/40 flex items-center justify-center text-slate2">
+                        <i class="ti ti-rocket text-xl"></i>
+                      </div>
+                      <span class="text-[10px] font-bold uppercase tracking-tight text-slate text-center leading-tight">Setup</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-1.5">
+                      <div class="h-10 w-10 rounded-lg bg-slate-50 border border-border/40 flex items-center justify-center text-slate2">
+                        <i class="ti ti-headset text-xl"></i>
+                      </div>
+                      <span class="text-[10px] font-bold uppercase tracking-tight text-slate text-center leading-tight">Support</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-1.5">
+                      <div class="h-10 w-10 rounded-lg bg-slate-50 border border-border/40 flex items-center justify-center text-slate2">
+                        <i class="ti ti-certificate text-xl"></i>
+                      </div>
+                      <span class="text-[10px] font-bold uppercase tracking-tight text-slate text-center leading-tight">Ownership</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               <div
-                class="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[90%] max-w-sm sm:w-auto sm:left-auto sm:transform-none sm:-bottom-6 sm:-right-6 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-3 sm:px-6 sm:py-4 rounded-2xl shadow-xl animate-float flex items-center justify-between sm:block z-10">
+                class="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-sm sm:w-auto sm:left-auto sm:transform-none sm:-bottom-8 sm:-right-8 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-3 sm:px-6 sm:py-4 rounded-2xl shadow-xl animate-float flex items-center justify-between sm:block z-10">
                 <div class="text-[10px] font-bold uppercase tracking-widest opacity-80">Guaranteed</div>
                 <div class="font-display font-bold text-sm sm:text-base"><span id="success-count"
                     class="inline-block tabular-nums text-right min-w-[1.8em]">0</span>% Launch Success</div>
@@ -1030,117 +1237,6 @@
           </div>
         </article>
       </div>
-
-      <!-- Option 3: The Signature Seal & Studio Standard -->
-      <div class="mt-20 relative py-10">
-        <!-- Background Blueprint Crosshair (Decorative) -->
-        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.04]">
-          <div class="w-px h-full bg-ink"></div>
-          <div class="h-px w-full bg-ink absolute"></div>
-        </div>
-
-        <div class="relative max-w-5xl mx-auto px-2 sm:px-4">
-          <!-- True 3-Column Blueprint Grid -->
-          <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-2 sm:gap-12 lg:gap-16">
-
-            <!-- Left Features -->
-            <div class="space-y-10 sm:space-y-16 text-right py-4">
-              <!-- Feature 1 -->
-              <div class="relative group">
-                <div class="absolute -right-4 sm:-right-8 top-1/2 w-3 sm:w-6 h-px bg-slate-300"></div>
-                <h4
-                  class="font-display text-[9px] sm:text-sm font-extrabold text-ink uppercase tracking-widest mb-1 flex items-center gap-1 justify-end">
-                  <span class="truncate">Design</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkle-icon lucide-sparkle text-accent shrink-0"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/></svg>
-                </h4>
-                <p class="text-[8px] sm:text-xs text-slate2 leading-tight">Meetings to plan your brand and design.</p>
-              </div>
-
-              <!-- Feature 2 -->
-              <div class="relative group">
-                <div class="absolute -right-4 sm:-right-8 top-1/2 w-3 sm:w-6 h-px bg-slate-300"></div>
-                <h4
-                  class="font-display text-[9px] sm:text-sm font-extrabold text-ink uppercase tracking-widest mb-1 flex items-center gap-1 justify-end">
-                  <span class="truncate">30-Day Care</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkle-icon lucide-sparkle text-accent shrink-0"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/></svg>
-                </h4>
-                <p class="text-[8px] sm:text-xs text-slate2 leading-tight">Updates and fixes after your site goes live.
-                </p>
-              </div>
-            </div>
-
-            <!-- Central Seal -->
-            <div class="flex flex-col items-center justify-center">
-              <div class="relative w-24 h-24 sm:w-40 sm:h-40 flex items-center justify-center">
-                <!-- Rotating Text Path -->
-                <svg viewBox="0 0 100 100"
-                  class="absolute inset-0 w-full h-full animate-[spin_10s_linear_infinite] opacity-20">
-                  <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
-                  <text class="text-[8px] font-display font-bold uppercase tracking-[0.2em] fill-ink">
-                    <textPath xlink:href="#circlePath">
-                      • Hiezy Care Standard • Hand-Crafted • Hiezy Care Standard • Hand-Crafted
-                    </textPath>
-                  </text>
-                </svg>
-
-                <!-- Inner Badge -->
-                <div
-                  class="h-16 w-16 sm:h-24 sm:w-24 rounded-full bg-white border border-border shadow-xl flex flex-col items-center justify-center p-2 sm:p-4 text-center z-10">
-                  <img id="seal-logo" src="" alt="Hiezy Logo"
-                    class="h-6 sm:h-10 w-auto mb-0.5 sm:mb-1 object-contain pointer-events-none">
-                  <div
-                    class="text-[6px] sm:text-[8px] font-display font-black text-ink uppercase tracking-tighter leading-none">
-                    Care<br>Standard</div>
-                </div>
-
-                <!-- Verified Check -->
-                <div
-                  class="absolute -bottom-1 right-2 sm:-bottom-2 sm:right-6 h-5 w-5 sm:h-8 sm:w-8 rounded-full bg-accent text-white grid place-items-center shadow-lg z-20">
-                  <i class="ti ti-circle-check text-[8px] sm:text-sm"></i>
-                </div>
-              </div>
-              <div class="mt-4 text-center hidden sm:block">
-                <div class="font-body italic text-slate2 text-sm">"Our personal guarantee of support."</div>
-              </div>
-            </div>
-
-            <!-- Right Features -->
-            <div class="space-y-10 sm:space-y-16 text-left py-4">
-              <!-- Feature 3 -->
-              <div class="relative group">
-                <div class="absolute -left-4 sm:-left-8 top-1/2 w-3 sm:w-6 h-px bg-slate-300"></div>
-                <h4
-                  class="font-display text-[9px] sm:text-sm font-extrabold text-ink uppercase tracking-widest mb-1 flex items-center gap-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkle-icon lucide-sparkle text-accent shrink-0"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/></svg>
-                  <span class="truncate">Setup</span>
-                </h4>
-                <p class="text-[8px] sm:text-xs text-slate2 leading-tight">Careful setup for your domain and hosting.
-                </p>
-              </div>
-
-              <!-- Feature 4 -->
-              <div class="relative group">
-                <div class="absolute -left-4 sm:-left-8 top-1/2 w-3 sm:w-6 h-px bg-slate-300"></div>
-                <h4
-                  class="font-display text-[9px] sm:text-sm font-extrabold text-ink uppercase tracking-widest mb-1 flex items-center gap-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkle-icon lucide-sparkle text-accent shrink-0"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/></svg>
-                  <span class="truncate">Ownership</span>
-                </h4>
-                <p class="text-[8px] sm:text-xs text-slate2 leading-tight">You own all your files and domain.</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-      </div>
-
-      </div>
-      </div>
-      </div>
-
-
 
       <!-- Engagement options -->
       <div class="mt-16 sm:mt-20">
@@ -1393,8 +1489,8 @@
         <!-- Section Header -->
         <div class="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
           <div
-            class="inline-flex items-center gap-2 rounded-full border-2 border-ink bg-yellow-300 px-4 h-9 text-xs font-display font-bold text-ink shadow-[3px_3px_0_0_#000] mb-6">
-            <i class="ti ti-message-circle text-ink"></i>
+            class="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 h-9 text-xs font-display font-medium text-ink mb-6">
+            <i class="ti ti-message-circle text-accent"></i>
             <span id="typewriter-text"></span><span id="typewriter-cursor"
               style="display:inline-block;width:1px;height:0.9em;background:currentColor;margin-left:0;vertical-align:middle;animation:blink 0.8s step-end infinite;"></span>
           </div>
