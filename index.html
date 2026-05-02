@@ -216,6 +216,28 @@
       box-shadow: 2px 0 8px rgba(29, 78, 216, 0.4);
     }
 
+    /* Active nav underline */
+    .active-underline {
+      position: relative;
+    }
+    .active-underline::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: var(--accent);
+      border-radius: 1px;
+    }
+
+    /* Glass/frosted effect */
+    .glass {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
     /* Scroll Reveal Styles */
     .reveal-init {
       opacity: 0;
@@ -334,6 +356,11 @@
       }
     }
 
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
     @media (max-width: 640px) {
       .preloader-bar-container {
         width: 220px;
@@ -346,8 +373,8 @@
       }
     }
 
-    /* Neo-Brutalism Styles */
-    .btn-neobrutal {
+    /* Neo-Brutalism Styles - Consolidated (btn-neobrutal and btn-neobrutal-secondary shared styles) */
+    .btn-neobrutal, .btn-neobrutal-secondary {
       position: relative;
       border: 2px solid #000000 !important;
       box-shadow: 3px 3px 0px 0px #000000 !important;
@@ -355,28 +382,11 @@
       border-radius: 12px !important;
       font-family: "Sansita", sans-serif !important;
     }
-    .btn-neobrutal:hover {
+    .btn-neobrutal:hover, .btn-neobrutal-secondary:hover {
       transform: translate(-1px, -1px) !important;
       box-shadow: 4px 4px 0px 0px #000000 !important;
     }
-    .btn-neobrutal:active {
-      transform: translate(1px, 1px) !important;
-      box-shadow: 1px 1px 0px 0px #000000 !important;
-    }
-
-    .btn-neobrutal-secondary {
-      position: relative;
-      border: 2px solid #000000 !important;
-      box-shadow: 3px 3px 0px 0px #000000 !important;
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
-      border-radius: 12px !important;
-      font-family: "Sansita", sans-serif !important;
-    }
-    .btn-neobrutal-secondary:hover {
-      transform: translate(-1px, -1px) !important;
-      box-shadow: 4px 4px 0px 0px #000000 !important;
-    }
-    .btn-neobrutal-secondary:active {
+    .btn-neobrutal:active, .btn-neobrutal-secondary:active {
       transform: translate(1px, 1px) !important;
       box-shadow: 1px 1px 0px 0px #000000 !important;
     }
@@ -1105,7 +1115,7 @@
       <!-- Service tiers & starting prices -->
       <div class="mt-12 grid gap-6 lg:grid-cols-3">
         <article id="pricing-card-basic"
-          class="js-lift-card flex flex-col h-full rounded-2xl border border-border bg-white/70 p-7 shadow-soft-hover"
+          class="flex flex-col h-full rounded-2xl border border-border bg-white/70 p-7"
           style="will-change: transform, opacity, box-shadow;">
           <div class="flex items-start justify-between gap-4">
             <div class="w-full h-[7.5rem]">
@@ -1197,7 +1207,7 @@
         </article>
 
         <article id="pricing-card-advanced"
-          class="js-lift-card flex flex-col h-full rounded-2xl border border-border bg-white/70 p-7 shadow-soft-hover"
+          class="flex flex-col h-full rounded-2xl border border-border bg-white/70 p-7"
           style="will-change: transform, opacity, box-shadow;">
           <div class="flex items-start justify-between gap-4">
             <div class="w-full h-[7.5rem]">
@@ -2287,7 +2297,7 @@
     // Initialize the first inspiration on page load
     document.addEventListener('DOMContentLoaded', () => {
       // ── Inject logo from content.js → HIEZY.brand ──
-      ['footer-logo', 'seal-logo'].forEach(id => {
+      ['footer-logo'].forEach(id => {
         const el = document.getElementById(id);
         if (el) {
           el.src = HIEZY.brand.logo;
