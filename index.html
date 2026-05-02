@@ -614,8 +614,8 @@
     }
 
     .browser-star {
-      font-size: 14px;
-      opacity: 0.8;
+      font-size: 20px;
+      opacity: 0.9;
     }
   </style>
 </head>
@@ -870,7 +870,7 @@
                     <button>←</button>
                     <button disabled>→</button>
                     <div class="browser-address-bar">
-                      <span>hiezy.com</span>
+                      <span class="browser-url-container"><span id="browser-url">www.hiezy.com</span><span id="browser-cursor" class="browser-cursor"></span></span>
                       <span class="browser-star">✰</span>
                     </div>
                     <button>⋮</button>
@@ -2194,7 +2194,7 @@
           const shadowColor = i === 1 ? `rgba(29, 78, 216, ${shadowAlpha})` : `rgba(0, 0, 0, ${shadowAlpha})`;
           card.style.boxShadow = `0 ${s.currentShadow / 2}px ${s.currentShadow}px -${s.currentShadow / 4}px ${shadowColor}`;
 
-          if (Math.abs(s.targetY - s.currentY) > 0.01 || Math.abs(s.targetX - s.currentX) > 0.01) isMoving = true;
+          if (Math.abs(s.targetY - s.currentY) > 0.01 || Math.abs(s.targetX - s.currentX) > 0.01 || Math.abs(s.targetY - s.currentY) > 0.01) isMoving = true;
         });
 
         requestAnimationFrame(updatePhysics);
@@ -2455,20 +2455,47 @@
       }
       type();
     })();
+
+    // Browser URL typing effect
+    (function () {
+      const urlEl = document.getElementById('browser-url');
+      if (!urlEl) return;
+
+      const phrases = [
+        'www.hiezy.com',
+        'www.hiezy.com/contact'
+      ];
+
+      let phraseIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+
+      function type() {
+        const current = phrases[phraseIndex];
+        if (isDeleting) {
+          urlEl.textContent = current.substring(0, charIndex - 1);
+          charIndex--;
+        } else {
+          urlEl.textContent = current.substring(0, charIndex + 1);
+          charIndex++;
+        }
+
+        let delay = isDeleting ? 40 : 70;
+
+        if (!isDeleting && charIndex === current.length) {
+          delay = 2000; // pause at end before erasing
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          delay = 300; // short delay before next phrase
+        }
+
+        setTimeout(type, delay);
+      }
+      type();
+    })();
   </script>
-
-  <!-- Perimeter Progress Bar -->
-  <div id="scroll-progress-perimeter" class="fixed inset-0 z-[10000] pointer-events-none">
-
-    <div id="progress-top" class="absolute top-0 left-0 h-[2px] sm:h-[4px] bg-accent transition-all duration-75"
-      style="background-color: #1d4ed8; width: 0%;"></div>
-    <div id="progress-right" class="absolute top-0 right-0 w-[2px] sm:w-[4px] bg-accent transition-all duration-75"
-      style="background-color: #1d4ed8; height: 0%;"></div>
-    <div id="progress-bottom" class="absolute bottom-0 right-0 h-[2px] sm:h-[4px] bg-accent transition-all duration-75"
-      style="background-color: #1d4ed8; width: 0%;"></div>
-    <div id="progress-left" class="absolute bottom-0 left-0 w-[2px] sm:w-[4px] bg-accent transition-all duration-75"
-      style="background-color: #1d4ed8; height: 0%;"></div>
-  </div>
 
   <script>
     // Perimeter Progress Bar Logic

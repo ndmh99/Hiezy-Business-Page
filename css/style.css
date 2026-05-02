@@ -159,6 +159,21 @@ body {
   }
 }
 
+/* Browser URL cursor */
+.browser-url-container {
+  display: flex;
+  align-items: center;
+}
+
+.browser-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background-color: var(--accent);
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+
 /* Inspiration Hub Animations */
 #inspiration-content {
   transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
