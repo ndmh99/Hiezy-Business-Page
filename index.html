@@ -95,6 +95,7 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="data/content.js"></script>
+  <script src="data/inspiration-engine.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -189,14 +190,11 @@
     ::-webkit-scrollbar {
       width: 0px;
       background: transparent;
-      /* Optional: just make it invisible */
     }
 
     html {
       scrollbar-width: none;
-      /* Firefox */
       -ms-overflow-style: none;
-      /* IE/Edge */
     }
 
     /* Perimeter Bar Glow Effects */
@@ -214,28 +212,6 @@
 
     #progress-left {
       box-shadow: 2px 0 8px rgba(29, 78, 216, 0.4);
-    }
-
-    /* Active nav underline */
-    .active-underline {
-      position: relative;
-    }
-    .active-underline::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background-color: var(--accent);
-      border-radius: 1px;
-    }
-
-    /* Glass/frosted effect */
-    .glass {
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
     }
 
     /* Scroll Reveal Styles */
@@ -309,15 +285,41 @@
       transform: translateY(0);
     }
 
-    .feature-row:nth-child(1) { transition-delay: 0ms; }
-    .feature-row:nth-child(2) { transition-delay: 50ms; }
-    .feature-row:nth-child(3) { transition-delay: 100ms; }
-    .feature-row:nth-child(4) { transition-delay: 150ms; }
-    .feature-row:nth-child(5) { transition-delay: 200ms; }
-    .feature-row:nth-child(6) { transition-delay: 250ms; }
-    .feature-row:nth-child(7) { transition-delay: 300ms; }
-    .feature-row:nth-child(8) { transition-delay: 350ms; }
-    .feature-row:nth-child(9) { transition-delay: 400ms; }
+    .feature-row:nth-child(1) {
+      transition-delay: 0ms;
+    }
+
+    .feature-row:nth-child(2) {
+      transition-delay: 50ms;
+    }
+
+    .feature-row:nth-child(3) {
+      transition-delay: 100ms;
+    }
+
+    .feature-row:nth-child(4) {
+      transition-delay: 150ms;
+    }
+
+    .feature-row:nth-child(5) {
+      transition-delay: 200ms;
+    }
+
+    .feature-row:nth-child(6) {
+      transition-delay: 250ms;
+    }
+
+    .feature-row:nth-child(7) {
+      transition-delay: 300ms;
+    }
+
+    .feature-row:nth-child(8) {
+      transition-delay: 350ms;
+    }
+
+    .feature-row:nth-child(9) {
+      transition-delay: 400ms;
+    }
 
     /* Laser-Scan Border Effect */
     @property --laser-angle {
@@ -426,8 +428,15 @@
     }
 
     @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
     }
 
     @media (max-width: 640px) {
@@ -443,21 +452,37 @@
     }
 
     /* Neo-Brutalism Styles - Consolidated (btn-neobrutal and btn-neobrutal-secondary shared styles) */
-    .btn-neobrutal, .btn-neobrutal-secondary {
+    .btn-neobrutal,
+    .btn-neobrutal-secondary {
       position: relative;
-      border: 2px solid #000000 !important;
-      box-shadow: 3px 3px 0px 0px #000000 !important;
+      border: 1px solid #0b1220 !important;
+      box-shadow: 4px 4px 0px 0px #0b1220 !important;
       transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
-      border-radius: 12px !important;
+      border-radius: 0px !important; /* Authentic Neo-Brutalism usually has sharp corners */
       font-family: "Sansita", sans-serif !important;
     }
-    .btn-neobrutal:hover, .btn-neobrutal-secondary:hover {
-      transform: translate(-1px, -1px) !important;
-      box-shadow: 4px 4px 0px 0px #000000 !important;
+
+    .btn-neobrutal:hover,
+    .btn-neobrutal-secondary:hover {
+      transform: translate(-2px, -2px) !important;
+      box-shadow: 6px 6px 0px 0px #0b1220 !important;
     }
-    .btn-neobrutal:active, .btn-neobrutal-secondary:active {
-      transform: translate(1px, 1px) !important;
-      box-shadow: 1px 1px 0px 0px #000000 !important;
+
+    .btn-neobrutal:active,
+    .btn-neobrutal-secondary:active {
+      transform: translate(0px, 0px) !important;
+      box-shadow: 2px 2px 0px 0px #0b1220 !important;
+    }
+
+    /* Primary vs Secondary button specific colors */
+    .btn-neobrutal {
+      background-color: var(--accent) !important;
+      color: white !important;
+    }
+
+    .btn-neobrutal-secondary {
+      background-color: white !important;
+      color: var(--ink) !important;
     }
 
     /* Browser Window Styles */
@@ -506,7 +531,8 @@
       cursor: pointer;
     }
 
-    .browser-rounded-l, .browser-rounded-r {
+    .browser-rounded-l,
+    .browser-rounded-r {
       position: absolute;
       background-color: #515151;
       width: 20px;
@@ -645,9 +671,13 @@
   <header class="sticky top-0 z-50 border-b border-border bg-white/70 backdrop-blur-xl">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between gap-3">
-        <div class="self-start -ml-4 sm:-ml-6 lg:-ml-8" style="filter: drop-shadow(4px 4px 10px rgba(11, 18, 32, 0.25)); z-index: 10;">
-          <a href="#home" class="relative flex flex-col items-start focus-ring pl-4 sm:pl-6 lg:pl-8 pr-10 pt-2 pb-4 bg-ink" style="clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);">
-            <img id="nav-logo" src="assets/images/brand/hiezy-logo-white.png" alt="Hiezy logo" class="h-14 sm:h-16 w-auto -mb-3">
+        <div class="self-start -ml-4 sm:-ml-6 lg:-ml-8"
+          style="filter: drop-shadow(4px 4px 10px rgba(11, 18, 32, 0.25)); z-index: 10;">
+          <a href="#home"
+            class="relative flex flex-col items-start focus-ring pl-4 sm:pl-6 lg:pl-8 pr-10 pt-2 pb-4 bg-ink"
+            style="clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);">
+            <img id="nav-logo" src="assets/images/brand/hiezy-logo-white.png" alt="Hiezy logo"
+              class="h-14 sm:h-16 w-auto -mb-3">
             <span class="text-[10px] font-bold uppercase tracking-widest text-white relative z-10">Web Solutions</span>
           </a>
         </div>
@@ -805,8 +835,10 @@
           <div class="lg:col-span-6">
             <div
               class="inline-flex items-center gap-2 rounded-full border border-border bg-white sm:bg-white/70 px-3 py-1.5 text-xs font-display font-semibold text-slate2 shadow-sm">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-blue-600" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-blue-600" fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z" />
               </svg>
               Professional sites starting at $149
             </div>
@@ -849,15 +881,19 @@
                 <div id="hero-card"
                   class="relative rounded-xl border border-border bg-[#353535] shadow-soft overflow-hidden browser-container"
                   style="transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);">
-                  
+
                   <!-- New Browser UI -->
                   <div class="browser-tabs-head">
                     <div class="browser-tabs">
                       <div class="browser-tab-open">
-                        <div class="browser-rounded-r"><div class="browser-mask-round-r"></div></div>
+                        <div class="browser-rounded-r">
+                          <div class="browser-mask-round-r"></div>
+                        </div>
                         <span>Hiezy Web Solutions</span>
                         <div class="browser-close-tab">✕</div>
-                        <div class="browser-rounded-l"><div class="browser-mask-round-l"></div></div>
+                        <div class="browser-rounded-l">
+                          <div class="browser-mask-round-l"></div>
+                        </div>
                       </div>
                     </div>
                     <div class="browser-window-opt">
@@ -870,7 +906,8 @@
                     <button>←</button>
                     <button disabled>→</button>
                     <div class="browser-address-bar">
-                      <span class="browser-url-container"><span id="browser-url">www.hiezy.com</span><span id="browser-cursor" class="browser-cursor"></span></span>
+                      <span class="browser-url-container"><span id="browser-url">www.hiezy.com</span><span
+                          id="browser-cursor" class="browser-cursor"></span></span>
                       <span class="browser-star">✰</span>
                     </div>
                     <button>⋮</button>
@@ -911,7 +948,8 @@
                         <div
                           class="rounded-2xl border border-border bg-gradient-to-br from-blue-600/10 to-sky-500/10 sm:bg-gradient-to-br sm:from-blue-600/10 sm:to-sky-500/10 p-4">
                           <div class="font-display text-sm font-bold text-ink">Primary action</div>
-                          <div class="mt-1 text-sm text-slate2 sm:text-slate2">Tap-friendly buttons for action calling.</div>
+                          <div class="mt-1 text-sm text-slate2 sm:text-slate2">Tap-friendly buttons for action calling.
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -919,7 +957,7 @@
                     <div class="md:col-span-3 p-5">
                       <img src="assets/images/brand/hero-preview.webp"
                         class="w-full aspect-[16/9] rounded-2xl object-cover border border-border shadow-sm"
-                        alt="Website mockup on devices" style="">
+                        alt="Website mockup on devices">
                       <div class="mt-4 grid grid-cols-3 gap-3">
                         <div class="rounded-2xl border border-border bg-white sm:bg-white/70 p-3">
                           <div class="text-xs font-display font-semibold text-slate2 sm:text-slate2">Performance</div>
@@ -1027,7 +1065,11 @@
               <h2 class="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-ink leading-[1.1]"><span
                   class="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-ink leading-[1.1]"
                   style="border-image: none; margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse))); margin-right: 0px; margin-bottom: calc(0.5rem * var(--tw-space-y-reverse)); margin-left: 0px; color: rgb(11, 18, 32);">How
-                  We Support<br style="border-image: none;"><span style="background: linear-gradient(to right, var(--accent-2), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent;">Individuals</span> & <span style="background: linear-gradient(to right, var(--accent), var(--accent-2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent;">Businesses</span>.</h2>
+                  We Support<br style="border-image: none;"><span
+                    style="background: linear-gradient(to right, var(--accent-2), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent;">Individuals</span>
+                  & <span
+                    style="background: linear-gradient(to right, var(--accent), var(--accent-2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent;">Businesses</span>.
+              </h2>
             </div>
 
             <p class="text-lg text-slate2 leading-relaxed max-w-md">Every project includes a little extra care and
@@ -1097,12 +1139,15 @@
                 <div class="pt-0 p-8 sm:p-10">
                   <div class="flex items-center justify-between mb-8">
                     <div>
-                      <div class="text-xs font-bold text-slate2 uppercase tracking-widest mb-1">Hiezy Care Standard Package</div>
+                      <div class="text-xs font-bold text-slate2 uppercase tracking-widest mb-1">Hiezy Care Standard
+                        Package</div>
                       <div class="text-xl font-display font-bold text-ink">Launch Foundation</div>
                     </div>
                     <div class="h-14 w-14 rounded-full border border-border flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9 text-blue-600" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9 text-blue-600" fill="currentColor"
+                        viewBox="0 0 16 16">
+                        <path
+                          d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z" />
                       </svg>
                     </div>
                   </div>
@@ -1112,7 +1157,8 @@
                       <div class="text-[10px] font-bold text-accent uppercase tracking-widest mb-2">Audit Status</div>
                       <div class="text-sm font-bold text-ink flex items-center gap-2">
                         <span class="relative flex h-2 w-2">
-                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                          <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                           <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                         </span>
                         Production Ready
@@ -1127,28 +1173,36 @@
                   <!-- Option 2: Micro-Icon Feature Grid -->
                   <div class="mt-8 grid grid-cols-4 gap-4 pt-6 border-t border-border/50">
                     <div class="flex flex-col items-center gap-1.5">
-                      <div class="h-10 w-10 rounded-lg bg-slate-50 border border-border/40 flex items-center justify-center text-slate2">
+                      <div
+                        class="h-10 w-10 rounded-lg bg-slate-50 border border-border/40 flex items-center justify-center text-slate2">
                         <i class="ti ti-messages text-xl"></i>
                       </div>
-                      <span class="text-[10px] font-bold uppercase tracking-tight text-slate text-center leading-tight">Consult</span>
+                      <span
+                        class="text-[10px] font-bold uppercase tracking-tight text-slate text-center leading-tight">Consult</span>
                     </div>
                     <div class="flex flex-col items-center gap-1.5">
-                      <div class="h-10 w-10 rounded-lg bg-slate-50 border border-border/40 flex items-center justify-center text-slate2">
+                      <div
+                        class="h-10 w-10 rounded-lg bg-slate-50 border border-border/40 flex items-center justify-center text-slate2">
                         <i class="ti ti-rocket text-xl"></i>
                       </div>
-                      <span class="text-[10px] font-bold uppercase tracking-tight text-slate text-center leading-tight">Setup</span>
+                      <span
+                        class="text-[10px] font-bold uppercase tracking-tight text-slate text-center leading-tight">Setup</span>
                     </div>
                     <div class="flex flex-col items-center gap-1.5">
-                      <div class="h-10 w-10 rounded-lg bg-slate-50 border border-border/40 flex items-center justify-center text-slate2">
+                      <div
+                        class="h-10 w-10 rounded-lg bg-slate-50 border border-border/40 flex items-center justify-center text-slate2">
                         <i class="ti ti-headset text-xl"></i>
                       </div>
-                      <span class="text-[10px] font-bold uppercase tracking-tight text-slate text-center leading-tight">Support</span>
+                      <span
+                        class="text-[10px] font-bold uppercase tracking-tight text-slate text-center leading-tight">Support</span>
                     </div>
                     <div class="flex flex-col items-center gap-1.5">
-                      <div class="h-10 w-10 rounded-lg bg-slate-50 border border-border/40 flex items-center justify-center text-slate2">
+                      <div
+                        class="h-10 w-10 rounded-lg bg-slate-50 border border-border/40 flex items-center justify-center text-slate2">
                         <i class="ti ti-certificate text-xl"></i>
                       </div>
-                      <span class="text-[10px] font-bold uppercase tracking-tight text-slate text-center leading-tight">Ownership</span>
+                      <span
+                        class="text-[10px] font-bold uppercase tracking-tight text-slate text-center leading-tight">Ownership</span>
                     </div>
                   </div>
                 </div>
@@ -1183,8 +1237,7 @@
 
       <!-- Service tiers & starting prices -->
       <div class="mt-12 grid gap-6 lg:grid-cols-3">
-        <article id="pricing-card-basic"
-          class="flex flex-col h-full rounded-2xl border border-border bg-white/70 p-7"
+        <article id="pricing-card-basic" class="flex flex-col h-full rounded-2xl border border-border bg-white/70 p-7"
           style="will-change: transform, opacity, box-shadow;">
           <div class="flex items-start justify-between gap-4">
             <div class="w-full h-[7.5rem]">
@@ -1331,7 +1384,8 @@
             </p>
           </div>
 
-          <div class="lg:col-span-8 relative grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-12 gap-y-4 md:gap-y-6 engagement-right">
+          <div
+            class="lg:col-span-8 relative grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-12 gap-y-4 md:gap-y-6 engagement-right">
             <!-- Vertical solid line divider for desktop -->
             <div
               class="hidden md:block absolute left-1/2 top-2 bottom-2 w-px border-l border-solid border-ink/20 -translate-x-1/2 z-0">
@@ -1340,7 +1394,8 @@
             <!-- Headers -->
             <div class="order-1 md:order-none relative pt-4 pb-2">
               <div class="flex items-start gap-5">
-                <img src="assets/icons/target.webp" alt="One-time build icon" class="w-14 h-14 object-contain shrink-0 drop-shadow-md icon-pop">
+                <img src="assets/icons/target.webp" alt="One-time build icon"
+                  class="w-14 h-14 object-contain shrink-0 drop-shadow-md icon-pop">
                 <div>
                   <h3 class="font-display text-2xl font-extrabold text-ink">One‑time build</h3>
                   <p class="text-sm font-medium text-slate2 mt-1">Launch it, own it, and manage it.</p>
@@ -1350,7 +1405,8 @@
 
             <div class="order-6 md:order-none relative pt-4 pb-2 md:pl-6">
               <div class="flex items-start gap-5">
-                <img src="assets/icons/calendar.webp" alt="Monthly care icon" class="w-12 h-12 object-contain shrink-0 drop-shadow-md icon-pop">
+                <img src="assets/icons/calendar.webp" alt="Monthly care icon"
+                  class="w-12 h-12 object-contain shrink-0 drop-shadow-md icon-pop">
                 <div>
                   <h3 class="font-display text-2xl font-extrabold text-ink">Monthly care</h3>
                   <p class="text-sm font-medium text-slate2 mt-1">Starting at $49/mo. Includes a free custom domain and
@@ -1366,7 +1422,12 @@
             </div>
 
             <div class="order-7 md:order-none flex gap-4 cursor-default text-slate2 md:pl-6 feature-row">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-check-icon lucide-check-check shrink-0 mt-0.5 text-accent"><path d="M18 6 7 17l-5-5"/><path d="m22 10-7.5 7.5L13 16"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-check-check-icon lucide-check-check shrink-0 mt-0.5 text-accent">
+                <path d="M18 6 7 17l-5-5" />
+                <path d="m22 10-7.5 7.5L13 16" />
+              </svg>
               <span>Frequent updates, backups, and fixes</span>
             </div>
 
@@ -1379,7 +1440,12 @@
             </div>
 
             <div class="order-8 md:order-none flex gap-4 cursor-default text-slate2 md:pl-6 feature-row">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-check-icon lucide-check-check shrink-0 mt-0.5 text-accent"><path d="M18 6 7 17l-5-5"/><path d="m22 10-7.5 7.5L13 16"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-check-check-icon lucide-check-check shrink-0 mt-0.5 text-accent">
+                <path d="M18 6 7 17l-5-5" />
+                <path d="m22 10-7.5 7.5L13 16" />
+              </svg>
               <span>Priority support 24/7</span>
             </div>
 
@@ -1390,7 +1456,12 @@
             </div>
 
             <div class="order-9 md:order-none flex gap-4 cursor-default text-slate2 md:pl-6 feature-row">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-check-icon lucide-check-check shrink-0 mt-0.5 text-accent"><path d="M18 6 7 17l-5-5"/><path d="m22 10-7.5 7.5L13 16"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-check-check-icon lucide-check-check shrink-0 mt-0.5 text-accent">
+                <path d="M18 6 7 17l-5-5" />
+                <path d="m22 10-7.5 7.5L13 16" />
+              </svg>
               <span class="font-bold text-ink">Custom domain & hosting fees included</span>
             </div>
 
@@ -1453,17 +1524,18 @@
             <div id="inspiration-content"
               class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center transition-all duration-500 opacity-100">
               <!-- Initial content (Dashboards) -->
-              <div class="lg:col-span-7 relative group mb-12 lg:mb-0">
+              <div class="lg:col-span-7 relative group mb-12 lg:mb-0" id="inspiration-stack">
                 <!-- Stacked Page Preview Effect -->
                 <div
                   class="relative z-20 rounded-2xl border border-border bg-white p-2 shadow-2xl transition-transform duration-500 group-hover:-translate-y-2">
                   <img src="" class="rounded-xl w-full aspect-[16/10] object-cover"
-                    alt="Modern Dashboard Design Inspiration">
+                    alt="Modern Dashboard Design Inspiration" id="inspiration-main-img">
                 </div>
                 <div
-                  class="absolute -top-3 -right-3 sm:-top-6 sm:-right-6 z-10 w-[60%] sm:w-2/3 rounded-2xl border border-border bg-white p-2 shadow-xl transition-transform duration-700 group-hover:-translate-y-4 group-hover:translate-x-2">
+                  class="absolute -top-3 -right-3 sm:-top-6 sm:-right-6 z-10 w-[60%] sm:w-2/3 rounded-2xl border border-border bg-white p-2 shadow-xl transition-transform duration-700 group-hover:-translate-y-4 group-hover:translate-x-2 cursor-pointer"
+                  onclick="swapInspirationImages(this)">
                   <img src="" class="rounded-xl w-full aspect-[16/10] object-cover"
-                    alt="E-commerce Website Design Inspiration">
+                    alt="E-commerce Website Design Inspiration" id="inspiration-secondary-img">
                 </div>
               </div>
 
@@ -1482,8 +1554,7 @@
                   modular components, and a sophisticated muted palette.
                 </p>
 
-                <a href="#"
-                  class="btn-neobrutal-secondary mt-6 inline-flex items-center justify-center gap-2 bg-white px-5 py-2.5 font-sansita text-base font-semibold text-ink focus-ring">
+                <a href="inspirations.html" class="mt-6 inline-flex items-center justify-center gap-2 bg-white border border-ink px-5 py-2.5 font-sansita text-base font-semibold text-ink shadow-[4px_4px_0px_0px_#0b1220] transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_#0b1220] active:translate-x-[0px] active:translate-y-[0px] active:shadow-[2px_2px_0px_0px_#0b1220] focus-ring">
                   Explore gallery <i class="ti ti-arrow-right"></i>
                 </a>
               </div>
@@ -1593,10 +1664,12 @@
 
 
         <!-- Main Content: Form, FAQ & Visual -->
-        <div class="flex flex-col lg:flex-row bg-white rounded-3xl border border-border shadow-soft overflow-hidden mb-16">
+        <div
+          class="flex flex-col lg:flex-row bg-white rounded-3xl border border-border shadow-soft overflow-hidden mb-16">
 
           <!-- Left Column: Form (Readable) -->
-          <div class="w-full lg:w-[44%] p-6 sm:p-10 relative bg-white border-b lg:border-b-0 lg:border-r border-border flex flex-col">
+          <div
+            class="w-full lg:w-[44%] p-6 sm:p-10 relative bg-white border-b lg:border-b-0 lg:border-r border-border flex flex-col">
             <div class="flex-1 flex flex-col">
               <div class="mb-8 border-b border-border pb-6 flex items-center gap-5">
                 <div
@@ -1624,102 +1697,113 @@
                   <!-- STEP 1 -->
                   <div id="step1" class="[grid-area:1/1] transition-opacity duration-300 flex flex-col z-10">
                     <div class="grid gap-4">
-                    <!-- Name -->
-                    <div class="relative">
-                      <input id="name" name="name" type="text" placeholder=" " autocomplete="name"
-                        class="peer w-full rounded-xl border border-slate-300 bg-white px-4 pb-2 pt-6 text-base text-ink placeholder-transparent shadow-sm focus:border-accent focus:ring-1 focus:ring-accent transition-colors focus:outline-none"
-                        required="">
-                      <label for="name"
-                        class="absolute left-4 top-4 z-10 origin-[0] -translate-y-2.5 scale-75 transform text-slate-500 font-display font-bold text-xs transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-2.5 peer-focus:scale-75 peer-focus:text-accent cursor-text">Full Name</label>
-                    </div>
-
-                    <!-- Business -->
-                    <div class="relative">
-                      <input id="business" name="business" type="text" placeholder=" " autocomplete="organization"
-                        class="peer w-full rounded-xl border border-slate-300 bg-white px-4 pb-2 pt-6 text-base text-ink placeholder-transparent shadow-sm focus:border-accent focus:ring-1 focus:ring-accent transition-colors focus:outline-none"
-                        required="">
-                      <label for="business"
-                        class="absolute left-4 top-4 z-10 origin-[0] -translate-y-2.5 scale-75 transform text-slate-500 font-display font-bold text-xs transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-2.5 peer-focus:scale-75 peer-focus:text-accent cursor-text">Business Name</label>
-                    </div>
-
-                    <!-- Email -->
-                    <div class="relative">
-                      <input id="email" name="email" type="email" placeholder=" " autocomplete="email"
-                        class="peer w-full rounded-xl border border-slate-300 bg-white px-4 pb-2 pt-6 text-base text-ink placeholder-transparent shadow-sm focus:border-accent focus:ring-1 focus:ring-accent transition-colors focus:outline-none"
-                        required="">
-                      <label for="email"
-                        class="absolute left-4 top-4 z-10 origin-[0] -translate-y-2.5 scale-75 transform text-slate-500 font-display font-bold text-xs transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-2.5 peer-focus:scale-75 peer-focus:text-accent cursor-text">Email Address</label>
-                    </div>
-
-                    <!-- Phone -->
-                    <div class="relative">
-                      <input id="phone" name="phone" type="tel" placeholder=" " autocomplete="tel"
-                        class="peer w-full rounded-xl border border-slate-300 bg-white px-4 pb-2 pt-6 text-base text-ink placeholder-transparent shadow-sm focus:border-accent focus:ring-1 focus:ring-accent transition-colors focus:outline-none">
-                      <label for="phone"
-                        class="absolute left-4 top-4 z-10 origin-[0] -translate-y-2.5 scale-75 transform text-slate-500 font-display font-bold text-xs transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-2.5 peer-focus:scale-75 peer-focus:text-accent cursor-text">Phone (optional)</label>
-                    </div>
-                  </div>
-
-                  <div class="pt-6 mt-auto flex flex-col">
-                    <button type="button" id="nextBtn"
-                      class="btn-neobrutal inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-3.5 font-sansita text-lg font-bold focus-ring w-full">
-                      Next Step
-                      <i class="ti ti-arrow-right"></i>
-                    </button>
-                    <p id="step1Error" class="text-xs text-red-500 mt-3 hidden font-bold">Please fill in required fields.</p>
-                  </div>
-                </div>
-
-                <!-- STEP 2 -->
-                <div id="step2" class="[grid-area:1/1] invisible pointer-events-none transition-opacity duration-300 opacity-0 flex flex-col z-0">
-                  <div class="grid gap-4">
-                    <div class="relative">
-                      <input id="website" name="website" type="url" placeholder=" " autocomplete="url"
-                        class="peer w-full rounded-xl border border-slate-300 bg-white px-4 pb-2 pt-6 text-base text-ink placeholder-transparent shadow-sm focus:border-accent focus:ring-1 focus:ring-accent transition-colors focus:outline-none">
-                      <label for="website"
-                        class="absolute left-4 top-4 z-10 origin-[0] -translate-y-2.5 scale-75 transform text-slate-500 font-display font-bold text-xs transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-2.5 peer-focus:scale-75 peer-focus:text-accent cursor-text">Current Website (optional)</label>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                      <div>
-                        <label class="font-display text-xs font-bold text-slate-500 pl-1" for="need">What do you need?</label>
-                        <select id="need" name="need"
-                          class="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-3 text-ink shadow-sm focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none transition-colors text-sm">
-                          <option>New website</option>
-                          <option>Redesign</option>
-                          <option>Updates</option>
-                          <option>Not sure</option>
-                        </select>
+                      <!-- Name -->
+                      <div class="relative">
+                        <input id="name" name="name" type="text" placeholder=" " autocomplete="name"
+                          class="peer w-full rounded-xl border border-slate-300 bg-white px-4 pb-2 pt-6 text-base text-ink placeholder-transparent shadow-sm focus:border-accent focus:ring-1 focus:ring-accent transition-colors focus:outline-none"
+                          required="">
+                        <label for="name"
+                          class="absolute left-4 top-4 z-10 origin-[0] -translate-y-2.5 scale-75 transform text-slate-500 font-display font-bold text-xs transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-2.5 peer-focus:scale-75 peer-focus:text-accent cursor-text">Full
+                          Name</label>
                       </div>
-                      <div>
-                        <label class="font-display text-xs font-bold text-slate-500 pl-1" for="budget">Budget range?</label>
-                        <select id="budget" name="budget"
-                          class="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-3 text-ink shadow-sm focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none transition-colors text-sm">
-                          <option>Under $500</option>
-                          <option>$500–$1,500</option>
-                          <option>$1,500+</option>
-                        </select>
+
+                      <!-- Business -->
+                      <div class="relative">
+                        <input id="business" name="business" type="text" placeholder=" " autocomplete="organization"
+                          class="peer w-full rounded-xl border border-slate-300 bg-white px-4 pb-2 pt-6 text-base text-ink placeholder-transparent shadow-sm focus:border-accent focus:ring-1 focus:ring-accent transition-colors focus:outline-none"
+                          required="">
+                        <label for="business"
+                          class="absolute left-4 top-4 z-10 origin-[0] -translate-y-2.5 scale-75 transform text-slate-500 font-display font-bold text-xs transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-2.5 peer-focus:scale-75 peer-focus:text-accent cursor-text">Business
+                          Name</label>
+                      </div>
+
+                      <!-- Email -->
+                      <div class="relative">
+                        <input id="email" name="email" type="email" placeholder=" " autocomplete="email"
+                          class="peer w-full rounded-xl border border-slate-300 bg-white px-4 pb-2 pt-6 text-base text-ink placeholder-transparent shadow-sm focus:border-accent focus:ring-1 focus:ring-accent transition-colors focus:outline-none"
+                          required="">
+                        <label for="email"
+                          class="absolute left-4 top-4 z-10 origin-[0] -translate-y-2.5 scale-75 transform text-slate-500 font-display font-bold text-xs transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-2.5 peer-focus:scale-75 peer-focus:text-accent cursor-text">Email
+                          Address</label>
+                      </div>
+
+                      <!-- Phone -->
+                      <div class="relative">
+                        <input id="phone" name="phone" type="tel" placeholder=" " autocomplete="tel"
+                          class="peer w-full rounded-xl border border-slate-300 bg-white px-4 pb-2 pt-6 text-base text-ink placeholder-transparent shadow-sm focus:border-accent focus:ring-1 focus:ring-accent transition-colors focus:outline-none">
+                        <label for="phone"
+                          class="absolute left-4 top-4 z-10 origin-[0] -translate-y-2.5 scale-75 transform text-slate-500 font-display font-bold text-xs transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-2.5 peer-focus:scale-75 peer-focus:text-accent cursor-text">Phone
+                          (optional)</label>
                       </div>
                     </div>
-                    <div class="relative">
-                      <textarea id="goal" name="goal" rows="3" placeholder=" "
-                        class="peer w-full rounded-xl border border-slate-300 bg-white px-4 pb-2 pt-6 text-base text-ink placeholder-transparent shadow-sm focus:border-accent focus:ring-1 focus:ring-accent transition-colors focus:outline-none"
-                        required=""></textarea>
-                      <label for="goal"
-                        class="absolute left-4 top-4 z-10 origin-[0] -translate-y-2.5 scale-75 transform text-slate-500 font-display font-bold text-xs transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-2.5 peer-focus:scale-75 peer-focus:text-accent cursor-text">What's your main goal?</label>
+
+                    <div class="pt-6 mt-auto flex flex-col">
+                      <button type="button" id="nextBtn"
+                        class="btn-neobrutal inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-3.5 font-sansita text-lg font-bold focus-ring w-full">
+                        Next Step
+                        <i class="ti ti-arrow-right pt-1"></i>
+                      </button>
+                      <p id="step1Error" class="text-xs text-red-500 mt-3 hidden font-bold">Please fill in required
+                        fields.</p>
                     </div>
                   </div>
 
-                  <div class="pt-6 flex items-center justify-end gap-4 mt-auto">
-                    <button type="button" id="backBtn" aria-label="Go back"
-                      class="inline-flex items-center justify-center text-slate2 hover:text-ink transition focus-ring p-1.5">
-                      <i class="ti ti-arrow-left text-xl font-black"></i>
-                    </button>
-                    <button type="submit" id="submitBtn" aria-label="Submit"
-                      class="btn-neobrutal inline-flex items-center justify-center gap-3 bg-white text-ink px-8 py-3.5 font-sansita text-lg font-bold focus-ring flex-1">
-                      Send Request →
-                    </button>
+                  <!-- STEP 2 -->
+                  <div id="step2"
+                    class="[grid-area:1/1] invisible pointer-events-none transition-opacity duration-300 opacity-0 flex flex-col z-0">
+                    <div class="grid gap-4">
+                      <div class="relative">
+                        <input id="website" name="website" type="url" placeholder=" " autocomplete="url"
+                          class="peer w-full rounded-xl border border-slate-300 bg-white px-4 pb-2 pt-6 text-base text-ink placeholder-transparent shadow-sm focus:border-accent focus:ring-1 focus:ring-accent transition-colors focus:outline-none">
+                        <label for="website"
+                          class="absolute left-4 top-4 z-10 origin-[0] -translate-y-2.5 scale-75 transform text-slate-500 font-display font-bold text-xs transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-2.5 peer-focus:scale-75 peer-focus:text-accent cursor-text">Current
+                          Website (optional)</label>
+                      </div>
+                      <div class="grid grid-cols-2 gap-4">
+                        <div>
+                          <label class="font-display text-xs font-bold text-slate-500 pl-1" for="need">What do you
+                            need?</label>
+                          <select id="need" name="need"
+                            class="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-3 text-ink shadow-sm focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none transition-colors text-sm">
+                            <option>New website</option>
+                            <option>Redesign</option>
+                            <option>Updates</option>
+                            <option>Not sure</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label class="font-display text-xs font-bold text-slate-500 pl-1" for="budget">Budget
+                            range?</label>
+                          <select id="budget" name="budget"
+                            class="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-3 text-ink shadow-sm focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none transition-colors text-sm">
+                            <option>Under $500</option>
+                            <option>$500–$1,500</option>
+                            <option>$1,500+</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="relative">
+                        <textarea id="goal" name="goal" rows="3" placeholder=" "
+                          class="peer w-full rounded-xl border border-slate-300 bg-white px-4 pb-2 pt-6 text-base text-ink placeholder-transparent shadow-sm focus:border-accent focus:ring-1 focus:ring-accent transition-colors focus:outline-none"
+                          required=""></textarea>
+                        <label for="goal"
+                          class="absolute left-4 top-4 z-10 origin-[0] -translate-y-2.5 scale-75 transform text-slate-500 font-display font-bold text-xs transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-2.5 peer-focus:scale-75 peer-focus:text-accent cursor-text">What's
+                          your main goal?</label>
+                      </div>
+                    </div>
+
+                    <div class="pt-6 flex items-center justify-end gap-4 mt-auto">
+                      <button type="button" id="backBtn" aria-label="Go back"
+                        class="inline-flex items-center justify-center text-slate2 hover:text-ink transition focus-ring p-1.5">
+                        <i class="ti ti-arrow-left text-xl font-black"></i>
+                      </button>
+                      <button type="submit" id="submitBtn" aria-label="Submit"
+                        class="btn-neobrutal inline-flex items-center justify-center gap-3 bg-white text-ink px-8 py-3.5 font-sansita text-lg font-bold focus-ring flex-1">
+                        Send Request
+                        <i class="ti ti-arrow-right pt-1"></i>
+                      </button>
+                    </div>
                   </div>
-                </div>
                 </div>
 
                 <div id="formMsg"
@@ -1735,86 +1819,111 @@
           </div>
 
           <!-- Middle Column: FAQ (Enhanced Readability) -->
-          <div class="w-full lg:w-[31%] p-6 sm:p-10 bg-slate-50/50 border-b lg:border-b-0 lg:border-r border-border flex flex-col">
+          <div
+            class="w-full lg:w-[31%] p-6 sm:p-10 bg-slate-50/50 border-b lg:border-b-0 lg:border-r border-border flex flex-col">
             <div class="flex items-center gap-4 mb-8">
-              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white border border-border shadow-sm shrink-0">
-                <img src="assets/icons/question-mark.webp" alt="FAQ icon" class="w-6 h-6 object-contain shrink-0 drop-shadow-sm">
+              <div
+                class="flex h-10 w-10 items-center justify-center rounded-xl bg-white border border-border shadow-sm shrink-0">
+                <img src="assets/icons/question-mark.webp" alt="FAQ icon"
+                  class="w-6 h-6 object-contain shrink-0 drop-shadow-sm">
               </div>
               <h3 class="font-display text-xl font-extrabold tracking-tight text-ink">FAQ</h3>
             </div>
 
             <div class="space-y-3">
-              <details class="group rounded-xl border border-border bg-white p-4 shadow-sm transition-all hover:border-slate-300">
+              <details
+                class="group rounded-xl border border-border bg-white p-4 shadow-sm transition-all hover:border-slate-300">
                 <summary class="cursor-pointer list-none flex items-center justify-between gap-3 focus-ring">
                   <span class="font-display text-sm font-medium text-ink leading-tight">How long does it take?</span>
                   <i class="ti ti-plus text-xs text-slate2 group-open:rotate-45 transition"></i>
                 </summary>
-                <p class="mt-3 text-sm leading-relaxed text-slate2">Simple sites can be ready in just a few days. Bigger sites usually take 1–2 weeks.</p>
+                <p class="mt-3 text-sm leading-relaxed text-slate2">Simple sites can be ready in just a few days. Bigger
+                  sites usually take 1–2 weeks.</p>
               </details>
 
-              <details class="group rounded-xl border border-border bg-white p-4 shadow-sm transition-all hover:border-slate-300">
+              <details
+                class="group rounded-xl border border-border bg-white p-4 shadow-sm transition-all hover:border-slate-300">
                 <summary class="cursor-pointer list-none flex items-center justify-between gap-3 focus-ring">
                   <span class="font-display text-sm font-medium text-ink leading-tight">Do I own my website?</span>
                   <i class="ti ti-plus text-xs text-slate2 group-open:rotate-45 transition"></i>
                 </summary>
-                <p class="mt-3 text-sm leading-relaxed text-slate2">Yes. You get full ownership, all files, and a clear handoff — you're always in control.</p>
+                <p class="mt-3 text-sm leading-relaxed text-slate2">Yes. You get full ownership, all files, and a clear
+                  handoff — you're always in control.</p>
               </details>
 
-              <details class="group rounded-xl border border-border bg-white p-4 shadow-sm transition-all hover:border-slate-300">
+              <details
+                class="group rounded-xl border border-border bg-white p-4 shadow-sm transition-all hover:border-slate-300">
                 <summary class="cursor-pointer list-none flex items-center justify-between gap-3 focus-ring">
                   <span class="font-display text-sm font-medium text-ink leading-tight">Help with hosting?</span>
                   <i class="ti ti-plus text-xs text-slate2 group-open:rotate-45 transition"></i>
                 </summary>
-                <p class="mt-3 text-sm leading-relaxed text-slate2">We handle expert setup. Ongoing fees are paid directly to providers ($5-$15/mo) for total control.</p>
+                <p class="mt-3 text-sm leading-relaxed text-slate2">We handle expert setup. Ongoing fees are paid
+                  directly to providers ($5-$15/mo) for total control.</p>
               </details>
 
-              <details class="group rounded-xl border border-border bg-white p-4 shadow-sm transition-all hover:border-slate-300">
+              <details
+                class="group rounded-xl border border-border bg-white p-4 shadow-sm transition-all hover:border-slate-300">
                 <summary class="cursor-pointer list-none flex items-center justify-between gap-3 focus-ring">
                   <span class="font-display text-sm font-medium text-ink leading-tight">Need later changes?</span>
                   <i class="ti ti-plus text-xs text-slate2 group-open:rotate-45 transition"></i>
                 </summary>
-                <p class="mt-3 text-sm leading-relaxed text-slate2">You can make edits yourself, or our monthly care plan handles everything for you.</p>
+                <p class="mt-3 text-sm leading-relaxed text-slate2">You can make edits yourself, or our monthly care
+                  plan handles everything for you.</p>
               </details>
             </div>
 
             <div class="mt-auto pt-6 border-t border-border">
-              <a href="mailto:hiezy.info@gmail.com" class="inline-flex items-center gap-3 text-sm text-accent hover:text-ink transition font-black focus-ring rounded-md">
+              <a href="mailto:hiezy.info@gmail.com"
+                class="inline-flex items-center gap-3 text-sm text-accent hover:text-ink transition font-black focus-ring rounded-md">
                 <i class="ti ti-mail text-base"></i> Email us directly
               </a>
             </div>
           </div>
 
           <!-- Right Column: Visual -->
-          <div class="w-full lg:w-[25%] bg-accent2 p-6 sm:p-10 flex flex-col justify-between items-center text-center text-white relative min-h-[350px]">
+          <div
+            class="w-full lg:w-[25%] bg-accent2 p-6 sm:p-10 flex flex-col justify-between items-center text-center text-white relative min-h-[350px]">
             <div class="flex gap-4 mb-8">
-              <a href="mailto:hiezy.info@gmail.com" aria-label="Email Us" class="text-white/80 hover:text-white transition focus-ring rounded-md p-1"><i class="ti ti-mail text-2xl"></i></a>
-              <a href="tel:+17786970065" aria-label="Call Us" class="text-white/80 hover:text-white transition focus-ring rounded-md p-1"><i class="ti ti-phone text-2xl"></i></a>
+              <a href="mailto:hiezy.info@gmail.com" aria-label="Email Us"
+                class="text-white/80 hover:text-white transition focus-ring rounded-md p-1"><i
+                  class="ti ti-mail text-2xl"></i></a>
+              <a href="tel:+17786970065" aria-label="Call Us"
+                class="text-white/80 hover:text-white transition focus-ring rounded-md p-1"><i
+                  class="ti ti-phone text-2xl"></i></a>
             </div>
 
             <div class="flex-1 flex flex-col justify-center items-center">
-              <img src="assets/icons/rocket.webp" alt="Graphic" class="w-32 h-32 mb-8 drop-shadow-xl" style="filter: brightness(0) invert(1);">
-              
+              <img src="assets/icons/rocket.webp" alt="Graphic" class="w-32 h-32 mb-8 drop-shadow-xl"
+                style="filter: brightness(0) invert(1);">
+
               <h3 class="font-display text-3xl font-extrabold mb-4">Let's Work Together</h3>
               <p class="text-emerald-50 mb-8 text-sm leading-relaxed max-w-xs">
                 We build professional websites and software solutions—at a price that fits every budget.
               </p>
-              
+
               <div class="relative inline-block rotate-[-1deg] select-none group mt-4">
                 <!-- Sketchy Offset Shadow -->
                 <div class="absolute inset-0 bg-ink/10 translate-x-1.5 translate-y-1.5 rounded-sm"></div>
                 <!-- Main Badge -->
                 <div class="relative bg-[#ffb703] border-2 border-ink px-5 py-2.5 flex items-center gap-4 shadow-sm">
                   <div class="flex flex-col items-start leading-none">
-                    <span class="text-[8px] font-display font-black uppercase tracking-tighter text-ink/60 mb-0.5">Starting at</span>
+                    <span
+                      class="text-[8px] font-display font-black uppercase tracking-tighter text-ink/60 mb-0.5">Starting
+                      at</span>
                     <span class="text-2xl font-display font-black text-ink">$149</span>
                   </div>
                   <!-- Vertical Divider -->
                   <div class="w-px h-8 bg-ink/20"></div>
-                  <div class="text-[10px] font-display font-black uppercase tracking-[0.15em] text-ink leading-tight text-left">
+                  <div
+                    class="text-[10px] font-display font-black uppercase tracking-[0.15em] text-ink leading-tight text-left">
                     Professional<br>Websites
                   </div>
                   <!-- Small Sparkle SVG -->
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="absolute -top-2 -right-2 text-ink"><path d="m12 3 1.912 5.813a2 2 0 0 0 1.275 1.275L21 12l-5.813 1.912a2 2 0 0 0-1.275 1.275L12 21l-1.912-5.813a2 2 0 0 0-1.275-1.275L3 12l5.813-1.912a2 2 0 0 0 1.275-1.275L12 3Z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"
+                    class="absolute -top-2 -right-2 text-ink">
+                    <path
+                      d="m12 3 1.912 5.813a2 2 0 0 0 1.275 1.275L21 12l-5.813 1.912a2 2 0 0 0-1.275 1.275L12 21l-1.912-5.813a2 2 0 0 0-1.275-1.275L3 12l5.813-1.912a2 2 0 0 0 1.275-1.275L12 3Z" />
+                  </svg>
                 </div>
               </div>
             </div>
@@ -2039,72 +2148,52 @@
       // Transition to Step 2
       step1.classList.add('opacity-0');
       setTimeout(() => {
-        step1.classList.add('invisible', 'pointer-events-none', 'z-0');
+        step1.classList.add('invisible', 'pointer-events-none');
         step1.classList.remove('z-10');
-        step2.classList.remove('invisible', 'pointer-events-none', 'z-0');
+        step2.classList.remove('invisible', 'pointer-events-none');
         step2.classList.add('z-10');
-        setTimeout(() => step2.classList.remove('opacity-0'), 50);
+        setTimeout(() => step2.classList.remove('opacity-0'), 10);
+        stepIndicator.textContent = 'Step 2 of 2';
+        dot1.classList.replace('bg-ink', 'bg-[#e2e8f0]');
+        dot2.classList.replace('bg-[#e2e8f0]', 'bg-ink');
       }, 300);
-
-      stepIndicator.textContent = 'Step 2 of 2';
-      dot1.classList.replace('bg-ink', 'bg-[#e2e8f0]');
-      dot2.classList.replace('bg-[#e2e8f0]', 'bg-ink');
     });
 
     backBtn?.addEventListener('click', () => {
       step2.classList.add('opacity-0');
       setTimeout(() => {
-        step2.classList.add('invisible', 'pointer-events-none', 'z-0');
+        step2.classList.add('invisible', 'pointer-events-none');
         step2.classList.remove('z-10');
-        step1.classList.remove('invisible', 'pointer-events-none', 'z-0');
+        step1.classList.remove('invisible', 'pointer-events-none');
         step1.classList.add('z-10');
-        setTimeout(() => step1.classList.remove('opacity-0'), 50);
+        setTimeout(() => step1.classList.remove('opacity-0'), 10);
+        stepIndicator.textContent = 'Step 1 of 2';
+        dot2.classList.replace('bg-ink', 'bg-[#e2e8f0]');
+        dot1.classList.replace('bg-[#e2e8f0]', 'bg-ink');
       }, 300);
-
-      stepIndicator.textContent = 'Step 1 of 2';
-      dot2.classList.replace('bg-ink', 'bg-[#e2e8f0]');
-      dot1.classList.replace('bg-[#e2e8f0]', 'bg-ink');
     });
-
-    // Form Submission
-    function enc(v) { return encodeURIComponent((v || '').toString().trim()); }
 
     quoteForm?.addEventListener('submit', (e) => {
       e.preventDefault();
+      const formData = new FormData(quoteForm);
+      const data = Object.fromEntries(formData.entries());
 
-      // Validate Step 2
-      const goalEl = document.getElementById('goal');
-      if (!goalEl.value.trim()) {
-        goalEl.classList.add('border-red-500/50');
-        return;
-      }
-
-      // Simulate loading spinner
-      const originalHtml = submitBtn.innerHTML;
-      submitBtn.innerHTML = `<i class="ti ti-refresh-dot animate-spin text-lg"></i> <span>Sending...</span>`;
       submitBtn.disabled = true;
-      submitBtn.classList.add('opacity-80', 'cursor-not-allowed');
+      submitBtn.innerHTML = '<i class="ti ti-loader animate-spin text-xl"></i>';
 
+      // Simulate submission
       setTimeout(() => {
-        // Success
-        submitBtn.innerHTML = originalHtml;
-        submitBtn.disabled = false;
-        submitBtn.classList.remove('opacity-80', 'cursor-not-allowed');
-
-        step2.classList.add('hidden');
-        stepIndicator.parentElement.classList.add('hidden');
-        formMsg.classList.remove('hidden');
-
-        // Email logic
-        const data = new FormData(quoteForm);
-        const subject = `Quick Quote Request — ${data.get('business') || 'New inquiry'}`;
-        const body =
-          `Name: ${data.get('name') || ''}\nBusiness: ${data.get('business') || ''}\nEmail: ${data.get('email') || ''}\nPhone: ${data.get('phone') || ''}\nCurrent website: ${data.get('website') || ''}\n\nNeed: ${data.get('need') || ''}\nPages: ${data.get('pages') || ''}\nBudget: ${data.get('budget') || ''}\nTimeline: ${data.get('timeline') || ''}\n\nGoal:\n${data.get('goal') || ''}\n\n— Sent from Hiezy.com`;
-
-        const mailto = `mailto:hiezy.info@gmail.com?subject=${enc(subject)}&body=${enc(body)}`;
-        window.location.href = mailto;
-        formMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }, 800);
+        quoteForm.innerHTML = `
+          <div class="flex flex-col items-center justify-center py-12 text-center animate-in fade-in zoom-in duration-500">
+            <div class="h-20 w-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-6">
+              <i class="ti ti-check text-4xl"></i>
+            </div>
+            <h4 class="font-display text-2xl font-bold text-ink mb-2">Quote Request Sent!</h4>
+            <p class="text-slate2">Thanks ${data.name.split(' ')[0]}, we'll get back to you within 1 business day.</p>
+            <button type="button" onclick="location.reload()" class="mt-8 text-accent font-bold hover:underline">Send another request</button>
+          </div>
+        `;
+      }, 1500);
     });
   </script>
 
@@ -2281,56 +2370,7 @@
 
     function renderInspiration() {
       const data = inspirationData[currentCategory][currentProjectIndex];
-      const container = document.getElementById('inspiration-content');
-
-      // Phase 1: Start exit animation
-      container.classList.add('inspiration-exit');
-
-      setTimeout(() => {
-        // Phase 2: Update HTML content
-        container.innerHTML = `
-          <div class="lg:col-span-7 relative group mb-12 lg:mb-0">
-            <div class="relative z-20 rounded-2xl border border-border bg-white p-2 shadow-2xl transition-transform duration-500 group-hover:-translate-y-2">
-              <img src="${data.img1}" class="rounded-xl w-full aspect-[16/10] object-cover" alt="Primary Page">
-            </div>
-            <div class="absolute -top-3 -right-3 sm:-top-6 sm:-right-6 z-10 w-[60%] sm:w-2/3 rounded-2xl border border-border bg-white p-2 shadow-xl transition-transform duration-700 group-hover:-translate-y-4 group-hover:translate-x-2">
-              <img src="${data.img2}" class="rounded-xl w-full aspect-[16/10] object-cover" alt="Secondary Page">
-            </div>
-            
-            <!-- Mini Carousel Controls -->
-            <div class="absolute -bottom-6 right-0 z-30 flex items-center gap-2">
-              <button onclick="cycleProject(-1)" aria-label="Previous portfolio project" class="h-12 w-12 rounded-full bg-white border border-border shadow-lg flex items-center justify-center text-ink hover:text-accent hover:border-accent transition-all active:scale-95">
-                <i class="ti ti-arrow-left" aria-hidden="true"></i>
-              </button>
-              <button onclick="cycleProject(1)" aria-label="Next portfolio project" class="h-12 w-12 rounded-full bg-white border border-border shadow-lg flex items-center justify-center text-ink hover:text-accent hover:border-accent transition-all active:scale-95">
-                <i class="ti ti-arrow-right" aria-hidden="true"></i>
-              </button>
-            </div>
-          </div>
-          
-          <div class="lg:col-span-5 flex flex-col justify-center">
-            <div class="flex items-center gap-3 mb-6">
-              ${data.tags.map((tag, index) => `
-                <span class="px-3 py-1 ${index === 0 ? 'bg-accent/10 text-accent' : 'bg-slate-100 text-slate2'} rounded-full text-[10px] font-bold uppercase tracking-widest">${tag}</span>
-              `).join('')}
-            </div>
-            <h3 class="font-display text-3xl sm:text-4xl font-extrabold text-ink mb-6">${data.title}</h3>
-            <p class="text-lg text-slate2 leading-relaxed mb-8">${data.description}</p>
-
-            <a href="inspirations.html" class="btn-neobrutal-secondary mt-6 inline-flex items-center justify-center gap-2 bg-white px-5 py-2.5 font-sansita text-base font-semibold text-ink focus-ring">
-              Explore gallery <i class="ti ti-arrow-right"></i>
-            </a>
-          </div>
-        `;
-
-        // Phase 3: Start entrance animation
-        // Double rAF is the most reliable way to trigger transitions after DOM updates in Safari
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            container.classList.remove('inspiration-exit');
-          });
-        });
-      }, 400);
+      InspirationEngine.render(data);
     }
 
     function switchInspiration(category) {
@@ -2397,21 +2437,25 @@
       const videoOverlay = document.getElementById('videoOverlay');
       const playIcon = document.getElementById('playIcon');
 
-      if (introVideo && videoOverlay) {
-        videoOverlay.addEventListener('click', () => {
-          introVideo.play();
-          videoOverlay.classList.add('opacity-0', 'pointer-events-none');
-        });
+      if (introVideo) {
+        // Video playing handled by native controls or background policy.
+        // If we want a click-to-play overlay, ensure the overlay exists.
+        if (videoOverlay) {
+          videoOverlay.addEventListener('click', () => {
+            introVideo.play();
+            videoOverlay.classList.add('opacity-0', 'pointer-events-none');
+          });
 
-        introVideo.addEventListener('click', () => {
-          introVideo.pause();
-          videoOverlay.classList.remove('opacity-0', 'pointer-events-none');
-        });
+          introVideo.addEventListener('click', () => {
+            introVideo.pause();
+            videoOverlay.classList.remove('opacity-0', 'pointer-events-none');
+          });
 
-        introVideo.addEventListener('ended', () => {
-          videoOverlay.classList.remove('opacity-0', 'pointer-events-none');
-          introVideo.load(); // Reset to show the first frame/poster
-        });
+          introVideo.addEventListener('ended', () => {
+            videoOverlay.classList.remove('opacity-0', 'pointer-events-none');
+            introVideo.load();
+          });
+        }
       }
     });
 
@@ -2765,11 +2809,12 @@
             progress = 100;
             updateUI();
 
+
             setTimeout(() => {
               if (preloader) {
                 preloader.style.transform = 'translateY(-100%)';
                 preloader.style.pointerEvents = 'none';
-                document.body.style.overflow = 'auto'; // Re-enable scrolling if disabled
+                document.body.style.overflow = 'auto';
               }
               setTimeout(loadThirdPartyScripts, 200);
             }, 600);
@@ -2849,6 +2894,4 @@
     })();
   </script>
 </body>
-
-
 </html>
