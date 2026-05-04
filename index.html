@@ -1121,19 +1121,26 @@
                 PLUS</div>
 
               <div class="bg-white border border-border p-2 rounded-[2rem] shadow-2xl">
-                <div class="relative rounded-[1.5rem] overflow-hidden aspect-[16/10.5] group">
-                  <video id="introVideo" style="border: white 1px solid" preload="metadata" playsinline=""
+                <div class="relative rounded-[1.5rem] overflow-hidden aspect-[16/10.5] group bg-slate-50 border border-slate-100">
+                  <!-- HUD Window Controls -->
+                  <div class="absolute top-4 left-5 flex gap-1.5 z-20">
+                    <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                  </div>
+
+                  <video id="introVideo" preload="metadata" playsinline=""
                     class="w-full h-full object-contain">
                     <source src="assets/videos/introduction.mp4#t=1" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
 
-                  <!-- Custom Play Button Overlay -->
+                  <!-- Glassmorphism Overlay -->
                   <div id="videoOverlay"
-                    class="absolute inset-0 flex items-center justify-center bg-ink/10 transition-all duration-500 cursor-pointer group-hover:bg-ink/20">
+                    class="absolute inset-0 flex items-center justify-center bg-ink/5 backdrop-blur-[2px] transition-all duration-500 cursor-pointer group-hover:backdrop-blur-none group-hover:bg-transparent">
                     <button id="playIcon"
-                      class="h-20 w-20 rounded-full bg-accent flex items-center justify-center text-white transition-all duration-500 hover:scale-110 active:scale-95">
-                      <i class="ti ti-player-play text-5xl ml-1"></i>
+                      class="h-16 w-16 rounded-full bg-white/90 shadow-xl flex items-center justify-center text-accent transition-all duration-500 hover:scale-110 active:scale-95 border border-white">
+                      <i class="ti ti-player-play text-3xl ml-1"></i>
                     </button>
                   </div>
                 </div>
