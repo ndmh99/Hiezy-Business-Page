@@ -122,7 +122,8 @@
           },
           animation: {
             marquee: 'marquee 25s linear infinite',
-            float: 'float 3s ease-in-out infinite'
+            float: 'float 3s ease-in-out infinite',
+            'pulse-soft': 'pulse-soft 2s ease-in-out infinite'
           },
           keyframes: {
             marquee: {
@@ -132,6 +133,10 @@
             float: {
               '0%, 100%': { transform: 'translateY(0)' },
               '50%': { transform: 'translateY(-10px)' }
+            },
+            'pulse-soft': {
+              '0%, 100%': { boxShadow: '0 0 0 0 rgba(29, 78, 216, 0)' },
+              '50%': { boxShadow: '0 0 0 8px rgba(29, 78, 216, 0.2)' }
             }
           }
         }
@@ -1075,36 +1080,33 @@
             <p class="text-lg text-slate2 leading-relaxed max-w-md">Every project includes a little extra care and
               support to give you some peace of mind.</p>
 
-            <div class="mt-12 space-y-10">
-              <div class="flex gap-6">
-                <div class="flex-shrink-0 h-px w-8 bg-accent mt-3"></div>
+            <div id="care-standards" class="mt-12 space-y-10 relative">
+              <!-- Vertical Track -->
+              <div class="absolute top-0 bottom-0 w-0.5 bg-slate-200" style="left: 11px;"></div>
+              <div id="care-progress" class="absolute w-0.5 bg-accent transition-all duration-500 ease-out" style="top: -25px; left: 5px; height: 0%;"></div>
+              
+              <div class="flex gap-6 care-step" data-step="1">
+                <div class="flex-shrink-0 h-3 w-3 rounded-full bg-slate-200 border-2 border-white transition-all duration-500" style="margin-top: 6px;"></div>
                 <div>
-                  <h4 class="font-display font-bold text-ink text-lg italic">01. First Meeting</h4>
+                  <h4 class="care-heading font-display font-bold text-slate-400 text-lg italic transition-colors duration-500">01. First Meeting</h4>
                   <p class="text-slate2 text-sm mt-2 leading-relaxed">We talk with you to plan exactly what your website
                     needs and how it should work.</p>
                 </div>
               </div>
-              <div class="flex gap-6">
-                <div class="flex-shrink-0 h-px w-8 bg-accent mt-3"></div>
+              <div class="flex gap-6 care-step" data-step="2">
+                <div class="flex-shrink-0 h-3 w-3 rounded-full bg-slate-200 border-2 border-white transition-all duration-500" style="margin-top: 6px;"></div>
                 <div>
-                  <h4 class="font-display font-bold text-ink text-lg italic"><span
-                      class="font-display font-bold text-ink text-lg italic"
-                      style="margin: 0px; color: rgb(11, 18, 32);">
-                      <h4 class="font-display font-bold text-ink text-lg italic" style="color: rgb(11, 18, 32);">02.
-                        Smooth Launching</h4>
-                    </span></h4>
+                  <h4 class="care-heading font-display font-bold text-slate-400 text-lg italic transition-colors duration-500">02. Smooth Launching</h4>
                   <p class="text-slate2 text-sm mt-2 leading-relaxed">We handle the technical side of launching your
-                    site, ensuring a seamless experience from the very start.<br></p>
+                    site, ensuring a seamless experience from the very start.</p>
                 </div>
               </div>
-              <div class="flex gap-6">
-                <div class="flex-shrink-0 h-px w-8 bg-accent mt-3"></div>
+              <div class="flex gap-6 care-step" data-step="3">
+                <div class="flex-shrink-0 h-3 w-3 rounded-full bg-slate-200 border-2 border-white transition-all duration-500" style="margin-top: 6px;"></div>
                 <div>
-                  <h4 class="font-display font-bold text-ink text-lg italic">03.&nbsp;<span
-                      class="font-display font-bold text-ink text-lg italic"
-                      style="border-image: none; margin: 0px; color: rgb(11, 18, 32);">Support After Launch</span></h4>
+                  <h4 class="care-heading font-display font-bold text-slate-400 text-lg italic transition-colors duration-500">03. Support After Launch</h4>
                   <p class="text-slate2 text-sm mt-2 leading-relaxed">Your first 30 days of support are on us. Keep
-                    things running smoothly with optional care plans later (from $49/month).<br></p>
+                    things running smoothly with optional care plans later (from $49/month).</p>
                 </div>
               </div>
             </div>
@@ -2195,6 +2197,70 @@
         `;
       }, 1500);
     });
+  </script>
+
+  <script>
+    // Care Standards Active Journey Scroll Effect
+    (function () {
+      const careSection = document.getElementById('care-standards');
+      const progressBar = document.getElementById('care-progress');
+      const steps = document.querySelectorAll('.care-step');
+      const headings = document.querySelectorAll('.care-heading');
+      const nodes = document.querySelectorAll('.care-step > div:first-child');
+
+      if (!careSection || !progressBar) return;
+
+      let ticking = false;
+
+      function updateProgress() {
+        const rect = careSection.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // Calculate scroll progress through the section
+        const sectionTop = rect.top;
+        const sectionHeight = rect.height;
+        let progress = (windowHeight - sectionTop) / (windowHeight + sectionHeight);
+        progress = Math.max(0, Math.min(1, progress));
+
+        // Update progress bar height
+        progressBar.style.height = `${progress * 100}%`;
+
+        // Activate steps based on progress
+        // Step 1 activates immediately (0%), Step 2 at 33%, Step 3 at 66%
+        // This ensures all dots show up as user scrolls through the section
+        const thresholds = [0, 0.33, 0.66];
+        steps.forEach((step, index) => {
+          if (progress >= thresholds[index]) {
+            step.classList.add('active');
+            headings[index].classList.remove('text-slate-400');
+            headings[index].classList.add('text-ink');
+            nodes[index].classList.remove('bg-slate-200');
+            nodes[index].classList.add('bg-accent', 'scale-125', 'animate-pulse-soft');
+          } else {
+            step.classList.remove('active');
+            headings[index].classList.add('text-slate-400');
+            headings[index].classList.remove('text-ink');
+            nodes[index].classList.add('bg-slate-200');
+            nodes[index].classList.remove('bg-accent', 'scale-125', 'animate-pulse-soft');
+          }
+        });
+
+        ticking = false;
+      }
+
+      function onScroll() {
+        if (!ticking) {
+          requestAnimationFrame(updateProgress);
+          ticking = true;
+        }
+      }
+
+      // Initial check
+      updateProgress();
+
+      // Throttled scroll listener
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
   </script>
 
   <script>
