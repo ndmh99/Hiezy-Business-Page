@@ -99,6 +99,12 @@ body {
   }
 }
 
+/* Marquee animation for social proof ribbon */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
 /* Tiny float for hero mock */
 @keyframes floaty {
 

@@ -16,7 +16,7 @@ const InspirationEngine = (function() {
     return `
       <div class="lg:col-span-7 relative group mb-12 lg:mb-0" id="${config.stackId}">
         <div class="invisible w-full aspect-[16/10]"></div>
-        <div id="card-a" class="inspiration-card pos-front rounded-2xl border border-border bg-white p-2 shadow-2xl">
+        <div id="card-a" class="inspiration-card pos-front rounded-2xl border border-border bg-white p-2 shadow-2xl cursor-zoom-in" onclick="openInspirationLightbox('${data.img1}')">
           <img src="${data.img1}" class="rounded-xl w-full aspect-[16/10] object-cover" alt="Page 1">
         </div>
         <div id="card-b" class="inspiration-card pos-behind rounded-2xl border border-border bg-white p-2 shadow-xl cursor-pointer" onclick="InspirationEngine.swapCards(this)">
@@ -85,13 +85,16 @@ const InspirationEngine = (function() {
       behindCard.classList.add('animate-swing-front');
 
       setTimeout(() => {
-        frontCard.classList.remove('pos-front', 'animate-slide-back');
+        frontCard.classList.remove('pos-front', 'animate-slide-back', 'cursor-zoom-in');
         frontCard.classList.add('pos-behind');
-        behindCard.classList.remove('pos-behind', 'animate-swing-front');
-        behindCard.classList.add('pos-front');
-        
         frontCard.onclick = () => InspirationEngine.swapCards(frontCard);
-        behindCard.onclick = null;
+
+        behindCard.classList.remove('pos-behind', 'animate-swing-front');
+        behindCard.classList.add('pos-front', 'cursor-zoom-in');
+        
+        // Use the actual image data from project context or just get it from the img tag
+        const frontImgSrc = behindCard.querySelector('img').src;
+        behindCard.onclick = () => openInspirationLightbox(frontImgSrc);
       }, 800);
     }
   };

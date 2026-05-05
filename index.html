@@ -648,6 +648,16 @@
       font-size: 20px;
       opacity: 0.9;
     }
+
+    /* Pulse animation for global status dot */
+    @keyframes status-pulse {
+      0% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    .animate-status-pulse {
+      animation: status-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
   </style>
 </head>
 
@@ -672,6 +682,26 @@
         })();
     </script>
   </div>
+  <!-- Language & Region Status Bar -->
+  <div class="bg-ink border-b border-white/10 py-1.5 overflow-hidden">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-4 shrink-0">
+        <div class="flex items-center gap-2 whitespace-nowrap">
+          <span class="relative flex h-2 w-2 shrink-0">
+            <span class="animate-status-pulse absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span class="text-[10px] sm:text-xs font-medium text-white/70 uppercase tracking-tight">Active Coverage: Vancouver • Toronto • Remote</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-4 shrink-0">
+        <div class="text-[10px] sm:text-xs font-mono text-white/60 whitespace-nowrap" id="local-time-status">
+          Local Time: <span id="current-time" class="text-white/90">--:-- --</span> (PT)
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Global header (sticky) -->
   <header class="sticky top-0 z-50 border-b border-border bg-white/70 backdrop-blur-xl">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -1947,6 +1977,14 @@
     </section>
   </main>
 
+  <!-- Social Proof Marquee -->
+  <div class="bg-accent text-white overflow-hidden py-3">
+    <div class="flex whitespace-nowrap" style="animation: marquee 25s linear infinite;">
+      <span class="mx-4 font-display font-semibold text-sm tracking-wider">READY TO LAUNCH? • GET A QUOTE • NO HIDDEN FEES •</span>
+      <span class="mx-4 font-display font-semibold text-sm tracking-wider">READY TO LAUNCH? • GET A QUOTE • NO HIDDEN FEES •</span>
+      <span class="mx-4 font-display font-semibold text-sm tracking-wider">READY TO LAUNCH? • GET A QUOTE • NO HIDDEN FEES •</span>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="border-t border-border bg-white/60">
@@ -1995,9 +2033,74 @@
     </div>
   </footer>
 
+  <!-- Lightbox for Design Inspirations -->
+  <div id="inspiration-lightbox" class="fixed inset-0 z-[100] bg-ink/90 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4 sm:p-8">
+    <button onclick="closeInspirationLightbox()" class="absolute top-6 right-6 z-50 text-ink hover:text-accent transition-colors" aria-label="Close preview">
+      <i class="ti ti-x text-4xl drop-shadow-md"></i>
+    </button>
+    <div class="relative max-w-5xl w-full max-h-full flex items-center justify-center">
+      <img id="lightbox-img" src="" alt="Full preview" class="max-w-full max-h-[85vh] object-contain rounded-xl shadow-2xl scale-95 transition-transform duration-300">
+    </div>
+  </div>
+
   <script>
+    // Lightbox Logic for Design Inspirations
+    function openInspirationLightbox(src) {
+      const lightbox = document.getElementById('inspiration-lightbox');
+      const img = document.getElementById('lightbox-img');
+      if (!lightbox || !img) return;
+      
+      img.src = src;
+      lightbox.classList.remove('opacity-0', 'pointer-events-none');
+      lightbox.classList.add('opacity-100');
+      
+      // Animate image scale
+      setTimeout(() => {
+        img.classList.remove('scale-95');
+        img.classList.add('scale-100');
+      }, 10);
+      
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeInspirationLightbox() {
+      const lightbox = document.getElementById('inspiration-lightbox');
+      const img = document.getElementById('lightbox-img');
+      if (!lightbox || !img) return;
+      
+      img.classList.remove('scale-100');
+      img.classList.add('scale-95');
+      lightbox.classList.remove('opacity-100');
+      lightbox.classList.add('opacity-0', 'pointer-events-none');
+      
+      document.body.style.overflow = '';
+    }
+
+    // Close lightbox on click outside the image
+    document.getElementById('inspiration-lightbox')?.addEventListener('click', (e) => {
+      if (e.target.id === 'inspiration-lightbox') closeInspirationLightbox();
+    });
+
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Language & Region Status Bar Time
+    function updateLocalTime() {
+      const timeElement = document.getElementById('current-time');
+      if (timeElement) {
+        const now = new Date();
+        // Format for Pacific Time
+        const ptTime = now.toLocaleTimeString('en-US', {
+          timeZone: 'America/Vancouver',
+          hour: 'numeric',
+          minute: '2-digit',
+          hour12: true
+        });
+        timeElement.textContent = ptTime;
+      }
+    }
+    updateLocalTime();
+    setInterval(updateLocalTime, 60000);
 
     // Mobile Bottom Sheet
     const menuBtn = document.getElementById('menuBtn');
