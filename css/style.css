@@ -13,11 +13,19 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 body {
   background: var(--paper);
   color: var(--ink);
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  overscroll-behavior-x: none;
 }
 
 .font-display {
@@ -97,6 +105,25 @@ body {
   .transition {
     transition: none !important;
   }
+}
+
+/* FAQ Animation */
+.faq-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+details[open] .faq-content {
+  grid-template-rows: 1fr;
+}
+
+details.collapsing .faq-content {
+  grid-template-rows: 0fr !important;
+}
+
+.faq-content-inner {
+  overflow: hidden;
 }
 
 /* Marquee animation for social proof ribbon */
@@ -320,4 +347,13 @@ body {
     font-size: 3.75rem;
     line-height: 1
   }
+}
+/* Hard lock all horizontal scroll on mobile */
+@media screen and (max-width: 1024px) {
+    html, body {
+        overflow-x: hidden !important;
+        position: relative !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
 }
