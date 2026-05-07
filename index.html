@@ -691,7 +691,9 @@
             <span class="animate-status-pulse absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
           </span>
-          <span class="text-[10px] sm:text-xs font-medium text-white/70 uppercase tracking-tight">Active Coverage: Vancouver • Toronto • Remote</span>
+          <span class="text-[10px] sm:text-xs font-medium text-white/70 uppercase tracking-tight">
+            <span class="hidden sm:inline">Active Coverage: </span>Vancouver • Toronto • Remote
+          </span>
         </div>
       </div>
       <div class="flex items-center gap-4 shrink-0">
@@ -1147,8 +1149,8 @@
           <div class="lg:col-span-7">
             <div class="relative">
               <div
-                class="absolute -top-12 -left-12 text-[10rem] font-display font-black text-slate-100/50 -z-10 select-none">
-                PLUS</div>
+                class="absolute -top-20 -left-12 text-[10rem] font-display font-black text-slate-100/50 -z-10 select-none">
+                STUDIO</div>
 
               <div class="bg-white border border-border p-2 rounded-[2rem] shadow-2xl">
                 <div class="relative rounded-[1.5rem] overflow-hidden aspect-[16/10.5] group bg-slate-50 border border-slate-100">
@@ -1607,10 +1609,10 @@
     <section class="mx-auto max-w-7xl px-6 py-0">
       <div class="pb-14">
         <div class="flex items-center justify-center gap-3 mb-12">
-          <span class="text-xs tracking-[0.2em] uppercase text-[#64748b] font-semibold">—</span>
-          <span class="text-xs tracking-[0.2em] uppercase text-[#64748b] font-semibold">BRANDS THAT TRUSTED</span>
+          <span class="text-xs tracking-[0.2em] uppercase text-accent font-semibold">—</span>
+          <span class="text-xs tracking-[0.2em] uppercase text-accent font-bold">BRANDS THAT TRUSTED</span>
           <img id="trusted-hiezy-logo" src="" alt="HIEZY" class="h-10 w-auto pointer-events-none">
-          <span class="text-xs tracking-[0.2em] uppercase text-[#64748b] font-semibold">—</span>
+          <span class="text-xs tracking-[0.2em] uppercase text-accent font-semibold">—</span>
         </div>
         <div class="relative flex overflow-hidden w-full max-w-full" id="logo-marquee-wrapper">
           <div
@@ -1716,8 +1718,8 @@
                   <img id="quote-logo" src="" alt="" class="h-full w-auto pointer-events-none">
                 </div>
                 <div>
-                  <h3 class="font-display text-2xl font-extrabold tracking-tight text-ink">Request a Quote</h3>
-                  <p class="text-slate2 text-sm mt-0.5">Fast, clear, and honest pricing.</p>
+                  <h3 class="font-display text-2xl font-extrabold tracking-tight text-ink">Request Form</h3>
+                  <p class="text-slate2 text-sm mt-0.5 italic">Customer information will be kept confidential.</p>
                 </div>
               </div>
 
@@ -1980,9 +1982,10 @@
   <!-- Social Proof Marquee -->
   <div class="bg-accent text-white overflow-hidden py-3">
     <div class="flex whitespace-nowrap" style="animation: marquee 25s linear infinite;">
-      <span class="mx-4 font-display font-semibold text-sm tracking-wider">READY TO LAUNCH? • GET A QUOTE • NO HIDDEN FEES •</span>
-      <span class="mx-4 font-display font-semibold text-sm tracking-wider">READY TO LAUNCH? • GET A QUOTE • NO HIDDEN FEES •</span>
-      <span class="mx-4 font-display font-semibold text-sm tracking-wider">READY TO LAUNCH? • GET A QUOTE • NO HIDDEN FEES •</span>
+      <span class="mx-4 font-display font-semibold text-sm tracking-wider">READY TO LAUNCH? • HIEZY GOT YOU • 24/7 SUPPORT •</span>
+      <span class="mx-4 font-display font-semibold text-sm tracking-wider">READY TO LAUNCH? • HIEZY GOT YOU • 24/7 SUPPORT •</span>
+      <span class="mx-4 font-display font-semibold text-sm tracking-wider">READY TO LAUNCH? • HIEZY GOT YOU • 24/7 SUPPORT •</span>
+      <span class="mx-4 font-display font-semibold text-sm tracking-wider">READY TO LAUNCH? • HIEZY GOT YOU • 24/7 SUPPORT •</span>
     </div>
   </div>
 
@@ -2177,10 +2180,16 @@
     ];
 
     const setActive = (id) => {
-      sections.forEach(s => s.nav?.classList.remove('active-underline', 'text-ink'));
+      sections.forEach(s => {
+        if (s.nav) {
+          s.nav.classList.remove('active-underline', 'text-accent', '!text-accent');
+          s.nav.classList.add('text-slate2');
+        }
+      });
       const found = sections.find(s => s.id === id);
       if (found?.nav) {
-        found.nav.classList.add('active-underline', 'text-ink');
+        found.nav.classList.add('active-underline', '!text-accent');
+        found.nav.classList.remove('text-slate2');
       }
     };
 
